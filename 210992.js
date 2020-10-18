@@ -1,1 +1,20 @@
-{"assets":{"code":{"main":"class MainGame extends MonoBehaviour {\n  \/\/jamie's test on 210992\n  \/\/Start is called before the first frame update\n  Start() {\n  \n  }\n\n  \n  \n  \/\/Update is called once per frame\n  Update() {\n  \n  }\n}\n\n\n\n\n"},"model":{},"texture":{},"sound":{},"library":{},"scene":{"MainScene.scn":""},"material":{},"prefab":{}}}
+{
+    "assets": {
+        "code": {
+            "main": "\n\n//hello world !\n\n\n//jamie was here.\n\n\n\n//JSON_UNESCAPED_LINE_TERMINATORS\n\n\n//nl1br\n\n\n\n.js\n\n\n\n"
+        },
+        "model": {},
+        "texture": {
+            "earth.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210992.earth.png"
+            }
+        },
+        "sound": {},
+        "library": {},
+        "scene": {
+            "MainScene.scn": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      \n   ]\n}"
+        },
+        "material": {},
+        "prefab": {}
+    }
+}
