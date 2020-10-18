@@ -6431,7 +6431,7 @@ enum CursorLockMode
 
 function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: PropertyDescriptor, )
 {
-  print(v)
+  print(descriptor.value)
   return null;
 }
 
@@ -6518,7 +6518,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43269,
+               \"uniqueId\":43973,
                \"ser_children\":[
                   
                ]
@@ -6557,7 +6557,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":100,
                   \"z\":100
                },
-               \"uniqueId\":43272,
+               \"uniqueId\":43976,
                \"ser_children\":[
                   
                ]
@@ -6627,7 +6627,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43280,
+               \"uniqueId\":43984,
                \"ser_children\":[
                   
                ]
@@ -6665,7 +6665,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43298,
+               \"uniqueId\":44002,
                \"ser_children\":[
                   {
                      \"t\":\"GameObject\",
@@ -6694,7 +6694,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":0.9999999345029132,
                               \"z\":1.0000000339870152
                            },
-                           \"uniqueId\":43282,
+                           \"uniqueId\":43986,
                            \"ser_children\":[
                               
                            ]
@@ -6764,7 +6764,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43290,
+                           \"uniqueId\":43994,
                            \"ser_children\":[
                               
                            ]
@@ -6839,7 +6839,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43307,
+               \"uniqueId\":44011,
                \"ser_children\":[
                   {
                      \"t\":\"GameObject\",
@@ -6868,7 +6868,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43299,
+                           \"uniqueId\":44003,
                            \"ser_children\":[
                               
                            ]
@@ -6943,7 +6943,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43324,
+               \"uniqueId\":44028,
                \"ser_children\":[
                   {
                      \"t\":\"GameObject\",
@@ -6972,7 +6972,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43308,
+                           \"uniqueId\":44012,
                            \"ser_children\":[
                               
                            ]
@@ -7042,7 +7042,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43316,
+                           \"uniqueId\":44020,
                            \"ser_children\":[
                               
                            ]
@@ -7109,7 +7109,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43341,
+               \"uniqueId\":44045,
                \"ser_children\":[
                   {
                      \"t\":\"GameObject\",
@@ -7138,7 +7138,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43325,
+                           \"uniqueId\":44029,
                            \"ser_children\":[
                               
                            ]
@@ -7208,7 +7208,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43333,
+                           \"uniqueId\":44037,
                            \"ser_children\":[
                               
                            ]
@@ -7283,7 +7283,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                   \"y\":1,
                   \"z\":1
                },
-               \"uniqueId\":43358,
+               \"uniqueId\":44062,
                \"ser_children\":[
                   {
                      \"t\":\"GameObject\",
@@ -7312,7 +7312,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":5.935487303530186,
                               \"z\":8.280000006856485
                            },
-                           \"uniqueId\":43342,
+                           \"uniqueId\":44046,
                            \"ser_children\":[
                               
                            ]
@@ -7382,7 +7382,7 @@ function MenuItem(v : string, target?: any, propertyKey?: string, descriptor?: P
                               \"y\":1.000000006620509,
                               \"z\":1.0000000230844455
                            },
-                           \"uniqueId\":43350,
+                           \"uniqueId\":44054,
                            \"ser_children\":[
                               
                            ]
