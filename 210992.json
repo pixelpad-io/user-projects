@@ -1,7 +1,33 @@
 {
     "assets": {
         "code": {
-            "main": "//hello world !\n\n//JSON_UNESCAPED_LINE_TERMINATORS\n\n//nl1br\n\n//str_replace \\n at the top\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "main": "//hello world !
+
+//JSON_UNESCAPED_LINE_TERMINATORS
+
+//nl1br
+
+//str_replace \
+ at the top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
         },
         "model": {},
         "texture": {
@@ -12,7 +38,12 @@
         "sound": {},
         "library": {},
         "scene": {
-            "MainScene.scn": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      \n   ]\n}"
+            "MainScene.scn": "{
+   \"t\":\"Scene\",
+   \"rootObjs\":[
+      
+   ]
+}"
         },
         "material": {},
         "prefab": {}
