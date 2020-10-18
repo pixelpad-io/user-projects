@@ -1,7 +1,20 @@
 {
     "assets": {
         "code": {
-            "main": "//hello world !\n\n\n//hello \\n\n\n\n\n\n\n"
+            "main": "//hello world !\n
+\n
+\n
+//hello \\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+\n
+"
         },
         "model": {},
         "texture": {
@@ -12,7 +25,12 @@
         "sound": {},
         "library": {},
         "scene": {
-            "MainScene.scn": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      \n   ]\n}"
+            "MainScene.scn": "{\n
+   \"t\":\"Scene\",\n
+   \"rootObjs\":[\n
+      \n
+   ]\n
+}"
         },
         "material": {},
         "prefab": {}
