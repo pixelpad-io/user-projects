@@ -4278,7 +4278,7 @@ class EditorStyle {
       if (data.children.length > 0)
       {
         var list = new MenuButtonList(data.children);
-
+        print(this.transformCenterX)
         this.addControl(list);
       }
     });
