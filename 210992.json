@@ -1,7 +1,7 @@
 {
     "assets": {
         "code": {
-            "main": "class Main extends MonoBehaviour {\n  //hello world\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n\n\n\n\n\n\n\n\n\n\n",
+            "main": "class Main extends MonoBehaviour {\n  //hello world\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n\n\n\n\n\n\n\n\n\n\n\n\n",
             "script0": "class script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
         },
         "model": {},
