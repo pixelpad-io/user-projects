@@ -65,12 +65,33 @@
         "library": {},
         "scene": {
             "MainScene.scn": [
+                "class script0 extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
                 ""
             ],
             "Scene0.scn": [
-                "//this is a scene ",
+                "class script0 extends MonoBehaviour {",
                 "",
-                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
                 ""
             ]
         },
