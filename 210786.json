@@ -1923,6 +1923,7 @@
                 "",
                 "    //Only when refreshing should the logo be shown",
                 "    if (CameraFadeInFadeOut.loadLogo) {",
+                "      CameraFadeInFadeOut.loadLogo = false;",
                 "      this.background = Instantiate(CustomImage).Init(\"black_pixels.jpg\", 5000, 5000);",
                 "      this.background.image.alpha = 1;    ",
                 "      this.logo = Instantiate(CustomImage).Init(\"FirstRoboticsCanada.jpg\", 327, 255);",
