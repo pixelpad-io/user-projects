@@ -371,7 +371,7 @@
                 "",
                 "  private static OnAssetClicked (e : CustomEvent)",
                 "  {",
-                "    PixelPADEvents.onSceneClicked.notifyObservers( e.detail.sceneName);",
+                "    PixelPADEvents.onAssetClicked.notifyObservers( e.detail.sceneName);",
                 "  }",
                 "",
                 "  private static OnSceneClicked (e : CustomEvent)",
