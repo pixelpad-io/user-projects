@@ -26,9 +26,7 @@
         "model": {},
         "texture": {},
         "sound": {},
-        "library": {
-            "210786": {}
-        },
+        "library": {},
         "scene": {
             "Scene0.scn": [
                 "//this is a scene ",
