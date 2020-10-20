@@ -267,8 +267,6 @@
                 "  //Don't put this in Awake - it will crash",
                 "  Start() {",
                 "    SceneManager.LoadScene(`Level_${this.levelIndex}.scn`);  ",
-                "    //this.LoadLevel(this.levelIndex);",
-                "",
                 "  }",
                 "",
                 "  async LoadLevel(lv: number){",
