@@ -46,14 +46,9 @@
             ],
             "Scene1.scn": [
                 "//this is a scene ",
-                ""
+                "//"
             ],
-            "scene0": [
-                "//scene0",
-                "",
-                ""
-            ],
-            "Scene3.scn": [
+            "Scene4.scn": [
                 "//Scene3.scn",
                 "",
                 ""
