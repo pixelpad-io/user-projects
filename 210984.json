@@ -45,12 +45,7 @@
         },
         "scene": {
             "MainScene.scn": [
-                "{",
-                "   \"t\":\"Scene\",",
-                "   \"rootObjs\":[",
-                "      ",
-                "   ]",
-                "}"
+                ""
             ],
             "Scene0.scn": [
                 "//this is a scene ",
