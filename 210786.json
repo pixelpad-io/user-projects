@@ -3022,7 +3022,7 @@
         "sound": {},
         "library": {},
         "scene": {
-            "MainScene.scn": [
+            "LevelSelection.scn": [
                 "{",
                 "   \"t\":\"Scene\",",
                 "   \"rootObjs\":[",
