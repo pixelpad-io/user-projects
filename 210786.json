@@ -96,6 +96,7 @@
                 ""
             ],
             "LevelManager": [
+                "@RegisterAsComponent",
                 "class LevelManager extends MonoBehaviour {",
                 "",
                 "  levelIndex : number = 0;",
@@ -3053,7 +3054,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":2696,",
+                "               \"uniqueId\":8879,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3091,7 +3092,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":2697,",
+                "               \"uniqueId\":8880,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
