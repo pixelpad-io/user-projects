@@ -4650,8 +4650,6 @@
                 "    EditorSelection.SetSelectedGameObject(go);",
                 "  }",
                 "",
-                "",
-                "",
                 "  @MenuItem(\"GameObject/Light/Directional Light\")",
                 "  static CreateLight() {",
                 "    var go: GameObject = new GameObject();",
