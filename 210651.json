@@ -6541,7 +6541,7 @@
                 "      //Load the texture",
                 "      var fullName = Engine.getFullName(fileName, FileType.Texture);",
                 "      this.img.source = this.url;",
-                "      this.img.widthInPixels = 150;",
+                "      ",
                 "    } else {",
                 "      Debug.Log(\"Unrecognized file-format.\");",
                 "      return;",
