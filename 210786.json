@@ -1969,7 +1969,7 @@
                 "  //Update is called once per frame",
                 "  Update() {",
                 "    if(this.target){",
-                "      this.transform.transformNode.lookAt(this.target.transform.transformNode.position);",
+                "      this.transform.transformNode.lookAt(Robot.main.transform.transformNode.position);",
                 "    }",
                 "  }",
                 "",
