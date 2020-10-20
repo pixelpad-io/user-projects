@@ -6594,6 +6594,7 @@
                 "",
                 "  OnDispose() {",
                 "    this.onDisposeObservable.removeCallback(this.OnDispose);",
+                "    Engine.editorScene.onAfterRenderObservable.removeCallback(this.RenderScene);",
                 "    this.scene?.dispose();",
                 "  }",
                 "",
