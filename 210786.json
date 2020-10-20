@@ -119,7 +119,7 @@
                 ""
             ],
             "MainGame": [
-                "ENABLE_EDITOR = false;",
+                "ENABLE_EDITOR = true;",
                 "",
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
