@@ -1026,6 +1026,7 @@
                 "    private _objectPhysics: ObjectPhysics;",
                 "",
                 "    static Destroy(obj: SceneObject) {",
+                "        //Destroy all children before destroying other objects",
                 "        obj.transform.ser_children.forEach(c => {",
                 "            GameObject.Destroy(obj);",
                 "        });",
