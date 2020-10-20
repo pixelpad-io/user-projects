@@ -123,7 +123,7 @@
                 ""
             ],
             "MainGame": [
-                "ENABLE_EDITOR = true;",
+                "ENABLE_EDITOR = false;",
                 "",
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
@@ -3103,14 +3103,6 @@
                 "         ],",
                 "         \"prefabName\":null",
                 "      }",
-                "   ]",
-                "}"
-            ],
-            "MainScene.scn": [
-                "{",
-                "   \"t\":\"Scene\",",
-                "   \"rootObjs\":[",
-                "      ",
                 "   ]",
                 "}"
             ],
