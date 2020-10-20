@@ -2003,7 +2003,7 @@
                 "    switch(this.robotName){",
                 "      case \"robot_1.obj\": ",
                 "          this.robot.renderer.GetMeshes().forEach((e,i) => {",
-                "            Debug.Log(123)",
+                "            Debug.Log(e.id)",
                 "            e.position.y -= 0.5,",
                 "            e.isPickable = false",
                 "            let mat = new BABYLON.StandardMaterial(\"mat1\", Engine.scene)",
