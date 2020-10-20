@@ -1,1 +1,45 @@
-{"assets":{"code":{"main":"\nomg!!!!!\n","script0":"class script0 extends MonoBehaviour {\n\n  \/\/Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  \/\/Update is called once per frame\n  Update() {\n  \n  }\n}\n"},"model":{},"texture":{},"sound":{},"library":{},"scene":{"MainScene.scn":"","Scene0.scn":"\/\/this is a scene \n","Scene1.scn":"\/\/this is a scene \n"},"material":{},"prefab":{}}}
+{
+    "assets": {
+        "code": {
+            "main": [
+                "",
+                "omg!!!!!",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "script0": [
+                "class script0 extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ]
+        },
+        "model": {},
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {
+            "Scene0.scn": [
+                "//this is a scene ",
+                ""
+            ],
+            "Scene1.scn": [
+                "//this is a scene ",
+                ""
+            ]
+        },
+        "material": {},
+        "prefab": {}
+    }
+}
