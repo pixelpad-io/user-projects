@@ -6582,7 +6582,7 @@
                 "    this.img.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;",
                 "    this.img.width = \"150px\";",
                 "    this.img.height = \"150px\";",
-                "    this.img.paddingTopInPixels = \"10px\";",
+                "    this.img.paddingTop = \"10px\";",
                 "    this.img.stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;",
                 "    this.addControl(this.img);",
                 "  }",
