@@ -5852,8 +5852,7 @@
                 "",
                 "  public static IsPointerOverEditor () : boolean",
                 "  {",
-                "    //I'm not sure why this is > 1... but it works and it's late.",
-                "    return (this.objs.length < 2);",
+                "    return this.objs.length > 0;",
                 "  }",
                 "",
                 "}"
