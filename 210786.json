@@ -3023,14 +3023,6 @@
         "sound": {},
         "library": {},
         "scene": {
-            "MainScene.scn": [
-                "{",
-                "   \"t\":\"Scene\",",
-                "   \"rootObjs\":[",
-                "      ",
-                "   ]",
-                "}"
-            ],
             "LevelSelection.scn": [
                 "{",
                 "   \"t\":\"Scene\",",
@@ -3062,7 +3054,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":8879,",
+                "               \"uniqueId\":433,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3100,7 +3092,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":8880,",
+                "               \"uniqueId\":434,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3111,6 +3103,14 @@
                 "         ],",
                 "         \"prefabName\":null",
                 "      }",
+                "   ]",
+                "}"
+            ],
+            "MainScene.scn": [
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
                 "   ]",
                 "}"
             ],
