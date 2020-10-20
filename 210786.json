@@ -1964,7 +1964,6 @@
                 "  direction: Vector3;",
                 "  //Start is called before the first frame update",
                 "  Start() {",
-                "    this.target = MainGame.instance.GetOneRobot(\"\").gameObject;",
                 "  }",
                 "  ",
                 "  //Update is called once per frame",
