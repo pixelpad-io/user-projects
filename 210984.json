@@ -23,9 +23,21 @@
                 ""
             ]
         },
-        "model": {},
-        "texture": {},
-        "sound": {},
+        "model": {
+            "ball.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210984.ball.obj"
+            }
+        },
+        "texture": {
+            "texture0.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210984.texture0.png"
+            }
+        },
+        "sound": {
+            "sound0.mp3": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210984.sound0.mp3"
+            }
+        },
         "library": {},
         "scene": {
             "Scene0.scn": [
@@ -40,6 +52,11 @@
                 "//scene0",
                 "",
                 ""
+            ],
+            "Scene3.scn": [
+                "//Scene3.scn",
+                "",
+                ""
             ]
         },
         "material": {
@@ -47,11 +64,21 @@
                 "//material0",
                 "",
                 ""
+            ],
+            "Material4.mtl": [
+                "//Material4.mtl",
+                "",
+                ""
             ]
         },
         "prefab": {
             "prefab0": [
                 "//prefab0",
+                "",
+                ""
+            ],
+            "Prefab5.prefab": [
+                "//Prefab5.prefab",
                 "",
                 ""
             ]
