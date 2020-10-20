@@ -1940,8 +1940,6 @@
                 "    } else {",
                 "      this.timer += Time.deltaTime;",
                 "    }",
-                "",
-                "",
                 "  }",
                 "",
                 "  DestroyLogo() {",
