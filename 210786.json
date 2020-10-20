@@ -1992,6 +1992,7 @@
                 "  robotName : string = \"robot_1.obj\";",
                 "",
                 "  public SetColor(){",
+                "    ",
                 "    var robot = this.GetComponent(Robot);",
                 "    switch(this.robotName){",
                 "      case \"robot_1.obj\":",
