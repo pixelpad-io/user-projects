@@ -5,6 +5,8 @@
                 "",
                 "",
                 "",
+                "consolelog(getFirstSceneName());",
+                "",
                 ""
             ],
             "script0": [
@@ -43,9 +45,12 @@
         },
         "scene": {
             "MainScene.scn": [
-                "//\r",
-                "\r",
-                ""
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
+                "   ]",
+                "}"
             ],
             "Scene0.scn": [
                 "//this is a scene ",
