@@ -33,7 +33,6 @@
                 "    Debug.Log(b);",
                 "",
                 "    this.resetTimer = 60;",
-                "    // MainGame.level = Instantiate(Level_CrossNumbers);    ",
                 "",
                 "    // Instantiate(FPSCounterGUI);",
                 "    //This makes the engine runs 10 times as fast.",
