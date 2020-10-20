@@ -4662,12 +4662,6 @@
                 "    EditorSelection.SetSelectedGameObject(go);",
                 "  }",
                 "",
-                "  @MenuItem(\"File Viewer\")",
-                "  static FileViewer ()",
-                "  {",
-                "    InspectorWindow.current.OnViewModel();",
-                "  }",
-                "",
                 "  constructor() {",
                 "    super()",
                 "    this.background.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_TOP;",
@@ -6921,7 +6915,12 @@
         "library": {},
         "scene": {
             "MainScene.scn": [
-                ""
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
+                "   ]",
+                "}"
             ],
             "TEST.scn": [
                 "{",
