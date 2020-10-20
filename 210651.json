@@ -6917,6 +6917,9 @@
         "sound": {},
         "library": {},
         "scene": {
+            "MainScene.scn": [
+                ""
+            ],
             "TEST.scn": [
                 "{",
                 "   \"t\":\"Scene\",",
