@@ -283,6 +283,7 @@
                 "                Input.Update();\r",
                 "\r",
                 "                //Process detroyed objects\r",
+                "                //Needs to be in this order so children are destroyed before parents\r",
                 "                for (var i = 0; i < Engine.toBeDestroyed.length; i++) {\r",
                 "                    var obj = Engine.toBeDestroyed[i];\r",
                 "                    obj.InternalDestroy();\r",
