@@ -1009,7 +1009,7 @@
                 "    @SerializeField",
                 "    prefabName: string;",
                 "",
-                "    destroyOnLoad = true;",
+                "    //destroyOnLoad = true;",
                 "",
                 "    private get activeScene(): Scene {",
                 "        return SceneManager.GetActiveScene();",
@@ -1174,10 +1174,12 @@
                 "    }",
                 "}",
                 "",
+                "/*",
                 "function DontDestroyOnLoad (obj : SceneObject)",
                 "{",
                 "    obj.gameObject.destroyOnLoad = false;",
-                "}"
+                "}",
+                "*/"
             ],
             "MonoBehaviour": [
                 "class MonoBehaviour extends Component \r",
