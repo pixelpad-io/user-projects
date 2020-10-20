@@ -303,6 +303,7 @@
                 "                if (Engine.isExitingPlayMode)\r",
                 "                {\r",
                 "                    Engine.isExitingPlayMode = false;\r",
+                "                    \r",
                 "                    //Reloading the current scene, which should reset if not playing\r",
                 "                    SceneManager.LoadScene(Engine.startScene);\r",
                 "                }\r",
