@@ -6523,7 +6523,7 @@
                 "        meshes.forEach(m => {",
                 "          m.setParent(this.viewedObject);",
                 "        });",
-                "        this.viewedObject.scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);",
+                "        this.viewedObject.scaling = new BABYLON.Vector3(0.02, 0.02, 0.02);",
                 "      });",
                 "    } else if (fileName.endsWith(\".png\") || fileName.endsWith(\".jpg\")) {",
                 "      this.RecreateTextureImage();",
