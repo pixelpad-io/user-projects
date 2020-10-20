@@ -269,11 +269,12 @@
                 "    SceneManager.LoadScene(`Level_${this.levelIndex}.scn`);  ",
                 "  }",
                 "",
+                "/*",
                 "  async LoadLevel(lv: number){",
                 "    await new Promise(resolve => setTimeout(resolve, 2500));",
                 "    ",
                 "  }",
-                "",
+                "*/",
                 "}",
                 ""
             ],
