@@ -6589,7 +6589,7 @@
                 "",
                 "  OnDispose() {",
                 "    this.onDisposeObservable.removeCallback(this.OnDispose);",
-                "    this.scene.dispose();",
+                "    this.scene?.dispose();",
                 "  }",
                 "",
                 "}",
