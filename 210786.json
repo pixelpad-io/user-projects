@@ -3024,21 +3024,6 @@
                 "",
                 "",
                 "*/"
-            ],
-            "Example": [
-                "class Example extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "  ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "  ",
-                "  }",
-                "}",
-                ""
             ]
         },
         "model": {
