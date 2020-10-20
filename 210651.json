@@ -886,7 +886,7 @@
                 "            SceneManager.MarkSceneAsDirty();",
                 "        }",
                 "",
-                "        if (Engine.isPlaying || Engine.IsEditorType(this)) {",
+                "        if (Engine.isExitingPlayMode || Engine.isPlaying || Engine.IsEditorType(this)) {",
                 "            try {",
                 "                this.OnDestroy();",
                 "            } catch (e) {",
