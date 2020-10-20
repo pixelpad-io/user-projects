@@ -256,9 +256,11 @@
             "LevelManager": [
                 "class LevelManager extends MonoBehaviour {",
                 "",
+                "  levelIndex : number;",
+                "",
                 "  Start() {",
                 "    Instantiate(CameraFadeInFadeOut);",
-                "    this.LoadLevel(1);",
+                "    this.LoadLevel(this.levelIndex);",
                 "",
                 "  }",
                 "",
