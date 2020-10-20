@@ -794,7 +794,7 @@
                 "      max = min;",
                 "      min = t;",
                 "    }",
-                "    return Math.min(Math.max(value, max), min);",
+                "    return Math.min(Math.max(value, min), max);",
                 "  }",
                 "",
                 "  static Min (value : number, min : number) : number",
