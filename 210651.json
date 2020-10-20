@@ -6742,6 +6742,8 @@
             "Shadows": [
                 "class Lighting {",
                 "",
+                "  public static mainLight : BABYLON.Light;",
+                "",
                 "  private static shadowGenerators : BABYLON.ShadowGenerator[] = new Array();",
                 "",
                 "  private static casters : BABYLON.Mesh[] = new Array();",
