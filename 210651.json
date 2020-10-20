@@ -1334,6 +1334,8 @@
                 "    //If it's on top it will be used for interaction (e.g. picking a mesh through clicking)",
                 "    Engine.scene.activeCameras.unshift(this.bCam);",
                 "",
+                "  ",
+                "",
                 "    Camera.main = this;",
                 "  }",
                 "",
