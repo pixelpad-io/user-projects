@@ -6456,8 +6456,8 @@
                 "}",
                 ""
             ],
-            "ModelViewer": [
-                "class ModelViewer extends BABYLON.GUI.StackPanel {",
+            "FileViewer": [
+                "class FileViewer extends BABYLON.GUI.StackPanel {",
                 "",
                 "  img: BABYLON.GUI.Image;",
                 "",
