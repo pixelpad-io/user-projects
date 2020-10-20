@@ -1921,6 +1921,8 @@
                 "    if (this.loadLogo) {",
                 "      this.logo = Instantiate(CustomImage).Init(\"FirstRoboticsCanada.jpg\", 327, 255);",
                 "      this.logo.image.alpha = 0.5;",
+                "      this.logo = Instantiate(CustomImage).Init(\"black_pixels.jpg\", 2000, 1000);",
+                "      this.logo.image.alpha = 0.5;      ",
                 "    }",
                 "    else {",
                 "      Destroy(this);",
@@ -3035,21 +3037,6 @@
             }
         },
         "texture": {
-            "GameBoard_LevelTwo.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6396.210669.GameBoard_LevelTwo.png"
-            },
-            "MaroonTexture.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6396.210669.MaroonTexture.png"
-            },
-            "YellowTexture.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6396.210669.YellowTexture.png"
-            },
-            "robot.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6396.210669.robot.png"
-            },
-            "gridTile.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210760.gridTile.png"
-            },
             "asphaltTile.jpg": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.asphaltTile.jpg"
             },
@@ -3094,6 +3081,9 @@
             },
             "machineShop.hdr": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.machineShop.hdr"
+            },
+            "black_pixels.jpg": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.black_pixels.jpg"
             }
         },
         "sound": {},
@@ -3130,7 +3120,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":12418,",
+                "               \"uniqueId\":14100,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3168,7 +3158,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":12419,",
+                "               \"uniqueId\":14101,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
