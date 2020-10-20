@@ -184,7 +184,7 @@
                 "",
                 "  let robotList: RobotMoveList = new RobotMoveList();",
                 "",
-                "  robotList.robot = MainGame.level.GetOneRobot(name)",
+                "  robotList.robot = this.GetOneRobot(name)",
                 "  Debug.Log(robotList.robot.robotName)",
                 "  // Debug.Log(robotList.robot.name)",
                 "  return robotList",
