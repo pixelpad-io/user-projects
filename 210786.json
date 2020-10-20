@@ -2,6 +2,9 @@
     "assets": {
         "code": {
             "main": [
+                ""
+            ],
+            "MainGame": [
                 "ENABLE_EDITOR = false;",
                 "",
                 "@RegisterAsComponent",
