@@ -3131,7 +3131,10 @@
                 "",
                 "  public Unload(): void {",
                 "    for (var i = this.rootObjs.length - 1; i >= 0; i--) {",
-                "      GameObject.Destroy(this.rootObjs[i]);",
+                "      if (this.rootObjs[i].destroyOnLoad)",
+                "      {",
+                "        GameObject.Destroy(this.rootObjs[i]);",
+                "      }",
                 "    }",
                 "  }",
                 "}"
