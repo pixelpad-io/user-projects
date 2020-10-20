@@ -1161,7 +1161,7 @@
             "MainGame": [
                 "",
                 "ENABLE_EDITOR = true;",
-                "/*",
+                "//*",
                 "",
                 "class MainGame extends MonoBehaviour {",
                 "",
