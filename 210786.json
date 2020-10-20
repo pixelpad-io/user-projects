@@ -256,7 +256,7 @@
             "LevelManager": [
                 "class LevelManager extends MonoBehaviour {",
                 "",
-                "  levelIndex : number = 1;",
+                "  levelIndex : number = 0;",
                 "",
                 "  Start() {",
                 "    Instantiate(CameraFadeInFadeOut);",
@@ -268,6 +268,7 @@
                 "    await new Promise(resolve => setTimeout(resolve, 500));",
                 "    SceneManager.LoadScene(`Level_${lv}.scn`);",
                 "  }",
+                "",
                 "}",
                 ""
             ],
