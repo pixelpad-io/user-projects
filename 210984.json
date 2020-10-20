@@ -42,6 +42,11 @@
             "210786": {}
         },
         "scene": {
+            "MainScene.scn": [
+                "//\r",
+                "\r",
+                ""
+            ],
             "Scene0.scn": [
                 "//this is a scene ",
                 ""
