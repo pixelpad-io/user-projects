@@ -5571,7 +5571,6 @@
                 "",
                 "  OnViewModel() {",
                 "    this.Refresh();",
-                "    ",
                 "  }",
                 "",
                 "  OnGUI() {",
