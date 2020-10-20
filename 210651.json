@@ -1372,7 +1372,6 @@
                 "    } else {",
                 "      if (Camera.main) {",
                 "        Engine.scene.activeCamera = Camera.main.bCam;",
-                "",
                 "      }",
                 "    }",
                 "",
