@@ -6566,7 +6566,6 @@
                 "  }",
                 "",
                 "  RenderScene(ev) {",
-                "",
                 "    this.light.setDirectionToTarget(this.bg.absolutePosition);",
                 "",
                 "    //This is so we can use pixel coordinates instead of the ratio",
