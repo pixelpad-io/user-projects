@@ -38,7 +38,9 @@
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210984.sound0.mp3"
             }
         },
-        "library": {},
+        "library": {
+            "210786": {}
+        },
         "scene": {
             "Scene0.scn": [
                 "//this is a scene ",
