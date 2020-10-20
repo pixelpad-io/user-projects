@@ -1971,8 +1971,6 @@
                 "  Update() {",
                 "    if(this.target){",
                 "      this.transform.transformNode.lookAt(this.target.transform.transformNode.position);",
-                "    }else{",
-                "      this.target = Robot.main.gameObject;",
                 "    }",
                 "  }",
                 "",
