@@ -6475,7 +6475,7 @@
                 "",
                 "    ",
                 "",
-                "    var viewedObject = new BABYLON.TransformNode(\"ViewedObject\", this.scene);",
+                "    var viewedObject = new BABYLON.TransformNode(\"ViewedObject\", scene);",
                 "",
                 "    this.url = \"\";",
                 "    if (fileName.endsWith(\".obj\")) {",
