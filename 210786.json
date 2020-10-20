@@ -1941,7 +1941,7 @@
                 "        this.DestroyLogo();",
                 "",
                 "        this.background.image.alpha -= 0.01 / this.fadeDuration;",
-                "        if (this.background.image.alpha = 0)",
+                "        if (this.background.image.alpha <= 0)",
                 "        {",
                 "          Destroy(this);",
                 "        }",
