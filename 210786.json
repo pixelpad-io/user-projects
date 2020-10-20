@@ -1724,6 +1724,7 @@
                 "          //Stop the async moves",
                 "          // Move.current = null;",
                 "          SceneManager.ReloadCurrentScene();",
+                "          GameObject.FindObjectOfType(CameraFadeInFadeOut).loadLogo = false;",
                 "        }",
                 "        else ",
                 "        {",
