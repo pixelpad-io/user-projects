@@ -3691,9 +3691,7 @@
                 "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"bricks_texture.jpg\",\"normalTexture\":\"bricks_normal.jpg\"}"
             ],
             "floor.mat": [
-                "//floor.mat",
-                "",
-                ""
+                "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"rubber_board.jpg\",\"alpha\":1,\"normalTexture\":\"rubber_board_normal.jpg\",\"uScale\":5,\"vScale\":5,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0}"
             ]
         },
         "prefab": {
