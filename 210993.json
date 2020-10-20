@@ -15,7 +15,7 @@
         "sound": {},
         "library": {},
         "scene": {
-            "Level1.scn": "//this is a scene \n"
+            "MainScene.scn": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      \n   ]\n}"
         },
         "material": {
             "Floor.mat": "//material: Floor.mat\n\n"
