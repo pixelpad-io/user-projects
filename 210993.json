@@ -14,9 +14,7 @@
         "texture": {},
         "sound": {},
         "library": {},
-        "scene": {
-            "MainScene.scn": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      \n   ]\n}"
-        },
+        "scene": {},
         "material": {
             "Floor.mat": "//material: Floor.mat\n\n"
         },
