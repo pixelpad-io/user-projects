@@ -2103,43 +2103,8 @@
             "_____OLD_____": [
                 ""
             ],
-            "Shadows": [
-                "/*",
-                "",
-                "",
-                "class CustomShadows extends MonoBehaviour {",
-                "",
-                "  public static generator : BABYLON.ShadowGenerator;",
-                "  public static light : BABYLON.DirectionalLight;",
-                "",
-                "  //Start is called before the first frame update",
-                "  Awake() {",
-                "      ",
-                "      \t// light1",
-                "    if(!CustomShadows.light)",
-                "    CustomShadows.light = new BABYLON.DirectionalLight(\"dir01\", new BABYLON.Vector3(-1, -1, -1), Engine.scene);",
-                "    CustomShadows.light.position = new BABYLON.Vector3(20, 40, 20);",
-                "    CustomShadows.light.intensity = 0;",
-                "      ",
-                "    CustomShadows.generator = new BABYLON.ShadowGenerator(1024, CustomShadows.light);",
-                "    CustomShadows.generator.useExponentialShadowMap = true;",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "  ",
-                "  }",
-                "",
-                "  OnDestroy()",
-                "  {",
-                "    CustomShadows.generator.dispose();",
-                "    CustomShadows.light.dispose();",
-                "  }",
-                "}",
-                "",
-                "/*"
-            ],
             "CamTarget": [
+                "/*",
                 "class CamTarget extends MonoBehaviour {",
                 "",
                 "  moveSpeed : number = .1;",
@@ -2260,7 +2225,7 @@
                 "  }",
                 "  ",
                 "}",
-                ""
+                "*/"
             ],
             "Levels": [
                 "/*",
