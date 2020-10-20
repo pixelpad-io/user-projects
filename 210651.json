@@ -3103,7 +3103,7 @@
                 "@ExecuteInEditMode",
                 "class Light extends MonoBehaviour",
                 "{",
-                "  light :  BABYLON.ShadowLight;",
+                "  light :  BABYLON.DirectionalLight;",
                 "",
                 "  @SerializeField",
                 "  public intensity : number = .7;",
