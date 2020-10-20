@@ -294,7 +294,6 @@
                 "                for (var i = 0; i < Engine.toBeDestroyed.length; i++) {\r",
                 "                    \r",
                 "                    var obj = Engine.toBeDestroyed[i];\r",
-                "\r",
                 "                    obj.InternalDestroy();\r",
                 "                    \r",
                 "                }\r",
