@@ -1822,7 +1822,7 @@
                 "    var mouseX = Input.GetAxis(\"Mouse X\");",
                 "    var mouseY = Input.GetAxis(\"Mouse Y\");",
                 "",
-                "    ",
+                "    this.transform.parent.Translate(hor, 0, ver, BABYLON.Space.LOCAL);",
                 "",
                 "      ",
                 "    /*",
