@@ -3117,7 +3117,7 @@
                 "  Awake ()",
                 "  {",
                 "    var dirLight = new BABYLON.DirectionalLight(\"pointlight\", new BABYLON.Vector3(-1, -2, -1), Engine.scene);",
-                "    //dirLight.autoUpdateExtends = false;",
+                "    dirLight.autoUpdateExtends = false;",
                 "    dirLight.range = 100;",
                 "    ",
                 "    this.light = dirLight;",
