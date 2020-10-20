@@ -1652,7 +1652,6 @@
                 "        this.meshName = meshName;",
                 "        this.lastMeshName = meshName;",
                 "        this.scaleFactor = new BABYLON.Vector3(loadedScale, loadedScale, loadedScale);",
-                "        this.mergeMeshes = mergeMeshes;",
                 "",
                 "        if (textureName != null) {",
                 "            this.textureName = textureName;",
