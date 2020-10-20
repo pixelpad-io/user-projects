@@ -123,7 +123,7 @@
                 ""
             ],
             "MainGame": [
-                "ENABLE_EDITOR = true;",
+                "ENABLE_EDITOR = false;",
                 "",
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
@@ -3023,6 +3023,14 @@
         "sound": {},
         "library": {},
         "scene": {
+            "MainScene.scn": [
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
+                "   ]",
+                "}"
+            ],
             "LevelSelection.scn": [
                 "{",
                 "   \"t\":\"Scene\",",
