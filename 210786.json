@@ -758,7 +758,6 @@
                 "  /**Dont use anymore (use to manually load the mesh) */",
                 "  SetRobotMesh(meshName: string){",
                 "      this.renderer.LoadMesh(meshName, 0.034, null, false);",
-                "      Debug.Log(meshName);",
                 "      this.modelName = meshName;",
                 "      if(meshName == \"robot_1.obj\"){ ",
                 "        this.GetComponent(BoxCollider).size = new Vector3(1.25, 1, 2);",
