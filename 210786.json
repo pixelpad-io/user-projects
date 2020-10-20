@@ -3687,8 +3687,13 @@
             ]
         },
         "material": {
-            "Wall.mat": [
+            "wall.mat": [
                 "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"bricks_texture.jpg\",\"normalTexture\":\"bricks_normal.jpg\"}"
+            ],
+            "floor.mat": [
+                "//floor.mat",
+                "",
+                ""
             ]
         },
         "prefab": {
