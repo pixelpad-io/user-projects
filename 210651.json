@@ -364,7 +364,7 @@
                 "",
                 "  private static OnAssetClicked(e: CustomEvent) {",
                 "    switch (e.detail.assetType) {",
-                "      case \"Scene\":",
+                "      case \"scene\":",
                 "        PixelPADEvents.onSceneClicked.notifyObservers(e.detail.assetName);",
                 "        break;",
                 "      case \"material\":",
