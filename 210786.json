@@ -1922,7 +1922,6 @@
                 "  Update(){",
                 "",
                 "    //Wait with showing until robot is loaded.",
-                "    let robot = Robot.main;",
                 "    if(this.timer >= this.logoDuration){",
                 "      if(Robot.main && !Robot.main.renderer.isLoadingMesh){",
                 "        this.DestroyLogo();",
