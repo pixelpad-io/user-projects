@@ -5553,7 +5553,7 @@
                 "          break;",
                 "        case \"Prefab\":",
                 "          this.Refresh();",
-                "          this.main.addControl(new PrefabInspector(name));",
+                "          this.main.addControl(new PrefabInspector(asset[1]));",
                 "          break;",
                 "        case \"Model\":",
                 "          this.main.addControl(new ModelViewer());",
