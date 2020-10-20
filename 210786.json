@@ -284,6 +284,7 @@
                 ""
             ],
             "DefaultObjects": [
+                "/*",
                 "class DefaultObjectMaterialTexture extends MonoBehaviour {",
                 "  Setup(texture: string) {",
                 "    var mat = new BABYLON.StandardMaterial(\"Mat\", Engine.scene);",
@@ -350,6 +351,7 @@
                 "    }",
                 "  }",
                 "}",
+                "*/",
                 "",
                 "class CustomImage extends MonoBehaviour",
                 "{",
@@ -1912,7 +1914,6 @@
                 "      Destroy(this);",
                 "    }",
                 "  }",
-                "",
                 "",
                 "  Update(){",
                 "",
