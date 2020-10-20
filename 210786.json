@@ -1960,8 +1960,6 @@
             "FollowCamera": [
                 "class FollowCamera extends MonoBehaviour {",
                 "",
-                "  target: GameObject; ",
-                "  direction: Vector3;",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "  }",
@@ -1969,7 +1967,6 @@
                 "  //Update is called once per frame",
                 "  Update() {",
                 "      this.transform.transformNode.lookAt(Robot.main.transform.transformNode.position);",
-                "    ",
                 "  }",
                 "",
                 "}",
