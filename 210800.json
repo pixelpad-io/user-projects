@@ -2,12 +2,12 @@
     "assets": {
         "code": {
             "main": [
-                "\r",
+                "console.log(\"TEST\");\r",
                 "\r",
                 "/* */"
             ],
             "LevelManager2": [
-                "console.log(\"TEST\");",
+                "",
                 "",
                 "/*",
                 "@RegisterAsComponent",
