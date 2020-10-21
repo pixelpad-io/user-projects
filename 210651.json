@@ -7104,7 +7104,7 @@
                 "                  \"y\":2.8918396728399296,",
                 "                  \"z\":2.8918396728399296",
                 "               },",
-                "               \"uniqueId\":6141,",
+                "               \"uniqueId\":6460,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -7165,8 +7165,8 @@
                 "               {",
                 "                  \"t\":\"Vector3\",",
                 "                  \"x\":44.99999999999999,",
-                "                  \"y\":-45.00000000000001,",
-                "                  \"z\":-3.373487674796209e-14",
+                "                  \"y\":-45.000000000000014,",
+                "                  \"z\":-3.823286031435703e-14",
                 "               },",
                 "               \"_scale\":",
                 "               {",
@@ -7175,7 +7175,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":6149,",
+                "               \"uniqueId\":6468,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -7195,7 +7195,7 @@
         },
         "material": {
             "Red.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"board.jpg\",\"alpha\":1,\"normalTexture\":\"board_normal.jpg\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":43.69999999999998,\"roughness\":0}"
+                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"mainTexture\":\"board.jpg\",\"alpha\":0.5399999999999996,\"normalTexture\":\"board_normal.jpg\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0}"
             ],
             "Asteroid.mat": [
                 "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"asteroid.jpg\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0}"
