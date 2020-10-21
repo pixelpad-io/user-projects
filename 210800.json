@@ -10,6 +10,7 @@
                 "      console.log(\"TEST\")",
                 "",
                 "",
+                "/*",
                 "@RegisterAsComponent",
                 "class LevelManager2 extends MonoBehaviour {  ",
                 "",
@@ -19,7 +20,8 @@
                 "    SceneManager.LoadScene(`LevelSelection.scn`);",
                 "  }",
                 "",
-                "}"
+                "}",
+                "*/"
             ]
         },
         "model": {},
