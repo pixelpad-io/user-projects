@@ -198,7 +198,7 @@
                 "",
                 "  Update() {",
                 "",
-                "    if (!this.playButton && this.fadeInFinished) {",
+                "    if (!this.playButton && MainGame.fadeInFinished) {",
                 "      this.playButton = Instantiate(PlayButton);",
                 "    }",
                 "",
