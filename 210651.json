@@ -6400,6 +6400,7 @@
                 "    } else {",
                 "      this.shader = new BABYLON.StandardMaterial(name, Engine.scene);",
                 "    }",
+                "    this.wasPBR = this.isPBR;",
                 "  }",
                 "",
                 "  shader: BABYLON.PushMaterial;",
