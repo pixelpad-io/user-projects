@@ -116,6 +116,8 @@
                 "",
                 "  public nRobotsCreated = 0;",
                 "",
+                "  public fadeInFinished : boolean = false;",
+                "",
                 "  isRunning: boolean = false;",
                 "",
                 "  finished: boolean = false;",
@@ -195,19 +197,9 @@
                 "",
                 "  Update() {",
                 "",
-                "    if (!this.playButton) {",
+                "    if (!this.playButton && this.fadeInFinished) {",
                 "      this.playButton = Instantiate(PlayButton);",
                 "    }",
-                "",
-                "    //We reset the scene after a while, since memory leaks slow down the game if it's been on for too long",
-                "    if (!this.isRunning) {",
-                "      //Disabled the resetTime, since the memory leak seems to be fixed.",
-                "      //this.resetTimer -= Time.deltaTime;",
-                "      if (this.resetTimer <= 0) {",
-                "        SceneManager.ReloadCurrentScene();",
-                "      }",
-                "    }",
-                "  }",
                 "",
                 "  public InitWinScreen() {",
                 "    this.winScreen = Instantiate(CustomImage).Init(\"YouWinPopup.png\", 185, 212);",
@@ -3074,12 +3066,6 @@
             }
         },
         "texture": {
-            "bricks_texture.jpg": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.bricks_texture.jpg"
-            },
-            "bricks_normal.jpg": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.bricks_normal.jpg"
-            },
             "YouWinPopup.png": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.YouWinPopup.png"
             },
@@ -3091,12 +3077,6 @@
             },
             "FirstCanada_Logo_Border.jpg": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.FirstCanada_Logo_Border.jpg"
-            },
-            "hdrEnv.hdr": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.hdrEnv.hdr"
-            },
-            "testHdri.hdr": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.testHdri.hdr"
             },
             "rubber_pad.jpg": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.rubber_pad.jpg"
@@ -3148,7 +3128,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":29098,",
+                "               \"uniqueId\":30831,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3186,7 +3166,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":29099,",
+                "               \"uniqueId\":30832,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
