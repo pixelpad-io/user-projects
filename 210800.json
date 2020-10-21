@@ -2,8 +2,6 @@
     "assets": {
         "code": {
             "main": [
-                "\r",
-                "\r",
                 "@RegisterAsComponent\r",
                 "class LevelManager2 extends MonoBehaviour {  \r",
                 "\r",
@@ -61,7 +59,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":192,",
+                "               \"uniqueId\":479,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -99,7 +97,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":193,",
+                "               \"uniqueId\":480,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
