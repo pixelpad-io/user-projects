@@ -2,7 +2,9 @@
     "assets": {
         "code": {
             "main": [
-                ""
+                "\r",
+                "\r",
+                "/* */"
             ],
             "LevelManager2": [
                 "      console.log(\"TEST\")",
