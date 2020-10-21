@@ -6395,7 +6395,7 @@
                 "",
                 "  @SerializeField",
                 "  mainColor: Color = new Color();",
-                "",
+                "  ",
                 "  @SerializeField",
                 "  mainTexture: string = \"\";",
                 "  _lastTexture: string = \"\";",
