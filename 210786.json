@@ -2084,6 +2084,9 @@
             "Wall": [
                 "class Wall extends MonoBehaviour {",
                 "",
+                "  @SerializeField",
+                "  width : number = 1;",
+                "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "    this.GetComponentsInChildren(Renderer).forEach(r => {",
