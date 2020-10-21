@@ -2106,7 +2106,9 @@
                 "  ",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "  ",
+                "    this.sideWalls[0].transform.localPosition.x = -this.width * 0.5;",
+                "    this.sideWalls[1].transform.localPosition.x = this.width * 0.5;",
+                "    this.window.localScale.x = this.width;",
                 "  }",
                 "}",
                 ""
