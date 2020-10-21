@@ -2107,7 +2107,7 @@
                 "  Update() {",
                 "    this.sideWalls[0].transform.localPosition.x = -this.width * 0.5;",
                 "    this.sideWalls[1].transform.localPosition.x = this.width * 0.5;",
-                "    this.centerWalls.foreach(w => {",
+                "    this.centerWalls.forEach(w => {",
                 "      w.localScale.x = this.width;",
                 "    });",
                 "  }",
