@@ -9,7 +9,6 @@
                 "",
                 "",
                 "@RegisterAsComponent",
-                "@ExecuteInEditMode",
                 "class LevelManager2 extends MonoBehaviour {  ",
                 "",
                 "  //Don't put this in Awake - it will crash",
