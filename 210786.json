@@ -1860,6 +1860,8 @@
                 "          Cursor.lockState =CursorLockMode.Locked;",
                 "          this.transform.parent.Rotate(this.mouseY, 0, 0, BABYLON.Space.LOCAL);",
                 "          this.transform.parent.parent.Rotate(0, this.mouseX, 0, BABYLON.Space.WORLD);",
+                "        } else {",
+                "          Cursor.lockState =CursorLockMode.None;",
                 "        }",
                 "",
                 "        this.zoomValue = this.LerpUnclamped(this.zoomValue, this.zoomTarget, this.fadeSpeed);",
