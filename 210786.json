@@ -1886,6 +1886,9 @@
             "CameraFadeInFadeOut": [
                 "class CameraFadeInFadeOut extends MonoBehaviour {",
                 "",
+                "  public static startPos : BABYLON.Vector3;",
+                "  public static startRot : BABYLON.Quaternion;",
+                "",
                 "  //Tweakables",
                 "  @SerializeField",
                 "  logoDuration: number = 0.5;",
