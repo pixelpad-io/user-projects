@@ -1943,7 +1943,7 @@
                 "    if (this.timer >= this.logoDuration) {",
                 "      if (Robot.main && !Robot.main.renderer.isLoadingMesh) {",
                 "        this.DestroyLogo();",
-                "",
+                "        MainGame.instance.fadeInFinished = true;",
                 "        this.background.image.alpha -= 0.01 / this.fadeDuration;",
                 "        if (this.background.image.alpha <= 0)",
                 "        {",
