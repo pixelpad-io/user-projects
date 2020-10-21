@@ -1729,6 +1729,7 @@
                 "",
                 "    UpdateMaterial() {",
                 "        this.material?.onChange.remove(this.listen_onChange);",
+                "        ",
                 "        this.material = Material.Get(this.materialName);",
                 "        this.meshes.forEach(m => {",
                 "            m.material = this.material.shader;",
