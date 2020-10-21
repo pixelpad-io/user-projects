@@ -1868,7 +1868,7 @@
                 "",
                 "  OnDestroy() {",
                 "    Engine.scene.onBeforeCameraRenderObservable.remove(this.onCamRender);",
-                "    Engine.scene.onBeforeCameraRenderObservable.remove(this.onMouseMove);",
+                "    Engine.scene.onPointerObservable.remove(this.onMouseMove);",
                 "",
                 "  }",
                 "",
