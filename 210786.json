@@ -667,7 +667,7 @@
                 "",
                 "  Start() {",
                 "    //We unparent the robot at the start (away from it's prefab parent)",
-                "    this.transform.SetParent(null, true);",
+                "    //this.transform.SetParent(null, true);",
                 "",
                 "    if (MainGame.instance) {",
                 "      MainGame.instance.nRobotsCreated++;",
