@@ -238,7 +238,7 @@
                 "        var sceneName = getFirstSceneName();\r",
                 "        if (!sceneName)\r",
                 "        {\r",
-                "            Debug.Log(\"No scene found. You need to start with a scene if you want to save your work!\");\r",
+                "            console.log(\"No scene found. You need to start with a scene if you want to save your work!\");\r",
                 "        } else {\r",
                 "            SceneManager.LoadScene(sceneName);\r",
                 "        }\r",
