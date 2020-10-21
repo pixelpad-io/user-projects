@@ -10,7 +10,7 @@
                 "",
                 "/* */",
                 "",
-                "console.log(\"TEST5\");",
+                "console.log(\"TEST3\");",
                 "",
                 "/*",
                 "@RegisterAsComponent",
