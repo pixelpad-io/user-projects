@@ -236,7 +236,7 @@
                 "        if (sceneName) {\r",
                 "            SceneManager.LoadScene(sceneName);\r",
                 "        } else {\r",
-                "                        Debug.Log(\"No scene was found! Without a scene in your game you will get unexpected errors!\")\r",
+                "            Debug.Log(\"No scene was found! Without a scene in your game you will get unexpected errors!\")\r",
                 "\r",
                 "        }\r",
                 "\r",
