@@ -950,7 +950,6 @@
                 "        return null;",
                 "    }",
                 "",
-                "",
                 "    GetComponentInParent<T extends Component>(objType: new () => T): T {",
                 "        for (var i: number = 0; i < this.gameObject.components.length; i++) {",
                 "            if (this.CheckType(this.gameObject.components[i], objType)) {",
