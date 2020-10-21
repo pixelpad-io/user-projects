@@ -262,6 +262,7 @@
                 "    }",
                 "  }",
                 "  else {",
+                "    //This code is in 'main'. Only runs in editor",
                 "    await runOpModeDebug();",
                 "  }",
                 "}",
