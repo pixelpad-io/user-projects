@@ -6397,7 +6397,7 @@
                 "    }",
                 "  }",
                 "",
-                "  shader: BABYLON.StandardMaterial;",
+                "  shader: BABYLON.PushMaterial;",
                 "",
                 "  @SerializeField",
                 "  mainColor: Color = new Color();",
