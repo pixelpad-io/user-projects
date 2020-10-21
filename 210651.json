@@ -985,7 +985,7 @@
                 "    GetComponentsInChildren<T extends Component>(objType: new () => T): T[] {",
                 "        var arr = this.GetComponents(objType);",
                 "        this.transform.ser_children.forEach(child => {",
-                "",
+                "            arr = arr.concat(child.GetComponentsInChildren(objType));",
                 "        });",
                 "        ",
                 "        return arr;",
