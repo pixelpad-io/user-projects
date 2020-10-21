@@ -6396,7 +6396,7 @@
                 "    this.UpdateShader();",
                 "  }",
                 "",
-                "  UpdateShader ()",
+                "  private UpdateShader ()",
                 "  {",
                 "    if (this.isPBR) {",
                 "      this.shader = new BABYLON.PBRMaterial(name, Engine.scene);",
