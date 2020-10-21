@@ -1861,7 +1861,7 @@
                 "        }",
                 "",
                 "        this.zoomValue = this.LerpUnclamped(this.zoomValue, this.zoomTarget, this.fadeSpeed);",
-                "        this.zoomValue = Mathf.Clamp(this.zoomValue, )",
+                "        this.zoomValue = Mathf.Clamp(this.zoomValue, this.minZoom, this.maxZoom );",
                 "        this.transform.localPosition.z = this.zoomValue;",
                 "      }",
                 "    });",
