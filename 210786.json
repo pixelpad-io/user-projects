@@ -1848,6 +1848,7 @@
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "    this.zoomTarget = this.transform.localPosition.z;",
+                "    this.zoomValue = this.zoomTarget;",
                 "",
                 "    this.onCamRender = Engine.scene.onAfterRenderCameraObservable.add(cam => {",
                 "      if (cam == Camera.main.bCam) {",
