@@ -6427,7 +6427,7 @@
                 "",
                 "  private Update() {",
                 "    if (this.isPBR) {",
-                "      var mat = this.shader as BABYLON.PBRMaterial;",
+                "      var pMat = this.shader as BABYLON.PBRMaterial;",
                 "      ",
                 "    } else {",
                 "      var mat = this.shader as BABYLON.StandardMaterial;",
