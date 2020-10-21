@@ -2047,7 +2047,7 @@
                 ""
             ],
             "VictoryTrigger": [
-                "class Victory extends MonoBehaviour",
+                "class VictoryTrigger extends MonoBehaviour",
                 "{",
                 "  inVictoryArea: boolean = false;",
                 "  isVictory: boolean = false;  ",
@@ -4116,7 +4116,7 @@
                 "   \"rootObjs\":[",
                 "      {",
                 "         \"t\":\"GameObject\",",
-                "         \"name\":\"GameObject\",",
+                "         \"name\":\"Flag\",",
                 "         \"components\":[",
                 "            {",
                 "               \"t\":\"Transform\",",
