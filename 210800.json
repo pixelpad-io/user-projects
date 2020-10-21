@@ -3,6 +3,7 @@
         "code": {
             "main": [
                 "@RegisterAsComponent\r",
+                "@ExecuteInEditMode\r",
                 "class LevelManager2 extends MonoBehaviour {  \r",
                 "\r",
                 "  //Don't put this in Awake - it will crash\r",
