@@ -12,7 +12,7 @@
                 "",
                 "console.log(\"TEST3\");",
                 "",
-                "/*",
+                "",
                 "@RegisterAsComponent",
                 "class LevelManager2 extends MonoBehaviour {  ",
                 "",
@@ -23,7 +23,7 @@
                 "  }",
                 "",
                 "}",
-                "*/"
+                ""
             ]
         },
         "model": {},
