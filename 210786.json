@@ -3699,7 +3699,7 @@
                 "            },",
                 "            {",
                 "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
+                "               \"_mass\":100,",
                 "               \"_restitution\":0.5,",
                 "               \"_friction\":0.5,",
                 "               \"_isKinematic\":false",
