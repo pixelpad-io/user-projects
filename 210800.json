@@ -12,17 +12,6 @@
                 "",
                 "console.log(\"TEST3\");",
                 "",
-                "",
-                "@RegisterAsComponent",
-                "class LevelManager2 extends MonoBehaviour {  ",
-                "",
-                "  //Don't put this in Awake - it will crash",
-                "  Start() {   ",
-                "",
-                "    SceneManager.LoadScene(`LevelSelection.scn`);",
-                "  }",
-                "",
-                "}",
                 ""
             ]
         },
