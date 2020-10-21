@@ -201,6 +201,8 @@
                 "      this.playButton = Instantiate(PlayButton);",
                 "    }",
                 "",
+                "  }",
+                "",
                 "  public InitWinScreen() {",
                 "    this.winScreen = Instantiate(CustomImage).Init(\"YouWinPopup.png\", 185, 212);",
                 "    this.winScreen.RemoveFromControl();",
