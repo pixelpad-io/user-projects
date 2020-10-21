@@ -6384,6 +6384,9 @@
             "Material": [
                 "class Material {",
                 "",
+                "  @SerializeField",
+                "  isPBR : boolean = false;",
+                "",
                 "  constructor(name: string) {",
                 "    this.shader = new BABYLON.StandardMaterial(name, Engine.scene);",
                 "  }",
