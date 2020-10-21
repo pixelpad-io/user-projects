@@ -230,8 +230,6 @@
                 "        //In editor mode, see if we can get our last loadedSceneOrPrefab\r",
                 "        if (!Engine.isPlaying)\r",
                 "        {\r",
-                "            print(PlayerPrefs.Load());\r",
-                "            print(Project.data._loadedSceneOrPrefab);\r",
                 "            sceneName = Project.data._loadedSceneOrPrefab;\r",
                 "        }\r",
                 "\r",
