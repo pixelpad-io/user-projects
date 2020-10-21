@@ -9,7 +9,7 @@
             "LevelManager2": [
                 "      console.log(\"TEST\")",
                 "",
-                "/*",
+                "",
                 "@RegisterAsComponent",
                 "class LevelManager2 extends MonoBehaviour {  ",
                 "",
@@ -19,14 +19,7 @@
                 "    SceneManager.LoadScene(`LevelSelection.scn`);",
                 "  }",
                 "",
-                "/*",
-                "  async LoadLevel(lv: numer){",
-                "    await new Promise(resolve => setTimeout(resolve, 2500));",
-                "    ",
-                "  }",
-                "",
-                "}",
-                "*/"
+                "}"
             ]
         },
         "model": {},
