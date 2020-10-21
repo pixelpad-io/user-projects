@@ -965,6 +965,7 @@
                 "        {",
                 "            c.transform.ser_children.forEach(child => {",
                 "                c = child.GetComponentInChildren(objType);",
+                "                //Once found, stop looking",
                 "                if (c)",
                 "                    return c;",
                 "            });",
