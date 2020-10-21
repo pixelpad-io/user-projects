@@ -6404,6 +6404,7 @@
                 "      this.shader = new BABYLON.StandardMaterial(name, Engine.scene);",
                 "    }",
                 "    this.wasPBR = this.isPBR;",
+                "    this.onChange.notifyObservers(this.isPBR ? \"PBR\" : \"Standard\");",
                 "  }",
                 "",
                 "  shader: BABYLON.PushMaterial;",
