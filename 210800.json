@@ -7,7 +7,7 @@
                 "/* */"
             ],
             "LevelManager2": [
-                "      console.log(\"TEST\")",
+                "console.log(\"TEST\")",
                 "",
                 "",
                 "/*",
