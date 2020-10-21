@@ -211,7 +211,6 @@
                 "        Cursor.Init();\r",
                 "        Material.Init();\r",
                 "        MeshLoader.Init();\r",
-                "        TextureSystem.Init();\r",
                 "        Physics.Init();\r",
                 "        Input.Init();\r",
                 "        SceneManager.Init();\r",
