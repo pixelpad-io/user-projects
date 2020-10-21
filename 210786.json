@@ -68,7 +68,7 @@
                 "",
                 "",
                 "async function runOpModeDebug(robot: RobotMoveList = GetRobot()) {",
-                "   await robot.SetPower((-1), \"motorLeft\");",
+                "  await robot.SetPower((-1), \"motorLeft\");",
                 "  await robot.SetPower(1, \"motorRight\");",
                 "  await robot.Sleep(6000);",
                 "  await robot.SetPower(0, \"motorLeft\");",
@@ -105,7 +105,7 @@
                 ""
             ],
             "MainGame": [
-                "ENABLE_EDITOR = false;",
+                "ENABLE_EDITOR = true;",
                 "",
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
