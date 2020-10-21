@@ -2,7 +2,7 @@
     "assets": {
         "code": {
             "main": [
-                "console.log(\"TEST\");\r",
+                "console.log(\"TEST2\");\r",
                 "\r",
                 "/* */"
             ],
