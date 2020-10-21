@@ -3250,7 +3250,7 @@
                 "",
                 "  public Unload(): void {",
                 "    //A prefab auto-saves when we leave to a scene",
-                "    if (this.isPrefabScene)",
+                "    if (this.isPrefabScene && !Engine.isPlaying)",
                 "    {",
                 "      this.Save();",
                 "    }",
