@@ -6428,6 +6428,7 @@
                 "  private Update() {",
                 "    if (this.isPBR) {",
                 "      var pMat = this.shader as BABYLON.PBRMaterial;",
+                "      Color.UtoB(this.mainColor, pMat.albedoColor);",
                 "      ",
                 "    } else {",
                 "      var mat = this.shader as BABYLON.StandardMaterial;",
