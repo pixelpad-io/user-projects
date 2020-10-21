@@ -8,7 +8,7 @@
                 "// This way you don't have to remove your testing code every time you save to live.",
                 "",
                 "//DO NOT REMOVE THIS COMMENT BELOW",
-                "/*",
+                "//BLOCKLY_REPLACE//*",
                 "",
                 "",
                 "//All code below is for testing only and will be auto-commented when in the live engine",
