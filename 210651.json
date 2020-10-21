@@ -4274,6 +4274,8 @@
                 "",
                 "  public static Init() {",
                 "    this.data = JSON.parse(PlayerPrefs.Load()) as ProjectData;",
+                "    if (!this.data)",
+                "      this.data = new ProjectData();",
                 "  }",
                 "",
                 "  public static Save() {",
