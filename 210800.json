@@ -3,14 +3,6 @@
         "code": {
             "main": [
                 ""
-            ],
-            "LevelManager2": [
-                "",
-                "/* */",
-                "",
-                "console.log(\"TEST3\");",
-                "",
-                ""
             ]
         },
         "model": {},
