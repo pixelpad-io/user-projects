@@ -228,6 +228,7 @@
                 "        var sceneName = null;\r",
                 "\r",
                 "        //In editor mode, see if we can get our last loadedSceneOrPrefab\r",
+                "        //Currently not working! Need option to save data outside of engine.\r",
                 "        if (!Engine.isPlaying)\r",
                 "        {\r",
                 "            sceneName = Project.data.loadedSceneOrPrefab;\r",
