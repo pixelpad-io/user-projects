@@ -10,9 +10,7 @@
                 "  let robotList: RobotMoveList = new RobotMoveList();",
                 "",
                 "  robotList.robot = MainGame.instance.GetOneRobot(name);",
-                "  Debug.Log(robotList.robot.robotName)",
-                "  // Debug.Log(robotList.robot.name)",
-                "  return robotList",
+                "  return robotList;",
                 "}",
                 "",
                 "var x;",
@@ -3044,20 +3042,11 @@
             }
         },
         "texture": {
-            "asphaltTile.jpg": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.asphaltTile.jpg"
-            },
-            "asphaltNormal.jpg": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.asphaltNormal.jpg"
-            },
             "bricks_texture.jpg": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.bricks_texture.jpg"
             },
             "bricks_normal.jpg": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.bricks_normal.jpg"
-            },
-            "FirstRobotics.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.FirstRobotics.png"
             },
             "YouWinPopup.png": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.210786.YouWinPopup.png"
@@ -3127,7 +3116,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":35701,",
+                "               \"uniqueId\":192,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3165,7 +3154,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":35702,",
+                "               \"uniqueId\":193,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
