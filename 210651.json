@@ -4287,6 +4287,7 @@
                 "class ProjectData {",
                 "",
                 "  //WEIRD THIS GETTER IS NOT WORKING?!",
+                "  //Use _loadedSceneOrPrefab instead.",
                 "  get loadedSceneOrPrefab(): string {",
                 "    return this._loadedSceneOrPrefab;",
                 "  };",
