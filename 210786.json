@@ -2095,7 +2095,7 @@
                 "        if (r.name == \"SideWall\") {",
                 "          this.sideWalls.push(r.transform);",
                 "        } else {",
-                "          //We have to fix parented colliders by unparenting at the start.",
+                "          //We have to fix parented collider-bug by unparenting at the start.",
                 "          if (Engine.isPlaying)",
                 "          {",
                 "            r.transform.SetParent(null);",
