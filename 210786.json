@@ -1857,6 +1857,7 @@
                 "        this.mouseY = this.LerpUnclamped(this.mouseY, Input.GetAxis(\"Mouse Y\") * this.rotateSpeed, this.fadeSpeed);",
                 "",
                 "        if (Input.GetMouseButton(0)) {",
+                "          Cursor.lockState =CursorLockMode.Locked;",
                 "          this.transform.parent.Rotate(this.mouseY, 0, 0, BABYLON.Space.LOCAL);",
                 "          this.transform.parent.parent.Rotate(0, this.mouseX, 0, BABYLON.Space.WORLD);",
                 "        }",
