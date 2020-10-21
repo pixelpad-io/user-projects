@@ -1854,7 +1854,7 @@
                 "",
                 "        this.zoomValue = this.LerpUnclamped(this.zoomValue, this.zoomTarget, this.fadeSpeed);",
                 "",
-                "        this.transform.localPosition.x",
+                "        this.transform.localPosition.x = this.zoomValue;",
                 "      }",
                 "    });",
                 "",
