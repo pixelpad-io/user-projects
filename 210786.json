@@ -1851,7 +1851,7 @@
                 "",
                 "    if (this.firstTime)",
                 "    {",
-                "",
+                "      this.firstTime = false;",
                 "    }",
                 "    this.mouseX = this.LerpUnclamped(this.mouseX, Input.GetAxis(\"Mouse X\") * this.rotateSpeed, this.fadeSpeed);",
                 "    this.mouseY = this.LerpUnclamped(this.mouseY, Input.GetAxis(\"Mouse Y\") * this.rotateSpeed, this.fadeSpeed);",
