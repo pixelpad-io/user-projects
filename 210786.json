@@ -1906,6 +1906,8 @@
                 "",
                 "    //Only when refreshing should the logo be shown",
                 "    if (CameraFadeInFadeOut.loadLogo) {",
+                "      //We disable all lights. This way the meshes are not visible at the start.",
+                "      //This is to fix an issue where the meshes were showing in front of the UI at the very start.",
                 "      if (Lighting.mainLight)",
                 "      {",
                 "        this.lightIntensity = Lighting.mainLight.intensity;",
