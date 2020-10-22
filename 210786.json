@@ -2164,6 +2164,8 @@
                 "        w.SetParent(null, true);",
                 "      });",
                 "    }",
+                "",
+                "    this.UpdateWalls();",
                 "  }",
                 "",
                 "  //Update is called once per frame",
