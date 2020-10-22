@@ -686,7 +686,6 @@
                 "  }",
                 "",
                 "  Update() {",
-                "    Debug.Log(this.transform.position);",
                 "",
                 "    this.EngineMovement();",
                 "    this.EngineSensor();",
