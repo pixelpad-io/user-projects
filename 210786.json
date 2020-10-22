@@ -691,7 +691,7 @@
                 "",
                 "  Update() {",
                 "    this.nFramesPassed++;",
-                "    if (this.nFramesPassed <= 100)",
+                "    if (this.nFramesPassed <= 2)",
                 "    {",
                 "      this.transform.localPosition = this.startPos.clone();",
                 "    }",
