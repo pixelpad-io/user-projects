@@ -5249,6 +5249,8 @@
                 "        });",
                 "",
                 "        var collapsed = HierarchyWindow.idToCollapseState[obj.transform.uniqueId];",
+                "        if (collapsed == undefined)",
+                "            collapsed = true;",
                 "        this.SetCollapse(collapsed);",
                 "        this.SetSelected(EditorSelection.IsSelected(obj));",
                 "    }",
