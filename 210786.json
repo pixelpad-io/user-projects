@@ -1898,7 +1898,6 @@
                 "      this.background.image.alpha = 1;    ",
                 "      this.logo = Instantiate(CustomImage).Init(\"FirstRoboticsCanada.jpg\", 327, 255);",
                 "      this.logo.image.alpha = 1;",
-                "        ",
                 "    }",
                 "    else {",
                 "      Destroy(this);",
