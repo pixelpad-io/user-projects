@@ -2172,7 +2172,7 @@
                 "    this.sideWalls[0].transform.localPosition.x = -this.width * 0.5;",
                 "      this.sideWalls[1].transform.localPosition.x = this.width * 0.5;",
                 "      this.centerWalls.forEach(w => {",
-                "        w.localScale.x = this.width;",
+                "        w.localScale.x = w.localScale.x *this.width;",
                 "      });",
                 "  }",
                 "}",
