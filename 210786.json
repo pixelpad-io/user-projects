@@ -103,7 +103,7 @@
                 ""
             ],
             "MainGame": [
-                "ENABLE_EDITOR =  true;",
+                "ENABLE_EDITOR =  false;",
                 "",
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
@@ -3154,7 +3154,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":78035,",
+                "               \"uniqueId\":106618,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3192,7 +3192,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":78036,",
+                "               \"uniqueId\":106619,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
