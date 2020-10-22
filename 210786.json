@@ -1830,6 +1830,8 @@
                 "    } else {",
                 "      FollowCamera.startPos = this.transform.localPosition.clone();",
                 "      FollowCamera.startRot = this.transform.localRotation.clone();",
+                "      this.transform.localPosition = new Vector3(1000, 0, 0);",
+                "   ",
                 "    }",
                 "",
                 "    /*",
