@@ -1224,7 +1224,7 @@
                 "    //No longer using Time.deltaTime since EVERYTHING is now frame-based",
                 "    //Assuming 0.017, which is 60 FPS",
                 "    ",
-                "    //BACK to Time.deltaTime -> Since we're using velocity it's NOT framerate dependent?",
+                "    //BACK to Time.deltaTime -> Since we're using velocity it's NOT framerate dependent...",
                 "    this.timeLeft -= Time.deltaTime * 1000;",
                 "  }",
                 "",
