@@ -1828,6 +1828,8 @@
                 "      this.justFinishedFade = false;",
                 "",
                 "    } else {",
+                "      //We move the camera out of the screen so when the first models load, this is not done in front of the camera",
+                "      //It would be nice if loaded models didn't appear right when the get loaded.",
                 "      FollowCamera.startPos = this.transform.localPosition.clone();",
                 "      FollowCamera.startRot = this.transform.localRotation.clone();",
                 "      this.transform.localPosition = new Vector3(1000, 0, 0);",
