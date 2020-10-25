@@ -995,7 +995,7 @@
                 "        var arr = this.GetComponents(objType);",
                 "        for (var i = 0; i < this.transform.ser_children.length; i++) {",
                 "            var child = this.transform.ser_children[i];",
-                "            if (child&& child.transform)",
+                "            if (child)",
                 "                arr = arr.concat(child.GetComponentsInChildren(objType));",
                 "        }",
                 "",
