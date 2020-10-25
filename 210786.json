@@ -12552,6 +12552,9 @@
             ],
             "sensor_container.mat": [
                 "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.3056681644916902,\"g\":0.3056678588235257,\"b\":0.3056678588235257},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":10.480000000000006,\"roughness\":2.9200000000000053}"
+            ],
+            "sensor_color_blue.mat": [
+                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.03100818817184825,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":10,\"roughness\":1.440000000000001}"
             ]
         },
         "prefab": {
@@ -13489,7 +13492,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":26074,",
+                "               \"uniqueId\":33439,",
                 "               \"ser_children\":[",
                 "                  {",
                 "                     \"t\":\"GameObject\",",
@@ -13518,7 +13521,7 @@
                 "                              \"y\":0.01,",
                 "                              \"z\":0.8368323191778472",
                 "                           },",
-                "                           \"uniqueId\":26066,",
+                "                           \"uniqueId\":33431,",
                 "                           \"ser_children\":[",
                 "                              ",
                 "                           ]",
@@ -13526,7 +13529,7 @@
                 "                        {",
                 "                           \"t\":\"Renderer\",",
                 "                           \"meshName\":\"box\",",
-                "                           \"materialName\":\"sensor_color.mat\",",
+                "                           \"materialName\":\"sensor_color_blue.mat\",",
                 "                           \"scale\":1,",
                 "                           \"castShadows\":false,",
                 "                           \"receiveShadows\":true,",
@@ -13560,14 +13563,7 @@
                 "                           \"_isKinematic\":true",
                 "                        },",
                 "                        {",
-                "                           \"t\":\"ColorTag\",",
-                "                           \"color\":",
-                "                           {",
-                "                              \"t\":\"Color\",",
-                "                              \"r\":1,",
-                "                              \"g\":1,",
-                "                              \"b\":1",
-                "                           }",
+                "                           \"t\":\"ColorTag\"",
                 "                        }",
                 "                     ],",
                 "                     \"prefabName\":null",
@@ -13587,8 +13583,7 @@
                 "         \"prefabName\":null",
                 "      }",
                 "   ]",
-                "}",
-                ""
+                "}"
             ]
         }
     }
