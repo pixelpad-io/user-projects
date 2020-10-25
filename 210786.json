@@ -2210,6 +2210,13 @@
                 "    ",
                 "  }",
                 "",
+                "  Disable ()",
+                "  {",
+                "    this.centerWalls.forEach(w => {",
+                "      Destroy(w.gameObject);",
+                "    });",
+                "  }",
+                "",
                 "}",
                 ""
             ],
