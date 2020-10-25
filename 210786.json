@@ -564,7 +564,7 @@
                 "}",
                 ""
             ],
-            "RobotTouchSensor": [
+            "TouchSensor": [
                 "class TouchSensor extends RobotSensor{",
                 "  private isPressed: boolean;",
                 "",
@@ -602,7 +602,7 @@
             "ColorSensor": [
                 "@RegisterAsComponent",
                 "class ColorSensor extends RobotSensor{",
-                "  /*",
+                "  ",
                 "  private color: BABYLON.Color3 = new BABYLON.Color3(1,1,1);",
                 "  ",
                 "  public GetColor(){",
@@ -618,7 +618,7 @@
                 "      this.color = color",
                 "    }",
                 "  }",
-                "  */",
+                "  ",
                 "",
                 "}",
                 ""
@@ -659,7 +659,7 @@
                 "  public robotMotors: Array<RobotMotor> = new Array();",
                 "  //public robotColorSensors: Array<RobotColorSensor> = new Array();",
                 "  public robotServos: Array<RobotServo> = new Array();",
-                "  public robotTouchSensors: Array<RobotTouchSensor> = new Array();",
+                "  public robotTouchSensors: Array<TouchSensor> = new Array();",
                 "  //public robotColorDistanceSensors: Array<RobotColorDistanceSensor> = new Array();",
                 "",
                 "  // Raycast variable",
