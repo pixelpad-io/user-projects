@@ -861,6 +861,7 @@
                 "    this.forwardDirection.normalize();",
                 "    let ray = new BABYLON.Ray(this.bOrigin, this.forwardDirection, 100);",
                 "    let hit = Engine.scene.pickWithRay(ray)",
+                "    Debug.Log(hit.distance);",
                 "    if (hit.distance > 0)",
                 "    {",
                 "      this.distance = hit.distance;",
