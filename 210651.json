@@ -5449,7 +5449,7 @@
                 "            if (pickResult.hit) {",
                 "              var mesh = pickResult.pickedMesh;",
                 "              go = !mesh?.parent ? null : Engine.meshToObject[mesh.parent.uniqueId];",
-                "              go = ",
+                "              go = EditorSelection.GetPrefabParent(go);",
                 "            }",
                 "            if (Input.GetKey(KeyCode.Control)) {",
                 "              EditorSelection.ToggleSelectedGameObject(go);",
