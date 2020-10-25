@@ -6993,7 +6993,7 @@
                 "    parent.prefabParent = parent;",
                 "    parent.prefabName = name;",
                 "    var clone : Scene = Serializer.FromJSON(prefabJson);",
-                "    clone.rootObjs.forEach((go : GameObject) => {",
+                "    clone.objs.forEach((go : GameObject) => {",
                 "      go.transform.SetParent(parent.transform, false);",
                 "      go.prefabParent = parent;",
                 "    });",
