@@ -633,7 +633,7 @@
                 "      if (obj) {",
                 "        let colTag = obj.GetComponent(ColorTag)",
                 "        if (colTag) {",
-                "",
+                "          Debug.Log(`ColorSensor: Detecting ${colTag.GetColor()}`);",
                 "          if (!Utility.CompareColor(colTag.GetColor(), this.GetColor())) {",
                 "            let col = new BABYLON.Color3(colTag.GetColor().r, colTag.GetColor().g, colTag.GetColor().b)",
                 "            this.SetColor(col);",
