@@ -2155,6 +2155,7 @@
                 ""
             ],
             "LaserWall": [
+                "@ExecuteInEditMode",
                 "class LaserWall extends Wall {",
                 "",
                 "  ",
