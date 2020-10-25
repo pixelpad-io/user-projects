@@ -940,6 +940,10 @@
                 ""
             ],
             "RobotGUI": [
+                "/*",
+                "Used for challenges to display text above the robot.",
+                "*/",
+                "",
                 "class RobotGUI extends MonoBehaviour {",
                 "",
                 "  public robot: Robot;",
