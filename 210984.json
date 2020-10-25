@@ -2,11 +2,6 @@
     "assets": {
         "code": {
             "main": [
-                "",
-                "",
-                "",
-                "consolelog(getFirstSceneName());",
-                "",
                 ""
             ],
             "script0": [
@@ -44,9 +39,6 @@
             "210786": {}
         },
         "scene": {
-            "MainScene.scn": [
-                ""
-            ],
             "Scene0.scn": [
                 "//this is a scene ",
                 ""
