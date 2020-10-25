@@ -973,7 +973,7 @@
                 "                    c = child.GetComponentInChildren(objType);",
                 "                //Once found, stop looking",
                 "                if (c) {",
-                "                    return;",
+                "                    return c;",
                 "                }",
                 "            }",
                 "        }",
