@@ -629,6 +629,7 @@
                 "    let ray = new BABYLON.Ray(this.bOrigin, this.downDirection, 10);",
                 "    let hit = Engine.scene.pickWithRay(ray)",
                 "    if (hit.pickedMesh) {",
+                "      Debug.Log(hit.pickedMesh.name)",
                 "      let obj = Engine.meshToObject[hit.pickedMesh.uniqueId]",
                 "      if (obj) {",
                 "        let colTag = obj.GetComponent(ColorTag)",
