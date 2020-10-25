@@ -865,7 +865,6 @@
                 "  GetTargetPosition(engine: string) {",
                 "    const motor = this.robotMotors.find(motor => motor.GetName() === engine)",
                 "    if (motor) {",
-                "      // Debug.Log(motor.GetTickPosition())",
                 "      return motor.GetTickPosition()",
                 "    }",
                 "    return undefined;",
