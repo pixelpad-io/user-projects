@@ -1630,7 +1630,7 @@
                 "  }",
                 "",
                 "  Update() {",
-                "    this.fadeValue += Time.deltaTime * (this.maxFadeValue / this.fadeTime);",
+                "    this.fadeValue += Time.deltaTime / this.fadeTime;",
                 "",
                 "    if (this.fadeValue <= this.maxFadeValue) {",
                 "      this.renderer.material.specularPower = this.fadeValue;",
