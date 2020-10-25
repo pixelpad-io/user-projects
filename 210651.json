@@ -2456,6 +2456,7 @@
                 "        }",
                 "",
                 "        //Temp fix for insanely long children lists.",
+                "        //This seems to be caused by prefabs!",
                 "        for (var i = this.ser_children.length - 1; i >= 0; i--)",
                 "        {",
                 "            if (!this.ser_children[i])",
