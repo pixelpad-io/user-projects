@@ -6632,7 +6632,7 @@
                 "  public Clone () : Material",
                 "  {",
                 "    var matJson = Serializer.ToJSON(this);",
-                "    return Serializer.FromJSON(matJson, false);",
+                "    return Serializer.FromJSON(matJson, true);",
                 "  }",
                 "",
                 "",
