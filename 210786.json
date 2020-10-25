@@ -2155,6 +2155,13 @@
                 "}",
                 ""
             ],
+            "LaserWall": [
+                "class LaserWall extends Wall {",
+                "",
+                "  ",
+                "}",
+                ""
+            ],
             "_____OLD_____": [
                 ""
             ],
