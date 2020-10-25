@@ -2073,7 +2073,7 @@
                 "",
                 "    var mass = this.rb ? this.rb.mass : 0;",
                 "",
-                "    this.physicsImpostor = new BABYLON.PhysicsImpostor(this.go.transform.transformNode,",
+                "    this.physicsImpostor = new BABYLON.PhysicsImpostor(this,",
                 "      imposterType,",
                 "      //Set to mass here so setMass(0) actually updates",
                 "      { mass: mass, restitution: 1 },",
