@@ -1617,7 +1617,6 @@
                 "  Start(){",
                 "    this.renderer.material = this.renderer.material.Clone();",
                 "    this.renderer.material.mainColor = this.color;",
-                "  ",
                 "  }",
                 "",
                 "  public GetColor() : BABYLON.Color3",
