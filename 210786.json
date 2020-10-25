@@ -1614,7 +1614,7 @@
                 "  fadeTime = 5;",
                 "",
                 "  fadeValue: number = 0;",
-                "  maxFadeValue: number = 10;",
+                "  maxFadeValue: number = 5;",
                 "",
                 "  private color : BABYLON.Color3;",
                 "",
