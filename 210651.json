@@ -5668,6 +5668,8 @@
                 "  }",
                 "",
                 "  public static GetPrefabParent (v: GameObject) {",
+                "    if (!v)",
+                "      return null;",
                 "    if (v.prefabParent)",
                 "      return v.prefabParent;",
                 "    return v;",
