@@ -631,7 +631,7 @@
                 "  public holdingItem: boolean = false;",
                 "  public motorLeft: RobotMotor = new RobotMotor(\"motorLeft\");",
                 "  public motorRight: RobotMotor = new RobotMotor(\"motorRight\");",
-                "  public colorSensor: RobotColorSensor = new RobotColorSensor(\"sensorColor\", this)",
+                "  public colorSensor: ColorSensor;",
                 "  public distanceSensor: RobotColorDistanceSensor = new RobotColorDistanceSensor(\"distanceSensor\", this)",
                 "  public isDrawing: boolean = true;",
                 "  public positions: Array<BABYLON.Vector3> = new Array();",
