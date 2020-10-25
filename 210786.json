@@ -1612,7 +1612,7 @@
                 "class ColorTag extends MonoBehaviour {",
                 "  ",
                 "  @SerializeField",
-                "  public color: Color;",
+                "  public color: Color = new Color();",
                 "",
                 "  Start(){",
                 "    ",
