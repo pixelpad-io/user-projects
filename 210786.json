@@ -565,7 +565,7 @@
                 ""
             ],
             "RobotTouchSensor": [
-                "class RobotTouchSensor extends RobotSensor{",
+                "class TouchSensor extends RobotSensor{",
                 "  private isPressed: boolean;",
                 "",
                 "  // TODO: Implement functions for the touchSensor",
@@ -3206,7 +3206,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":192,",
+                "               \"uniqueId\":7891,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
@@ -3244,7 +3244,7 @@
                 "                  \"y\":1,",
                 "                  \"z\":1",
                 "               },",
-                "               \"uniqueId\":193,",
+                "               \"uniqueId\":7892,",
                 "               \"ser_children\":[",
                 "                  ",
                 "               ]",
