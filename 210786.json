@@ -1611,7 +1611,7 @@
             "ColorTag": [
                 "class ColorTag extends MonoBehaviour {",
                 "",
-                "  fadeTime = 3;",
+                "  fadeTime = 5;",
                 "",
                 "  fadeValue: number = 0;",
                 "  maxFadeValue: number = 10;",
