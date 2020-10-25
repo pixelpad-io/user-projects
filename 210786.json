@@ -2194,7 +2194,7 @@
                 "  Start ()",
                 "  {",
                 "    this.centerWalls.forEach(w => {",
-                "      w.renderer.material = this.isRed ? \"laser_blue.mat\" : \"laser_red.mat\";",
+                "      w.renderer.materialName = this.isRed ? \"laser_blue.mat\" : \"laser_red.mat\";",
                 "    });",
                 "    ",
                 "  }",
