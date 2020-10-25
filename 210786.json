@@ -379,7 +379,7 @@
                 "  public enabled: boolean = true;",
                 "  ",
                 "  @SerializeField",
-                "  public name: string;",
+                "  public componentName : string;",
                 "",
                 "  Start ()",
                 "  {",
