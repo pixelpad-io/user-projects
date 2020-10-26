@@ -25,7 +25,13 @@
         "texture": {},
         "sound": {},
         "library": {},
-        "scene": {},
+        "scene": {
+            "MainScene.scn": [
+                "//Scene0.scn",
+                "",
+                ""
+            ]
+        },
         "material": {},
         "prefab": {}
     }
