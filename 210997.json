@@ -11,9 +11,7 @@
                 "  ",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "    if (KeyboardEvent){",
-                "      consolelog(\"here\");",
-                "    }",
+                "    consolelog(Input)",
                 "",
                 "",
                 "  }",
@@ -27,9 +25,12 @@
         "library": {},
         "scene": {
             "MainScene.scn": [
-                "//Scene0.scn",
-                "",
-                ""
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
+                "   ]",
+                "}"
             ]
         },
         "material": {},
