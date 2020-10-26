@@ -3,7 +3,7 @@
         "code": {
             "main": [
                 "\r",
-                "if (mouseEvent()){\r",
+                "if (WheelEvent){\r",
                 "    consolelog(\"here\");\r",
                 "}\r",
                 "\r",
