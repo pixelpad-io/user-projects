@@ -1,0 +1,16 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                ""
+            ]
+        },
+        "model": {},
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
