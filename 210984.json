@@ -2,6 +2,12 @@
     "assets": {
         "code": {
             "main": [
+                "\r",
+                "if (mouseEvent()){\r",
+                "    consolelog(\"here\");\r",
+                "}\r",
+                "\r",
+                "\r",
                 ""
             ],
             "script0": [
@@ -40,8 +46,12 @@
         },
         "scene": {
             "Scene0.scn": [
-                "//this is a scene ",
-                ""
+                "{",
+                "   \"t\":\"Scene\",",
+                "   \"rootObjs\":[",
+                "      ",
+                "   ]",
+                "}"
             ],
             "Scene1.scn": [
                 "//this is a scene ",
