@@ -288,6 +288,7 @@
                 "        // Game/Render loop\r",
                 "        Engine.scene.onBeforeRenderObservable.add(() => {\r",
                 "            Time.Update();\r",
+                "            \r",
                 "            for (var j = 0; j < Engine.nFramesPerRenderLoop; j++) {\r",
                 "                \r",
                 "                \r",
