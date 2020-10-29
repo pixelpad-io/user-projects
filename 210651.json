@@ -286,6 +286,7 @@
                 "                    {\r",
                 "                        return;\r",
                 "                    }\r",
+                "                    this.lastFrameTime = Time.time;\r",
                 "                }\r",
                 "                if (ENABLE_EDITOR) {\r",
                 "                    UnionEditor.Update();\r",
