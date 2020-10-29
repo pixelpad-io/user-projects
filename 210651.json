@@ -6381,7 +6381,7 @@
                 "    });",
                 "    ",
                 "    //Update the value every frame in the inspector",
-                "    Engine.scene.onBeforeRenderObservable.add(() =>",
+                "    Engine.editorScene.onBeforeRenderObservable.add(() =>",
                 "    {",
                 "      if (this.valueInput.isChecked != this.value)",
                 "      {",
