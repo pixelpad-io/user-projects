@@ -1,0 +1,45 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                "class MainGame extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                "",
+                "//getModel(\"planet.obj\") --> search from post id 210651",
+                "//getTexture(\"mars.png\")",
+                "//Library -> ",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "model": {},
+        "texture": {
+            "210651.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.881.210838.210651.png"
+            }
+        },
+        "sound": {},
+        "library": {},
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
