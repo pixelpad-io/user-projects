@@ -193,7 +193,7 @@
                 "    private static lastFrameTime: number = 0;\r",
                 "\r",
                 "    //To avoid the game hanging after minimizing the browser, we never have more than 2 frames catching up\r",
-                "    private static nMaxFramesToCatchUp = 2;\r",
+                "    private static nMaxFramesToCatchUp = 3;\r",
                 "\r",
                 "    public static CreateScene(engine: BABYLON.Engine, canvas: HTMLCanvasElement): BABYLON.Scene {\r",
                 "\r",
