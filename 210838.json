@@ -38,7 +38,21 @@
         },
         "sound": {},
         "library": {},
-        "scene": {},
+        "scene": {
+            "MainScene.scn": [
+                "//MainScene.scn",
+                "",
+                ""
+            ],
+            "NewScene.scn": [
+                "//NewScene.scn",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
         "material": {},
         "prefab": {}
     }
