@@ -1499,7 +1499,7 @@
                 "    this.isAttached = true;",
                 "",
                 "    Engine.scene.activeCameras.push(this.cam);",
-                "    Engine.scene.onBeforeRenderObservable.add((ev) => {",
+                "    Engine.editorScene.onBeforeRenderObservable.add((ev) => {",
                 "      this.Update();",
                 "    });",
                 "  }",
