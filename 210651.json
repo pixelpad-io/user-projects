@@ -3609,7 +3609,7 @@
                 "        }",
                 "        if (this.GetKey(KeyCode.DownArrow) || this.GetKey(KeyCode.S))",
                 "        {",
-                "            this.keyAxisRaw.y = -1;",
+                "            this.keyAxisRaw.y -= 1;",
                 "        }",
                 "        ",
                 "        this.keyAxis.x = Mathf.MoveTowards(this.keyAxis.x, this.keyAxisRaw.x, this.sensitivity);",
