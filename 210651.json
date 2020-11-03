@@ -71,7 +71,7 @@
                 "}"
             ],
             "Engine": [
-                "var ENABLE_EDITOR: boolean = false;\r",
+                "var ENABLE_EDITOR: boolean = true;\r",
                 "\r",
                 "class Engine {\r",
                 "\r",
