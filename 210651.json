@@ -2967,7 +2967,7 @@
                 "    }",
                 "  }",
                 "",
-                "  Update() {",
+                "  FixedUpdate() {",
                 "    if (Engine.isPlaying) {",
                 "      //Pretty hacky solution to allow for Inspector Updates.",
                 "      if (this._isTrigger != this.wasTrigger) {",
