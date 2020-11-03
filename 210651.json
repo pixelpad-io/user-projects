@@ -1879,7 +1879,7 @@
                 "",
                 "    for (var i = 0; i < imposters.length; i++) {",
                 "      var op = (imposters[i].object as ObjectPhysics);",
-                "      if (op?.rb && op.rb.useGravity) {",
+                "      if (op?.rb) {",
                 "        //Gravity",
                 "        imposters[i].applyForce(Physics.gravity.scale(imposters[i].mass), imposters[i].getObjectCenter());",
                 "",
