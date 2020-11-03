@@ -217,7 +217,7 @@
                 "        //Physics are handled in the Physics class\r",
                 "        var physEngine = new BABYLON.CannonJSPlugin(false);\r",
                 "        Engine.scene.enablePhysics(BABYLON.Vector3.Zero(), physEngine);\r",
-                "        Engine.scene.getPhysicsEngine().setSubTimeStep(1000 / 60);\r",
+                "        physEngine.setTimeStep(1/60);\r",
                 "\r",
                 "        Engine.meshToObject = new Map();\r",
                 "        Engine.toBeDestroyed = new Array();\r",
