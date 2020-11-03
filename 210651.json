@@ -196,6 +196,9 @@
                 "    private static nMaxFramesToCatchUp = 3;\r",
                 "\r",
                 "    public static CreateScene(engine: BABYLON.Engine, canvas: HTMLCanvasElement): BABYLON.Scene {\r",
+                "        \r",
+                "        delete Engine.current;\r",
+                "        Engine.current = engine;\r",
                 "\r",
                 "        engine = new BABYLON.Engine(canvas, true, {\r",
                 "            deterministicLockstep: true,\r",
@@ -205,7 +208,7 @@
                 "        PixelPADEvents.AddAllListeners();\r",
                 "        document.addEventListener(\"playClicked\", Engine.OnPlayButton);\r",
                 "\r",
-                "        Engine.current = engine;\r",
+                "        \r",
                 "        Engine.canvas = canvas;\r",
                 "        // This creates a basic Babylon Scene object (non-mesh)\r",
                 "        Engine.scene = new BABYLON.Scene(engine);\r",
@@ -7327,7 +7330,7 @@
         "library": {},
         "scene": {
             "TEST.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.07988812616642493,\"y\":-1.7221315651801086,\"z\":0.0003801112092345904},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":10.598098224179795,\"y\":-33.44101913432875,\"z\":63.17274887512671},\"_scale\":{\"t\":\"Vector3\",\"x\":-0.04087386964759876,\"y\":-8.847848743966303,\"z\":0.845203082476794},\"uniqueId\":39806,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Red.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":39814,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-48.9030406606289,\"y\":-24003.657657736378,\"z\":20.998188947573908},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":26.375395409586943,\"y\":114.16351602970816,\"z\":167.57295621645548},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":39823,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.01,\"_isKinematic\":false}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.07988812616642493,\"y\":-1.7221315651801086,\"z\":0.0003801112092345904},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":10.598098224179795,\"y\":-33.44101913432875,\"z\":63.17274887512671},\"_scale\":{\"t\":\"Vector3\",\"x\":-0.04087386964759876,\"y\":-8.847848743966303,\"z\":0.845203082476794},\"uniqueId\":192,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Red.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":200,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-48.9030406606289,\"y\":-24003.657657736378,\"z\":20.998188947573908},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":26.375395409586943,\"y\":114.16351602970816,\"z\":167.57295621645548},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":203,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.01,\"_isKinematic\":false}],\"prefabName\":null}]}"
             ],
             "Test2.scn": [
                 "{",
