@@ -3092,7 +3092,7 @@
                 "    return BABYLON.PhysicsImpostor.BoxImpostor;",
                 "  }",
                 "",
-                "  Update ()",
+                "  FixedUpdate ()",
                 "  {",
                 "    super.Update();",
                 "    //Simple setter for SerializeField",
