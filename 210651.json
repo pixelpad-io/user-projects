@@ -1347,7 +1347,7 @@
             ],
             "MainGame": [
                 "",
-                "ENABLE_EDITOR = true;",
+                "ENABLE_EDITOR = false;",
                 "",
                 "",
                 "class MainGame extends MonoBehaviour {",
