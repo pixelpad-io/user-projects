@@ -1366,7 +1366,7 @@
                 "      }",
                 "      //console.log(\"Performing game logic, AFTER animations and physics for stepId: \"+theScene.getStepId());",
                 "      if (this.j == 100) {",
-                "        console.log(\"pos.y is: \" + this.sphere.position.y);",
+                "        console.log(\"pos.y is: \" + this.transform.position.y);",
                 "      }",
                 "  }",
                 "",
