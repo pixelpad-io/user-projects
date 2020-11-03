@@ -1362,7 +1362,7 @@
                 "    this.something += 1;",
                 "",
                 "    if (this.something < 200) {",
-                "      for (var i = 0; i < 25; i++) {",
+                "      for (var i = 0; i < 5; i++) {",
                 "        Debug.Log(this.something);",
                 "      }",
                 "    }",
