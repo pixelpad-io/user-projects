@@ -2537,7 +2537,7 @@
                 "    }",
                 "",
                 "    ",
-                "    Update ()",
+                "    FixedUpdate ()",
                 "    {",
                 "        //This seems redundant but it's calling the setter for all these variables",
                 "        //Because our inspector and serializer use the private variables, this needs to be done",
