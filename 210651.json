@@ -3094,7 +3094,7 @@
                 "",
                 "  FixedUpdate ()",
                 "  {",
-                "    super.Update();",
+                "    super.FixedUpdate();",
                 "    //Simple setter for SerializeField",
                 "    this.size;",
                 "    this.center;",
