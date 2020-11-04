@@ -23,7 +23,6 @@
                 "  Start() {",
                 "    this.GetComponent(Renderer).onChangedMesh.addOnce(e => {",
                 "      ",
-                "      this.GetComponent(Rigidbody)",
                 "    });",
                 "    ",
                 "  }",
