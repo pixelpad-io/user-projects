@@ -882,7 +882,7 @@
                 "",
                 "    private _markedForDestroy: boolean = false;",
                 "",
-                "    private hasStarted : boolean = false;",
+                "    public hasStarted : boolean = false;",
                 "",
                 "    public GetType(): string {",
                 "        return this.constructor.name;",
