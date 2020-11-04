@@ -22,7 +22,11 @@
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_corner.obj"
             }
         },
-        "texture": {},
+        "texture": {
+            "robot.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.robot.png"
+            }
+        },
         "sound": {},
         "library": {},
         "scene": {
