@@ -2997,7 +2997,6 @@
                 "  }",
                 "",
                 "  set size(value: Vector3) {",
-                "    value.onChange.clear();",
                 "    this._size = value;",
                 "    this._size.onChange.add(() => {",
                 "      this.ReconstructMeshLines();",
@@ -3080,7 +3079,7 @@
                 "",
                 "  OnDestroy()",
                 "  {",
-                "    ",
+                "",
                 "  }",
                 "",
                 "}"
