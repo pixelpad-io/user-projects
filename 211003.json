@@ -1,0 +1,36 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                "class MainGame extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ]
+        },
+        "model": {
+            "window_corner.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_corner.obj"
+            }
+        },
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {
+            "GameScene.scn": [
+                "{\"t\":\"Scene\",\"rootObjs\":[]}"
+            ]
+        },
+        "material": {},
+        "prefab": {}
+    }
+}
