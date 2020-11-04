@@ -23,9 +23,21 @@
                 "  Start() {",
                 "    var r = this.GetComponent(Renderer);",
                 "    r.onChangedMesh.addOnce(e => {",
-                "      r.GetMeshes().forEach(e => {",
-                "        Debug.Log(e.name);",
-                "      });",
+                "      var material0 = new BABYLON.StandardMaterial(\"mat0\", Engine.scene);",
+                "    material0.diffuseColor = new BABYLON.Color3(1, 0, 0);",
+                "    ",
+                "    var material1 = new BABYLON.StandardMaterial(\"mat1\", Engine.scene);",
+                "    material1.diffuseColor = new BABYLON.Color3(0, 0, 1);",
+                "    ",
+                "    var material2 = new BABYLON.StandardMaterial(\"mat2\", Engine.scene);",
+                "    material2.emissiveColor = new BABYLON.Color3(0.4, 0, 0.4);",
+                "",
+                "    var multimat = new BABYLON.MultiMaterial(\"multi\", Engine.scene);",
+                "    multimat.subMaterials.push(material0);",
+                "    multimat.subMaterials.push(material1);",
+                "    multimat.subMaterials.push(material2);",
+                "",
+                "      r.GetMesh().material = multimat;",
                 "    });",
                 "    ",
                 "  }",
@@ -55,7 +67,7 @@
         "library": {},
         "scene": {
             "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":2406,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-1.3493950699184832e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":2407,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4350,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.00000000000001,\"z\":-3.373487674796209e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4351,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
             ]
         },
         "material": {},
