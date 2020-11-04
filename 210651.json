@@ -3078,6 +3078,11 @@
                 "    this.center;",
                 "  }",
                 "",
+                "  OnDestroy()",
+                "  {",
+                "    ",
+                "  }",
+                "",
                 "}"
             ],
             "SphereCollider": [
