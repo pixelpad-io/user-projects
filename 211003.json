@@ -56,6 +56,9 @@
             },
             "window_corner2.obj": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_corner2.obj"
+            },
+            "window_3.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_3.obj"
             }
         },
         "texture": {
@@ -67,7 +70,7 @@
         "library": {},
         "scene": {
             "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4350,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.00000000000001,\"z\":-3.373487674796209e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4351,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4905,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-4.273084388075198e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4906,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":5.997619152069092,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5043,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_3.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null}]}"
             ]
         },
         "material": {},
