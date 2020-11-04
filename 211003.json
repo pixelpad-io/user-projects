@@ -15,11 +15,32 @@
                 "  }",
                 "}",
                 ""
+            ],
+            "Corner": [
+                "class Corner extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "    this.GetComponent(Renderer).onChangedMesh.add(function (the = this) {",
+                "      this.GetComponent(Renderer).onChangedMesh.remove(this);",
+                "    });",
+                "    ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
             ]
         },
         "model": {
             "window_corner.obj": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_corner.obj"
+            },
+            "window_corner2.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_corner2.obj"
             }
         },
         "texture": {
@@ -31,7 +52,7 @@
         "library": {},
         "scene": {
             "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":343,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.00000000000001,\"z\":-4.497983566394945e-15},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":666,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
             ]
         },
         "material": {},
