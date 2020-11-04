@@ -2418,7 +2418,7 @@
                 "  useGravity: boolean = true;",
                 "",
                 "",
-                "  Awake() {",
+                "  Start() {",
                 "    this.objectPhysics.MarkForUpdate();",
                 "  }",
                 "",
