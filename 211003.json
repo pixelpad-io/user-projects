@@ -21,6 +21,7 @@
                 "",
                 "  @SerializeField",
                 "  matNames : string[] = new Array()",
+                "  ",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "    var r = this.GetComponent(Renderer);",
