@@ -6188,7 +6188,7 @@
                 "    });",
                 "",
                 "    this.onDisposeObservable.addOnce(e => {",
-                "",
+                "      Engine.editorScene.onBeforeRenderObservable.remove(beforeRenderObserver);",
                 "    })",
                 "  }",
                 "",
