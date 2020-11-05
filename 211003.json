@@ -43,6 +43,24 @@
                 "  }",
                 "}",
                 ""
+            ],
+            "MainLight": [
+                "class MainLight extends MonoBehaviour {",
+                "",
+                "  @SerializeField",
+                "  intensity = 1;",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "    ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "    Lighting.mainLight.intensity = intensity;",
+                "  }",
+                "}",
+                ""
             ]
         },
         "model": {
