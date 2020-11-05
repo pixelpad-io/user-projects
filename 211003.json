@@ -26,27 +26,15 @@
                 "  Start() {",
                 "    var r = this.GetComponent(Renderer);",
                 "    r.onChangedMesh.addOnce(e => {",
-                "      var mat = new BABYLON.StandardMaterial(\"mat0\", Engine.scene);",
-                "      mat.diffuseColor = new BABYLON.Color3(1, 0, 0);",
-                "",
-                "      var material1 = new BABYLON.StandardMaterial(\"mat1\", Engine.scene);",
-                "      material1.diffuseColor = new BABYLON.Color3(0, 1, 0);",
-                "",
-                "      var material2 = new BABYLON.StandardMaterial(\"mat2\", Engine.scene);",
-                "      material2.diffuseColor = new BABYLON.Color3(1, 1, 1);",
-                "",
-                "      var material3 = new BABYLON.StandardMaterial(\"mat2\", Engine.scene);",
-                "      material3.diffuseColor = new BABYLON.Color3(0, 1, 1);",
-                "",
-                "",
+                "     ",
                 "",
                 "      var meshes = r.GetMeshes();",
-                "      Debug.Log(meshes.length)",
                 "",
-                "      meshes[0].material = Material.Get(\"MyMat.mat\").shader;",
-                "      meshes[1].material = material1;",
-                "      meshes[2].material = material2;",
-                "      meshes[3].material = material3;",
+                "      for (var i = 0; i < meshes.length; i++)",
+                "      {",
+                "        ",
+                "      }",
+                "      meshes.forEac",
                 "    });",
                 "",
                 "  }",
@@ -104,8 +92,23 @@
             ]
         },
         "material": {
-            "MyMat.mat": [
+            "Main.mat": [
                 "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"base_color.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            ],
+            "Ground.mat": [
+                "//Main.mat",
+                "",
+                ""
+            ],
+            "PlantLeaf.mat": [
+                "//PlantLeave.mat",
+                "",
+                ""
+            ],
+            "Soil.mat": [
+                "//Soil.mat",
+                "",
+                ""
             ]
         },
         "prefab": {}
