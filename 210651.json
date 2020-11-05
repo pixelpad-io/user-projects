@@ -6272,7 +6272,7 @@
                 "    this.addControl(this.nameField);",
                 "",
                 "    var arrayList = new BABYLON.GUI.StackPanel();",
-                "    arrayList.width = \"100px\";",
+                "    arrayList.widthInPixels = this.widthInPixels;",
                 "    arrayList.isVertical = true;",
                 "    arrayList.leftInPixels = -40;",
                 "    arrayList.heightInPixels = this.value.length * 20;",
