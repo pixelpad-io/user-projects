@@ -6189,6 +6189,8 @@
                 "",
                 "    this.onDisposeObservable.addOnce(e => {",
                 "      Engine.editorScene.onBeforeRenderObservable.remove(beforeRenderObserver);",
+                "      vInput.onKeyboardEventProcessedObservable.clear();",
+                "      vInput.onBlurObservable.clear();",
                 "    })",
                 "  }",
                 "",
