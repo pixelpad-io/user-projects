@@ -46,7 +46,7 @@
                 "      new BABYLON.SubMesh(1, 0, verticesCount, 900, 900, mesh);",
                 "      new BABYLON.SubMesh(2, 0, verticesCount, 1800, 2088, mesh);",
                 "",
-                "      mesh.material = this.mat;",
+                "      mesh.material = multimat;",
                 "    });",
                 "",
                 "  }",
