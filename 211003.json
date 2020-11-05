@@ -16,7 +16,7 @@
                 "}",
                 ""
             ],
-            "Corner": [
+            "MultiMaterial": [
                 "@ExecuteInEditMode",
                 "class Corner extends MonoBehaviour {",
                 "",
