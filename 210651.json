@@ -6307,7 +6307,6 @@
                 "    vInput.onFocusSelectAll = true;",
                 "",
                 "    this.UpdateTextFromValue();",
-                "    this.RefreshArrayList();",
                 "    //When inspector inputfield is changed, update value",
                 "    vInput.onBlurObservable.add((ev) => {",
                 "      this.UpdateValueFromText();",
