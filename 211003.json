@@ -57,7 +57,7 @@
                 "  ",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "    Lighting.mainLight.intensity = intensity;",
+                "    Lighting.mainLight.intensity = this.intensity;",
                 "  }",
                 "}",
                 ""
