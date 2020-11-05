@@ -6191,6 +6191,7 @@
                 "",
                 "  UpdateTextFromValue ()",
                 "  {  ",
+                "    //this.value is checked since it may be removed (e.g. in array)",
                 "    if (this.value && this.value != this.owner[this.propName])",
                 "    {",
                 "      this.value = this.owner[this.propName];",
