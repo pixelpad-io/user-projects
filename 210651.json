@@ -6359,6 +6359,7 @@
                 "      while (this.value.length > x) { this.value.pop(); }",
                 "      while (this.value.length < x) { this.value.push(0); }",
                 "      this.RefreshArrayList();",
+                "      ",
                 "      SceneManager.MarkSceneAsDirty();",
                 "    }",
                 "  }",
