@@ -19,12 +19,14 @@
             "Corner": [
                 "class Corner extends MonoBehaviour {",
                 "",
+                "  mat : BABYLON.StandardMaterial;",
+                "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "    var r = this.GetComponent(Renderer);",
                 "    r.onChangedMesh.addOnce(e => {",
-                "      var material0 = new BABYLON.StandardMaterial(\"mat0\", Engine.scene);",
-                "      material0.diffuseColor = new BABYLON.Color3(1, 0, 0);",
+                "      this.mat = new BABYLON.StandardMaterial(\"mat0\", Engine.scene);",
+                "       this.mat.diffuseColor = new BABYLON.Color3(1, 0, 0);",
                 "",
                 "      var material1 = new BABYLON.StandardMaterial(\"mat1\", Engine.scene);",
                 "      material1.diffuseColor = new BABYLON.Color3(0, 0, 1);",
@@ -33,18 +35,18 @@
                 "      material2.emissiveColor = new BABYLON.Color3(0.4, 0, 0.4);",
                 "",
                 "      var multimat = new BABYLON.MultiMaterial(\"multi\", Engine.scene);",
-                "      multimat.subMaterials.push(material0);",
+                "      multimat.subMaterials.push( this.mat);",
                 "      multimat.subMaterials.push(material1);",
                 "      multimat.subMaterials.push(material2);",
                 "",
-                "      r.GetMesh().material = multimat;",
+                "    r.GetMesh().material =  this.mat;",
                 "    });",
                 "",
                 "  }",
                 "",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "",
+                "    ",
                 "  }",
                 "}",
                 ""
@@ -70,10 +72,14 @@
         "library": {},
         "scene": {
             "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4905,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-4.273084388075198e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4906,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":5.997619152069092,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5043,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_3.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"Corner\"}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":10608,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_corner2.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"Corner\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":10609,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":5.997619152069092,\"y\":0,\"z\":4.246119499206543},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":10612,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_3.obj\",\"materialName\":\"\",\"scale\":0.01,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"Corner\"}],\"prefabName\":null}]}"
             ]
         },
-        "material": {},
+        "material": {
+            "MyMat.mat": [
+                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            ]
+        },
         "prefab": {}
     }
 }
