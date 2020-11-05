@@ -6316,6 +6316,8 @@
                 "  }",
                 "",
                 "  RefreshArrayList () {",
+                "    this.arrayList?.dispose();",
+                "    ",
                 "    this.arrayList = new BABYLON.GUI.StackPanel();",
                 "    this.arrayList.isVertical = true;",
                 "    this.arrayList.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;",
