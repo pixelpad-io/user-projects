@@ -6314,7 +6314,7 @@
                 "      this.UpdateValueFromText();",
                 "    });",
                 "",
-                "    this.collapseButtonOverserver =  this.collapseButton.onPointerUpObservable.add((evt) => {",
+                "    this.collapseButtonOverserver = this.collapseButton.onPointerUpObservable.add((evt) => {",
                 "      if (this.arrayList) {",
                 "        this.arrayList.dispose();",
                 "        this.arrayList = null;",
