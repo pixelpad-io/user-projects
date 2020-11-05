@@ -729,7 +729,7 @@
                 "          if (typeof value[j] == 'number' || typeof value[j] == 'boolean') {",
                 "            data += value[j];",
                 "          }",
-                "          else if (typeof value == 'string') {",
+                "          else if (typeof value[j] == 'string') {",
                 "            data += \"\\\"\" + value[j] + \"\\\"\";",
                 "          } else {",
                 "            data += this.GetPropertyJSON(value[j]);",
