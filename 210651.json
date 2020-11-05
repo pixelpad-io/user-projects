@@ -6253,8 +6253,6 @@
             "ArrayInspector": [
                 "class ArrayInspector extends PropertyInspector {",
                 "",
-                "  list : BABYLON.GUI",
-                "",
                 "  Init()",
                 "  {",
                 "    super.Init();",
