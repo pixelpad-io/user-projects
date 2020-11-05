@@ -1716,7 +1716,7 @@
                 "            var meshes: BABYLON.Mesh[] = MeshLoader.GetMesh(this.meshName, this.textureName);",
                 "            if (meshes != null) {",
                 "                if (this.mergeMeshes) {",
-                "                    this.SetMesh(BABYLON.Mesh.MergeMeshes(meshes, true, true));",
+                "                    this.SetMesh(BABYLON.Mesh.MergeMeshes(meshes, true, true, null, false, false));",
                 "                } else {",
                 "                    this.SetMesh(meshes);",
                 "                }",
