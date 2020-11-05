@@ -1372,7 +1372,7 @@
                 "  Update() {",
                 "    if (Input.GetKeyDown(KeyCode.Space)) {",
                 "      var i = 0;",
-                "      this.something3.forEach(e => {",
+                "      this.something2.forEach(e => {",
                 "       // i += e;",
                 "      });",
                 "      Debug.Log(i);",
