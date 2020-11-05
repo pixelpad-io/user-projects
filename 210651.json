@@ -1358,7 +1358,7 @@
                 "class MainGame extends MonoBehaviour {",
                 "",
                 "  @SerializeField",
-                "  something3: number[] = [1, 2, 3]",
+                "  something3 = new Array<string>()",
                 "",
                 "  j = 0;",
                 "  sphere = null;",
