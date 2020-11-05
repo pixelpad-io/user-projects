@@ -50,7 +50,7 @@
                 "meshes[2].material = material1;",
                 "meshes[3].material = material2;",
                 "meshes[4].material = material3;",
-                "meshes[5].material = material1;",
+                "meshes[5].material = mat;",
                 "    });",
                 "",
                 "  }",
