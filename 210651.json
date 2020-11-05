@@ -6251,7 +6251,7 @@
                 "}"
             ],
             "ArrayInspector": [
-                "class ArrayInspector extends NumberInspector {",
+                "class ArrayInspector extends PropertyInspector {",
                 "",
                 "  Init()",
                 "  {",
