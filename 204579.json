@@ -5,11 +5,21 @@
                 ""
             ]
         },
-        "model": {},
+        "model": {
+            "ball.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.ball.obj"
+            }
+        },
         "texture": {},
         "sound": {},
         "library": {},
-        "scene": {},
+        "scene": {
+            "TestScene.scn": [
+                "//TestScene.scn",
+                "",
+                ""
+            ]
+        },
         "material": {},
         "prefab": {}
     }
