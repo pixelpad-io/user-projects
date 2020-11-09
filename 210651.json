@@ -5222,6 +5222,7 @@
                 "        }",
                 "",
                 "        this.nameField = new BABYLON.GUI.TextBlock(\"\", obj.name);",
+                "        this.nameField.fontStyle = UnionEditor.fontStyle;",
                 "        this.nameField.paddingLeft = \"25px\";",
                 "        this.nameField.paddingTopInPixels = 3;",
                 "        this.nameField.color = obj.prefabParent ? UnionEditor.style.selectionColor.toHexString() : UnionEditor.style.textColor.toHexString();",
