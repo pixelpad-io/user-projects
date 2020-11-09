@@ -4395,7 +4395,7 @@
                 "    this._tb = new BABYLON.GUI.TextBlock(name + \"_button\", text);",
                 "    this._tb.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;",
                 "    this._tb.paddingTop = \"20%\";",
-                "    this._tb.style = UnionEditor.style;",
+                "    this._tb.style = UnionEditor.fontStyle;",
                 "    this._tb.resizeToFit = true;",
                 "    ",
                 "    this._tb.color = UnionEditor.style.textColor.toHexString();",
