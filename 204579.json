@@ -11,6 +11,12 @@
             },
             "LargeMetalPiece.obj": {
                 "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LargeMetalPiece.obj"
+            },
+            "MediumMetalPiece.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.MediumMetalPiece.obj"
+            },
+            "SmallMetalPiece.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.SmallMetalPiece.obj"
             }
         },
         "texture": {},
@@ -21,7 +27,7 @@
                 "{\"t\":\"Scene\",\"rootObjs\":[]}"
             ],
             "AssemblyScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"LargeMetalPiece\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":3098,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"LargeMetalPiece\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"LargeMetalPiece\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":3098,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"LargeMetalPiece\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"MedumMetalPiece\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0.941119372844696},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":3456,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"MediumMetalPiece\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
             ]
         },
         "material": {},
