@@ -72,7 +72,7 @@
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.3541592263802745,\"g\":0.5891177109971627,\"b\":1},\"mainTexture\":\"\",\"alpha\":0.28999999999999937,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":29.939999999999966,\"roughness\":0.3600000000000061,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
             "FrontWheel.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9419417382415922,\"g\":0.7654786523800016,\"b\":0.033873331543960106},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9772970773009195,\"g\":0.9772961000038423,\"b\":0.9772961000038423},\"specularPower\":5.250000000000017,\"roughness\":1.05,\"alphaMode\":0,\"hasAlpha\":false}"
+                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9419417382415922,\"g\":0.588833666556801,\"b\":0.033873331543960106},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9772970773009195,\"g\":0.9772961000038423,\"b\":0.9772961000038423},\"specularPower\":5.250000000000017,\"roughness\":1.05,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
             "BackWheel.mat": [
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.19947961799571723,\"g\":0.18877976180986264,\"b\":0.18877976180986264},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.33206213946819485,\"g\":0.30544558289885365,\"b\":0.30544558289885365},\"specularPower\":0.7800000000000118,\"roughness\":0.360000000000003,\"alphaMode\":0,\"hasAlpha\":false}"
@@ -82,9 +82,6 @@
             ],
             "Rotator.mat": [
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.7254053781975103,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":10.430000000000023,\"roughness\":0.32000000000000023,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "SmallPieces.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0,\"b\":0.7323647818668926},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1.7000000000000146,\"roughness\":0.4600000000000002,\"alphaMode\":0,\"hasAlpha\":false}"
             ]
         },
         "prefab": {}
