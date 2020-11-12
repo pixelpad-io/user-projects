@@ -69,7 +69,7 @@
         },
         "material": {
             "Metal.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.23483482595036823,\"g\":0.23483472222008758,\"b\":0.23483495705504465},\"mainTexture\":\"\",\"alpha\":0.28999999999999937,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":4.489999999999959,\"roughness\":0.3600000000000061,\"alphaMode\":0,\"hasAlpha\":false}"
+                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.3541592263802745,\"g\":0.5891177109971627,\"b\":1},\"mainTexture\":\"\",\"alpha\":0.28999999999999937,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":29.939999999999966,\"roughness\":0.3600000000000061,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
             "FrontWheel.mat": [
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9419417382415922,\"g\":0.7654786523800016,\"b\":0.033873331543960106},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9772970773009195,\"g\":0.9772961000038423,\"b\":0.9772961000038423},\"specularPower\":5.250000000000017,\"roughness\":1.05,\"alphaMode\":0,\"hasAlpha\":false}"
