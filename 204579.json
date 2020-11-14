@@ -74,6 +74,9 @@
             },
             "SecureBar.obj": {
                 "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.SecureBar.obj"
+            },
+            "ConnectorDock.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.ConnectorDock.obj"
             }
         },
         "texture": {
