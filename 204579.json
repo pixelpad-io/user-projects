@@ -104,7 +104,7 @@
             "FrontWheel.mat": [
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9419417382415922,\"g\":0.4935036481755572,\"b\":0.033873331543960106},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9772970773009195,\"g\":0.9772961000038423,\"b\":0.9772961000038423},\"specularPower\":5.250000000000017,\"roughness\":1.05,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
-            "BackWheel.mat": [
+            "Wheels.mat": [
                 "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.19947961799571723,\"g\":0.18877976180986264,\"b\":0.18877976180986264},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.33206213946819485,\"g\":0.30544558289885365,\"b\":0.30544558289885365},\"specularPower\":0.7800000000000118,\"roughness\":0.360000000000003,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
             "Motor.mat": [
