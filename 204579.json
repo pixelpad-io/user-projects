@@ -122,6 +122,9 @@
             },
             "MMetalRail.obj": {
                 "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.MMetalRail.obj"
+            },
+            "Support.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Support.obj"
             }
         },
         "texture": {},
