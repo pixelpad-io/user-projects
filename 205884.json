@@ -21,7 +21,11 @@
         "texture": {},
         "sound": {},
         "library": {},
-        "scene": {},
+        "scene": {
+            "Scene0.scn": [
+                "{\"t\":\"Scene\",\"rootObjs\":[]}"
+            ]
+        },
         "material": {},
         "prefab": {}
     }
