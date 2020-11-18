@@ -1,0 +1,32 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                "class MainGameehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ]
+        },
+        "model": {},
+        "texture": {
+            "textures.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17557.205954.textures.png"
+            }
+        },
+        "sound": {},
+        "library": {},
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
