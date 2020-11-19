@@ -1,0 +1,32 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                "class MainGame extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ]
+        },
+        "model": {
+            "A.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17015.206141.A.obj"
+            }
+        },
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
