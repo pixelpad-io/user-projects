@@ -2,6 +2,7 @@
     "assets": {
         "code": {
             "main": [
+                "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
