@@ -5,6 +5,9 @@
                 "@RegisterAsComponent",
                 "class MainGame extends MonoBehaviour {",
                 "",
+                "  @SerializeField",
+                "  speed : number = 1;",
+                "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "  ",
@@ -12,7 +15,7 @@
                 "  ",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "  ",
+                "    this.transform.Translate(this.speed * Time.deltaTime,0,0);",
                 "  }",
                 "}",
                 ""
@@ -28,7 +31,7 @@
         "library": {},
         "scene": {
             "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.018150657672396875,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":27.579911295301894},\"_scale\":{\"t\":\"Vector3\",\"x\":7.038416870252617,\"y\":0.27038459111467594,\"z\":4.15649706818482},\"uniqueId\":3658,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-1.3493950699184832e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":3666,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":2.666287899017334,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":3669,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"raptor.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.018150657672396875,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":27.579911295301894},\"_scale\":{\"t\":\"Vector3\",\"x\":7.038416870252617,\"y\":0.27038459111467594,\"z\":4.15649706818482},\"uniqueId\":4119,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.00000000000001,\"z\":-2.0240926048777253e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4127,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":2.666287899017334,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":4130,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"raptor.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"MainGame\"}],\"prefabName\":null}]}"
             ]
         },
         "material": {},
