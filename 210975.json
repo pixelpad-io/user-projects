@@ -16,8 +16,8 @@
                 "}",
                 ""
             ],
-            "Script1": [
-                "class Script1 extends MonoBehaviour {",
+            "Script5": [
+                "class Script5 extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
@@ -33,6 +33,21 @@
             ],
             "Script2": [
                 "class Script2 extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ],
+            "Script1": [
+                "class Script1 extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
@@ -63,21 +78,6 @@
             ],
             "Script4": [
                 "class Script4 extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "  ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "  ",
-                "  }",
-                "}",
-                ""
-            ],
-            "Script5": [
-                "class Script5 extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
