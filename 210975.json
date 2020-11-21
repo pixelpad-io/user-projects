@@ -91,8 +91,8 @@
                 "}",
                 ""
             ],
-            "Script6": [
-                "class Script6 extends MonoBehaviour {",
+            "Script7": [
+                "class Script7 extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
@@ -106,8 +106,8 @@
                 "}",
                 ""
             ],
-            "Script7": [
-                "class Script7 extends MonoBehaviour {",
+            "Script6": [
+                "class Script6 extends MonoBehaviour {",
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
@@ -123,7 +123,17 @@
             ]
         },
         "model": {},
-        "texture": {},
+        "texture": {
+            "texture0.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.5830.210975.texture0.png"
+            },
+            "texture1.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.5830.210975.texture1.png"
+            },
+            "texture3.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.5830.210975.texture3.png"
+            }
+        },
         "sound": {},
         "library": {},
         "scene": {},
