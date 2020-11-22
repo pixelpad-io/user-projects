@@ -28,7 +28,7 @@
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
-                "    this.gameObject.objectPhysics.physicsImpostor.parent = this.transform.parent.gameObject.objectPhysics.physicsImpostor;",
+                "    this.gameObject.objectPhysics.physicsImpostor.getParentsRotation();",
                 "  }",
                 "  ",
                 "  //Update is called once per frame",
