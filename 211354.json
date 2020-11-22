@@ -1,0 +1,30 @@
+{
+    "assets": {
+        "code": {
+            "main": [
+                "class MainGame extends MonoBehaviour {",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
+            ]
+        },
+        "model": {},
+        "texture": {},
+        "sound": {},
+        "library": {
+            "210786": {}
+        },
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
