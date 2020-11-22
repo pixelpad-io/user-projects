@@ -2168,7 +2168,7 @@
                 "    this.physicsImpostor = new BABYLON.PhysicsImpostor(this,",
                 "      imposterType,",
                 "      //Set to mass here so setMass(0) actually updates",
-                "      { mass: mass, restitution: 1},",
+                "      { mass: mass, restitution: 1, ignoreParent : true},",
                 "      Engine.scene);",
                 "",
                 "    //We have to call this setter once in order for friction to work...",
