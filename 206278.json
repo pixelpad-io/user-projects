@@ -69,7 +69,7 @@
                 "    }",
                 "  }",
                 "",
-                "  public void FreezeYPos(){",
+                "  public FreezeYPos(){",
                 "    this.freezedYPos = this.transform.position.y;",
                 "  }",
                 "}",
