@@ -19,6 +19,8 @@
             "PlayerController": [
                 "class PlayerController extends MonoBehaviour {",
                 "",
+                "  moveSpeed = 5;",
+                "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "  ",
