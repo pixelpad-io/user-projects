@@ -127,6 +127,8 @@
                 "    var player = Instantiate(name);",
                 "    player = this.PlaceOnTopOfFloor(i,j,player);",
                 "",
+                "    consolelog(\"mudou a posicao\")",
+                "",
                 "    var spawnArea = Instantiate(\"SpawnArea\");",
                 "    var pPos = player.transform.position;",
                 "    spawnArea.transform.position = new Vector3(pPos.x, pPos.y, pPos.z);",
@@ -139,8 +141,6 @@
                 "    var yy = pos.y + (obj.transform.localScale.y/2) + (this.transform.localScale.y/2);",
                 "    var zz =  pos.z - (this.height/2) + j + (obj.transform.localScale.z/2);",
                 "    obj.transform.position = new Vector3(xx, yy, zz);",
-                "",
-                "    consolelog(\"mudou a posicao\")",
                 "",
                 "    return obj;",
                 "  }",
@@ -176,7 +176,7 @@
         "library": {},
         "scene": {
             "World.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-2.596710681915283},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":18,\"y\":0.2,\"z\":16},\"uniqueId\":192,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true},{\"t\":\"MapGenerator\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.2120892185652084e-15,\"y\":25.424053192138672,\"z\":-10.967114448547363},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":70,\"y\":0,\"z\":4.9937649197972445e-31},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":200,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":202,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-2.596710681915283},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":18,\"y\":0.2,\"z\":16},\"uniqueId\":5138,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true},{\"t\":\"MapGenerator\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.2120892185652084e-15,\"y\":25.424053192138672,\"z\":-10.967114448547363},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":70,\"y\":0,\"z\":4.9937649197972445e-31},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5146,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5148,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
             ]
         },
         "material": {
