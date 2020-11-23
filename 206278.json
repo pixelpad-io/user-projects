@@ -151,7 +151,13 @@
                 "  Update() {",
                 "  ",
                 "  }",
-                "  ",
+                "",
+                "  OnTriggerEnter(other : Collider){",
+                "    if(other.gameObject.prefabName == \"Block\"){",
+                "      consolelog(\"acertou um\");",
+                "    }",
+                "  }",
+                "",
                 "}",
                 ""
             ]
@@ -193,7 +199,7 @@
                 "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":2,\"z\":1},\"uniqueId\":37144,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Wall.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null}]}"
             ],
             "SpawnArea.prefab": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Sphere\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":4,\"y\":4,\"z\":4},\"uniqueId\":172531,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"sphere\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SphereCollider\",\"_isTrigger\":true,\"_layer\":1,\"_layerMask\":1,\"radius\":1}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Sphere\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":4,\"y\":4,\"z\":4},\"uniqueId\":173047,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"sphere\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SphereCollider\",\"_isTrigger\":true,\"_layer\":1,\"_layerMask\":1,\"radius\":1},{\"t\":\"SpawnArea\"}],\"prefabName\":null}]}"
             ]
         }
     }
