@@ -79,7 +79,6 @@
                 "  }",
                 "",
                 "  AddBlock(i,j){",
-                "",
                 "      var xx = i + (block.transform.localScale.x/2);",
                 "      var yy = (block.transform.localScale.y/2);",
                 "      var zz =  j + (block.transform.localScale.z/2);",
