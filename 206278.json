@@ -97,7 +97,7 @@
                 "",
                 "  AddPlayer(i,j,pNum){",
                 "    var name = (pNum == 1)? \"PlayerOne\" : \"PlayerTwo\";",
-                "    var block = Instantiate(\"Highlight\");",
+                "    var block = Instantiate(name);",
                 "",
                 "    var pos = this.transform.position;",
                 "    var xx = pos.x - (this.width/2) + i + (block.transform.localScale.x/2);",
