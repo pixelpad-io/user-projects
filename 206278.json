@@ -125,7 +125,7 @@
                 "  AddPlayer(i,j,pNum){",
                 "    var name = (pNum == 1)? \"PlayerOne\" : \"PlayerTwo\";",
                 "    var player = Instantiate(name);",
-                "    this.PlaceOnTopOfFloor(i,j,player);",
+                "    player = this.PlaceOnTopOfFloor(i,j,player);",
                 "",
                 "    var spawnArea = Instantiate(\"SpawnArea\");",
                 "  }",
@@ -136,6 +136,8 @@
                 "    var yy = pos.y + (obj.transform.localScale.y/2) + (this.transform.localScale.y/2);",
                 "    var zz =  pos.z - (this.height/2) + j + (obj.transform.localScale.z/2);",
                 "    obj.transform.position = new Vector3(xx, yy, zz)",
+                "",
+                "    return obj;",
                 "  }",
                 "}",
                 ""
