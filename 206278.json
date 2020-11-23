@@ -62,7 +62,7 @@
                 "    this.width = Math.floor(this.transform.localScale.x);",
                 "    for(var i = 0 ; i < this.width ; i++){",
                 "      for(var j = 0 ; j < this.height ; j++){",
-                "        if((i != 0 || j != 0) && (i != width || j != Height)){",
+                "        if((i != 0 || j != 0) && (i != this.width || j != this.height)){",
                 "          if(Random.Range(0,2,true) == 0){",
                 "                this.AddBlock(i,j);",
                 "          }",
