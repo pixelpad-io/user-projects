@@ -65,6 +65,8 @@
                 "        if((i != 0 && j != 0) || (i != this.width  && j != this.height)){",
                 "          if(Random.Range(0,2,true) == 0){",
                 "                this.AddBlock(i,j);",
+                "          }else{",
+                "            this.AddSpherek(i,j);",
                 "          }",
                 "        }else{",
                 "",
