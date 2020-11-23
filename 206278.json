@@ -41,7 +41,6 @@
                 "    if(Input.GetKey(KeyCode.S)){",
                 "      pos = new Vector3(pos.x, pos.y, pos.z + (this.moveSpeed * Time.deltaTime));",
                 "    }",
-                "    consolelog(pos);",
                 "",
                 "    if(pos != this.transform.position){",
                 "      this.transform.position = pos;",
