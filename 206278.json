@@ -44,7 +44,7 @@
                 "  }",
                 "",
                 "  if(newPos != pos){",
-                "   this.transform.position = newPos;",
+                "    this.transform.position = newPos;",
                 "  }",
                 "  }",
                 "",
