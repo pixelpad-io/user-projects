@@ -126,7 +126,7 @@
                 "    var player = Instantiate(name);",
                 "",
                 "    this.PlaceOnTopOfFloor(i,j,player);",
-                "    player.GetComponent(PlayerController).FreezeYPos();",
+                "    player.GetComponent(PlayerController).freezedYPos = player.transform.position.y;",
                 "  }",
                 "",
                 "  PlaceOnTopOfFloor(i,j,obj){",
