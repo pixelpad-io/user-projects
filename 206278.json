@@ -19,6 +19,9 @@
             "PlayerController": [
                 "class PlayerController extends MonoBehaviour {",
                 "",
+                "  @SerializeField",
+                "  playerNumber;",
+                "",
                 "  moveSpeed = 5;",
                 "",
                 "  //Start is called before the first frame update",
