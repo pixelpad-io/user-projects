@@ -47,7 +47,7 @@
                 "      this.left = KeyCode.LeftArrow;",
                 "    }",
                 "",
-                "    FreezeYPos();",
+                "    this.FreezeYPos();",
                 "  }",
                 "  ",
                 "  //Update is called once per frame",
