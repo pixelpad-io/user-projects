@@ -156,7 +156,7 @@
                 "",
                 "  OnTriggerEnter(other : Collider){",
                 "    consolelog(other.gameObject.name);",
-                "      if(other.gameObject.prefabName == \"Block (Clone)\"){",
+                "      if(other.gameObject.name == \"Block (Clone)\"){",
                 "        Destroy(other);",
                 "      }",
                 "  }",
