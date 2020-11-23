@@ -130,7 +130,7 @@
                 "",
                 "    this.PlaceOnTopOfFloor(i,j,player);",
                 "",
-                "    player.GetComponentInChildren(PlayerController).FreezedYPos();",
+                "    player.GetComponentInChildren(PlayerController).FreezeYPos();",
                 "  }",
                 "",
                 "  PlaceOnTopOfFloor(i,j,obj){",
