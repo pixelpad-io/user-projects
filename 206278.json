@@ -70,7 +70,7 @@
                 "  }",
                 "",
                 "  FreezeYPos(){",
-                "    this.freezedYPos = this.transform.position;.y;",
+                "    this.freezedYPos = this.transform.position.y;",
                 "  }",
                 "}",
                 ""
