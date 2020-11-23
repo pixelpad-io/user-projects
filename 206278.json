@@ -119,10 +119,15 @@
         },
         "material": {
             "PlayerOne.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.7337058535872384,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.5333808773126227,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             ],
             "Block.mat": [
                 "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.2259961222902127,\"g\":0.22599589629409042,\"b\":0.22599589629409042},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.2682130456032875,\"g\":0.6060660171779821,\"b\":0.4220456416320687},\"specularPower\":15.659999999999998,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            ],
+            "PlayerTwo.mat": [
+                "//PlayerTwo.mat",
+                "",
+                ""
             ]
         },
         "prefab": {
@@ -130,7 +135,10 @@
                 "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":37865,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Block.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true}],\"prefabName\":null}]}"
             ],
             "PlayerOne.prefab": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":131798,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"PlayerOne.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"PlayerController\"}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":132712,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"PlayerOne.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"PlayerController\",\"playerNumber\":\"1\"}],\"prefabName\":null}]}"
+            ],
+            "PlayerTwo.prefab": [
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":133232,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"PlayerTwo.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"PlayerController\",\"playerNumber\":\"2\"}],\"prefabName\":null}]}"
             ]
         }
     }
