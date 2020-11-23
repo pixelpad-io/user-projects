@@ -48,6 +48,30 @@
                 "  }",
                 "}",
                 ""
+            ],
+            "MapGenerator": [
+                "class MapGenerator extends MonoBehaviour {",
+                "",
+                "  mapMatrix;",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "    var height = Math.floor(this.transform.localScale.z);",
+                "    var width = Math.floor(this.transform.localScale.x);",
+                "    for(var i = 0 ; i < width ; i++){",
+                "      for(var j = 0 ; j < height ; j++){",
+                "        if(i > 0 && i < width && j > 0 && j < height){",
+                "          ",
+                "        }",
+                "      }",
+                "    }",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "  ",
+                "  }",
+                "}",
+                ""
             ]
         },
         "model": {},
@@ -56,7 +80,7 @@
         "library": {},
         "scene": {
             "World.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-2.596710681915283},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":18,\"y\":0.2,\"z\":16},\"uniqueId\":24130,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Player\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":1.1586766242980957,\"y\":1.6439785957336426,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":24138,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Player.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"PlayerController\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.2120892185652084e-15,\"y\":15.061921119689941,\"z\":12.267314910888672},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":45.000000000000014,\"y\":180,\"z\":4.9937649197972445e-31},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":24146,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-8.995967132789888e-15},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":24148,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-2.596710681915283},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":18,\"y\":0.2,\"z\":16},\"uniqueId\":26933,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Player\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":1.1586766242980957,\"y\":1.6439785957336426,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":26941,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Player.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false},{\"t\":\"PlayerController\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.2120892185652084e-15,\"y\":15.061921119689941,\"z\":12.267314910888672},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":45.000000000000014,\"y\":180,\"z\":4.9937649197972445e-31},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":26949,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.000000000000014,\"z\":-1.3493950699184832e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":26951,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null}]}"
             ]
         },
         "material": {
