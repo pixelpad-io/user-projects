@@ -156,7 +156,7 @@
                 "  ",
                 "  }",
                 "",
-                "  OnTriggerEnter(other : Collider){",
+                "  OnTriggerEnter(other : Collision){",
                 "    consolelog(other.gameObject.name);",
                 "      if(other.gameObject.name == \"Block (Clone)\"){",
                 "        consolelog(\"ENTROU!!\");",
