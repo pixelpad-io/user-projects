@@ -93,6 +93,7 @@
                 "      yy = pos.y + (block.transform.localScale.y/2) + (this.transform.localScale.y/2);",
                 "      zz =  pos.z - (this.height/2) + j + (block.transform.localScale.z/2);",
                 "      block.transform.position = new Vector3(xx, yy, zz)",
+                "  }",
                 "}",
                 ""
             ]
