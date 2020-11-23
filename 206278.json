@@ -126,7 +126,6 @@
                 "    var name = (pNum == 1)? \"PlayerOne\" : \"PlayerTwo\";",
                 "    var player = Instantiate(name);",
                 "    player = this.PlaceOnTopOfFloor(i,j,player);",
-                "",
                 "    consolelog(\"mudou a posicao\")",
                 "",
                 "    var spawnArea = Instantiate(\"SpawnArea\");",
