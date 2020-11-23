@@ -128,7 +128,7 @@
                 "    this.PlaceOnTopOfFloor(i,j,player);",
                 "",
                 "    var spawnArea = Instantiate(\"SpawnArea\");",
-                "    spawnArea.transform.position = new Vector3(player.transform.position);",
+                "    spawnArea.transform.position = new Vector3(player.x,player.y,player.z);",
                 "  }",
                 "",
                 "  PlaceOnTopOfFloor(i,j,obj){",
