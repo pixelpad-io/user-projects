@@ -162,7 +162,7 @@
                 "  OnTriggerStay(other : Collider){",
                 "      if(this.detectColisions && other.gameObject.prefabParent.name == \"Block (Clone)\"){",
                 "        consolelog(\"ENTROU!!\");",
-                "        Destroy(other.transform);",
+                "        Destroy(other);",
                 "      }",
                 "  }",
                 "",
