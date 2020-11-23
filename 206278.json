@@ -48,7 +48,7 @@
                 "    }",
                 "",
                 "    var spawnArea = Instantiate(\"SpawnArea\");",
-                "    spawnArea.transform.position = this.transform.position",
+                "    spawnArea.transform.position = this.transform.position;",
                 "  }",
                 "  ",
                 "  //Update is called once per frame",
