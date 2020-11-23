@@ -33,6 +33,7 @@
                 "  if(Input.GetKey(KeyCode.A)){",
                 "    newPos = new Vector3(newPos.x + (10 * Time.deltaTime),newPos.y,newPos.z);",
                 "  }",
+                "  this.transform.position = newPos;",
                 "  }",
                 "}",
                 ""
