@@ -71,7 +71,7 @@
                 "",
                 "    // Bombs",
                 "    if(Input.GetKey(this.bomb)){",
-                "      consolelog(\"KABUM\")",
+                "      consolelog(\"KABUM\");",
                 "    }",
                 "",
                 "    if(pos != this.transform.position){",
