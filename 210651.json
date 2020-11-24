@@ -2037,7 +2037,7 @@
                 "    var p = position.subtract(box.position);",
                 "",
                 "    //Rotate the resulting Vector by the inverted box rotation (to make the comparison axis aligned)",
-                "    p.rotateByQuaternionToRef(BABYLON.Quaternion.Inverse(box.rotationQuaternion), p);",
+                "    p.rotateByQuaternionToRef(BABYLON.Quaternion.Inverse(box.absoluteRotationQuaternion), p);",
                 "",
                 "    var s = box.scaling;",
                 "",
