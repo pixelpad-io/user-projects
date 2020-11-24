@@ -2191,6 +2191,7 @@
                 "",
                 "    //We have to call this setter once in order for friction to work...",
                 "    this.physicsImpostor.friction = 0.5;",
+                "    this.go.transform.SetParent(prevParent);",
                 "",
                 "",
                 "    if (this.coll != null && this.rb != null) {",
