@@ -83,6 +83,7 @@
                 "",
                 "    if(this.canMove || (!this.canMove && newLooking != this.playerLooking)){",
                 "      this.Move(newLooking);",
+                "      this.canMove = true;",
                 "    }",
                 "",
                 "    // Bombs",
