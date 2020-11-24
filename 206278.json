@@ -190,6 +190,10 @@
                 "  Update() {",
                 "  ",
                 "  }",
+                "",
+                "  OnTriggerEnter(other : Collider){",
+                "    consolelog(other.gameObject.name);",
+                "  }",
                 "}",
                 ""
             ]
