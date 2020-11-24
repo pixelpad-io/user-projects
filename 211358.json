@@ -40,7 +40,10 @@
                 "",
                 "  OnTriggerEnter(other : Collider)",
                 "  {",
-                "    Debug.Log(321)",
+                "    if (other.GetComponentInParent(ClockArrm))",
+                "    {",
+                "      SceneManager.ReloadCurrentScene();",
+                "    }",
                 "  }",
                 "}",
                 ""
@@ -59,6 +62,8 @@
                 "  Update() {",
                 "    this.transform.position = this.player.transform.position.clone();",
                 "  }",
+                "",
+                "  ",
                 "}",
                 ""
             ],
