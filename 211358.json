@@ -31,7 +31,8 @@
                 "    var horizontal = Input.GetAxis(\"Horizontal\");",
                 "    var vertical = Input.GetAxis(\"Vertical\");",
                 "",
-                "    this.",
+                "    this.rb.velocity.x = horizontal;",
+                "    this.rb.velocity.z = vertical;",
                 "  }",
                 "}",
                 ""
