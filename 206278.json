@@ -94,7 +94,7 @@
                 "",
                 "    this.transform.position = new Vector3(pos.x + (this.playerLooking.x * this.moveSpeed),",
                 "                                          pos.y + (this.playerLooking.y * this.moveSpeed),",
-                "                                          pos.z + (this.playerLooking.z * this.moveSpeed))",
+                "                                          pos.z + (this.playerLooking.z * this.moveSpeed));",
                 "  }",
                 "",
                 "  ",
