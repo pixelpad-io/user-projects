@@ -70,12 +70,11 @@
                 "  //Update is called once per frame",
                 "  Update() {",
                 "    this.transform.Rotate(0, Time.deltaTime * this.speed, 0, BABYLON.Space.WORLD);",
-                "  ",
                 "  }",
                 "",
                 "  OnTriggerEnter(other : Collider)",
                 "  {",
-                "    ",
+                "",
                 "  }",
                 "}",
                 ""
