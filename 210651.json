@@ -3141,6 +3141,7 @@
                 "  {",
                 "    this._size?.onChange.remove(this.resizeObserver);",
                 "    this._center?.onChange.remove(this.recenterObserver);",
+                "    this.boundingBoxLines?.dispose();",
                 "",
                 "  }",
                 "",
