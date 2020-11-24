@@ -74,7 +74,10 @@
                 "",
                 "  OnTriggerEnter(other : Collider)",
                 "  {",
-                "",
+                "    if (other.GetComponent(Player))",
+                "    {",
+                "      ",
+                "    }",
                 "  }",
                 "}",
                 ""
