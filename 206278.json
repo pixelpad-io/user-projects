@@ -90,7 +90,7 @@
                 "    var pos = this.transform.position;",
                 "    consolelog(151852);",
                 "    var face = 151852",
-                "    children[0].transform.position = new Vector3(this.playerLooking.x  * 0.6,this.playerLooking.y  * 0.6,this.playerLooking.z  * 0.6);",
+                "    //children[0].transform.position = new Vector3(this.playerLooking.x  * 0.6,this.playerLooking.y  * 0.6,this.playerLooking.z  * 0.6);",
                 "  }",
                 "",
                 "  ",
