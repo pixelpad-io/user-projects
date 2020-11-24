@@ -88,7 +88,7 @@
                 "",
                 "  MoveForward(){",
                 "    var pos = this.transform.position;",
-                "    consolelog(GameObject.Find(this.prefabParent.gameObject.name).transform.Find(\"Face\"));",
+                "    consolelog(GameObject.Find(this.gameObject.name).transform.Find(\"Face\"));",
                 "    var face = 151852",
                 "    //children[0].transform.position = new Vector3(this.playerLooking.x  * 0.6,this.playerLooking.y  * 0.6,this.playerLooking.z  * 0.6);",
                 "  }",
