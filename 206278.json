@@ -71,7 +71,7 @@
                 "",
                 "    // Bombs",
                 "    if(Input.GetKey(this.bomb)){",
-                "      var bomb = Instantiate(\"Bomb\")",
+                "      var bomb = Instantiate(\"Bomb\");",
                 "    }",
                 "",
                 "    if(pos != this.transform.position){",
