@@ -2039,7 +2039,7 @@
                 "    //Rotate the resulting Vector by the inverted box rotation (to make the comparison axis aligned)",
                 "    p.rotateByQuaternionToRef(BABYLON.Quaternion.Inverse(box.absoluteRotationQuaternion), p);",
                 "",
-                "    var s = box.scaling;",
+                "    var s = box.absoluteScaling;",
                 "",
                 "    //Getting the closest point is easy since it's axis aligned",
                 "    var closesPoint = new BABYLON.Vector3(",
