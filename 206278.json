@@ -88,7 +88,7 @@
                 "",
                 "  MoveForward(){",
                 "    var pos = this.transform.position;",
-                "    ",
+                "    consolelog(\"Rorando\");",
                 "    this.prefabParent.transform.localRotation = new Quaternion(this.playerLooking.x * 90, this.playerLooking.y * 90, this.playerLooking.z * 90, Math.cos(90 / 2));",
                 "  }",
                 "",
