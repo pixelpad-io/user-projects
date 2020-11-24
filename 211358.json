@@ -37,6 +37,7 @@
                 "",
                 "    var input = new Vector3(horizontal, 0, vertical);",
                 "",
+                "",
                 "    this.rb.velocity = input;",
                 "  }",
                 "",
