@@ -55,6 +55,25 @@
                 "  }",
                 "}",
                 ""
+            ],
+            "ClockArrm": [
+                "class ClockArrm extends MonoBehaviour {",
+                "",
+                "  @SerializeField",
+                "  speed : number = 1;",
+                "",
+                "  //Start is called before the first frame update",
+                "  Start() {",
+                "  ",
+                "  }",
+                "  ",
+                "  //Update is called once per frame",
+                "  Update() {",
+                "    this.transform.Rotate(0, Time.deltaTime * this.speed, 0, BABYLON.Space.World);",
+                "  ",
+                "  }",
+                "}",
+                ""
             ]
         },
         "model": {},
