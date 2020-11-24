@@ -1365,7 +1365,7 @@
                 ""
             ],
             "MainGame": [
-                "/*",
+                "//*",
                 "ENABLE_EDITOR = true;",
                 "",
                 "",
