@@ -89,7 +89,7 @@
                 "  MoveForward(){",
                 "    var pos = this.transform.position;",
                 "    ",
-                "    this.prefabParent.transform.localRotation = new Vector3(this.playerLooking.x * 90, this.playerLooking.y * 90, this.playerLooking.z * 90);",
+                "    this.prefabParent.transform.localRotation = new Quaternion(this.playerLooking.x * 90, this.playerLooking.y * 90, this.playerLooking.z * 90, Math.cos(90 / 2));",
                 "  }",
                 "",
                 "  ",
