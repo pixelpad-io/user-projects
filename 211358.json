@@ -40,7 +40,7 @@
                 "",
                 "  OnTriggerEnter(other : Collider)",
                 "  {",
-                "    if (other.GetComponentInParent(ClockArrm))",
+                "    if (other.GetComponentInParent(ClockArm))",
                 "    {",
                 "      SceneManager.ReloadCurrentScene();",
                 "    }",
@@ -67,8 +67,8 @@
                 "}",
                 ""
             ],
-            "ClockArrm": [
-                "class ClockArrm extends MonoBehaviour {",
+            "ClockArm": [
+                "class ClockArm extends MonoBehaviour {",
                 "",
                 "  @SerializeField",
                 "  speed : number = 1;",
