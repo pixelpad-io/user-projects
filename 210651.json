@@ -2181,7 +2181,7 @@
                 "    var mass = this.rb ? this.rb.mass : 0;",
                 "    ",
                 "    //We unparent before creating the physics impostor",
-                "    //This is because of a bug where the parents rotation is not considered when creating a physics impostor",
+                "    //This is because of a bug where the parents rotation is not considered properly when creating a physics impostor",
                 "    var prevParent = this.go.transform.parent;",
                 "    this.go.transform.SetParent(null, true);",
                 "",
