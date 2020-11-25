@@ -253,8 +253,11 @@
                 "  Update() {",
                 "  ",
                 "  }",
-                "",
-                "  ",
+                "  OnTriggerEnter(other : Collider){",
+                "    if(other.transform.parent.name == \"Block (Clone)\"){",
+                "      Destroy(other.gameObject);",
+                "    }",
+                "  }",
                 "}",
                 ""
             ]
