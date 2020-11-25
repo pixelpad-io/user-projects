@@ -217,6 +217,8 @@
             "BombController": [
                 "class BombController extends MonoBehaviour {",
                 "",
+                "  timeToExplode = 3;",
+                "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
                 "  ",
@@ -224,7 +226,14 @@
                 "  ",
                 "  //Update is called once per frame",
                 "  Update() {",
-                "  ",
+                "    this.timeToExplode -= Time.deltaTime;",
+                "    if(this.timeToExplode <= 0){",
+                "      this.Explode();",
+                "    }",
+                "  }",
+                "",
+                "  Explode(){",
+                "    ",
                 "  }",
                 "}",
                 ""
@@ -274,6 +283,9 @@
             ],
             "Bomb.prefab": [
                 "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Sphere\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":69630,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"sphere\",\"materialName\":\"Bomb.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BombController\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0.42000000000000015,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.1,\"y\":0.8,\"z\":0.1},\"uniqueId\":69631,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Wick.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
+            ],
+            "Explosion.prefab": [
+                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":70089,\"ser_children\":[]},{\"t\":\"SphereCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"radius\":1}],\"prefabName\":null}]}"
             ]
         }
     }
