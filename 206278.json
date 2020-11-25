@@ -235,6 +235,8 @@
                 "  Explode(){",
                 "    var explosion = Instantiate(\"Explosion\");",
                 "    explosion.transform.position = this.transform.position;",
+                "",
+                "    Destroy(this.transform.parent.gameObject);",
                 "  }",
                 "}",
                 ""
