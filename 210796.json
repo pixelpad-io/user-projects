@@ -1,0 +1,33 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n    this.renderer.LoadMesh(\"ball.obj\");\n    saveScene(\"Scene.scn\", \"this is a new scene i'm saving\")\n    var data = getScene(\"Scen0.scn\");\n    consolelog(data);\n\n    //saveScene(\"gameScene\", \"JSON string of the scene\")\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    /*\n    var scene = sceneTriggered();\n    if (scene){\n      highlightScene(scene);\n    }\n    */\n  }\n}\n\n\n\n\n\n"
+            }
+        ],
+        "model": {
+            "ball.obj": {
+                "uri": "https://s3-us-west-1.amazonaws.com/test.pixelpad.io/eplusbase.obj"
+            }
+        },
+        "texture": {
+            "puppy.dds": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.210796.puppy.dds"
+            }
+        },
+        "sound": {},
+        "library": {},
+        "scene": {
+            "Scene0.scn": "this is a new scene i'm saving"
+        },
+        "material": {
+            "material0": "//material: material0\n\n//jamie",
+            "material1": "//material: material1\n\n//was ",
+            "material2": "//material: material2\n\n//here"
+        },
+        "prefab": {
+            "prefab0": "//prefab: prefab0\n\n//here 2",
+            "prefab1": "//prefab: prefab1\n\n//here 3"
+        }
+    }
+}
