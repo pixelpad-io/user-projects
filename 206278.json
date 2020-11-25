@@ -233,7 +233,8 @@
                 "  }",
                 "",
                 "  Explode(){",
-                "    ",
+                "    var explosion = Instantiate(\"Explosion\");",
+                "    explosion.transform.position = this.transform.position;",
                 "  }",
                 "}",
                 ""
