@@ -246,7 +246,7 @@
                 "",
                 "  //Start is called before the first frame update",
                 "  Start() {",
-                "  ",
+                "    consolelog(\"Kabum!!\")",
                 "  }",
                 "  ",
                 "  //Update is called once per frame",
