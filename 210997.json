@@ -1,37 +1,37 @@
 {
     "assets": {
-        "code": {
-            "main": [
-                "class MainGame extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    alert(\"here\");",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "    if (Input.GetKeyDown(KeyCode.Space)){",
-                "      ",
-                "    }",
-                "",
-                "",
-                "  }",
-                "}",
-                ""
-            ]
-        },
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n    alert(\"here\");\n  }\n  \n  //Update is called once per frame\n  Update() {\n    if (Input.GetKeyDown(KeyCode.Space)){\n      \n    }\n\n\n  }\n}\n"
+            },
+            {
+                "Script0": "class Script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            },
+            {
+                "folder0": [
+                    {
+                        "Script2": "class Script2 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                    },
+                    {
+                        "Script1": "class Script1 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                    },
+                    {
+                        "Script3": "class Script3 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                    }
+                ]
+            },
+            {
+                "Script4": "class Script4 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            },
+            {
+                "Script5": "class Script5 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            }
+        ],
         "model": {},
         "texture": {},
         "sound": {},
         "library": {},
-        "scene": {
-            "MainScene.scn": [
-                "//MainScene.scn",
-                "",
-                ""
-            ]
-        },
+        "scene": {},
         "material": {},
         "prefab": {}
     }
