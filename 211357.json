@@ -2,10 +2,10 @@
     "assets": {
         "code": [
             {
-                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n"
+                "main": "class MainGame extends MonoBehaviour {\n    \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
-                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n"
+                "main": "class MainGame extends MonoBehaviour {\n    \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
                 "Script0": "class Script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
@@ -31,12 +31,6 @@
                         "Script6": "class Script6 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
                     {
-                        "Script6": "class Script6 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                    },
-                    {
-                        "Script8": "class Script8 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                    },
-                    {
                         "Script8": "class Script8 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
                     {
@@ -45,16 +39,7 @@
                                 "Script2": "class Script2 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                             },
                             {
-                                "Script2": "class Script2 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                            },
-                            {
                                 "Script9": "class Script9 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                            },
-                            {
-                                "Script9": "class Script9 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                            },
-                            {
-                                "Script4": "class Script4 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                             },
                             {
                                 "Script4": "class Script4 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
@@ -88,7 +73,7 @@
             }
         },
         "texture": {
-            "\n          \n        \n          \n        \n          \n        earth3.png": {}
+            "\n          \n        earth3.png": {}
         },
         "sound": {},
         "library": {},
