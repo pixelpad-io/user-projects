@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "code": {
+            "main": ""
+        },
+        "model": {
+            "model0.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.16614.206858.model0.obj"
+            }
+        },
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {
+            "Scene0.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
+        },
+        "material": {},
+        "prefab": {}
+    }
+}
