@@ -52,6 +52,21 @@
             }
         },
         "texture": {
+            "2.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.2.png"
+            },
+            "dogelai.jpg": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.dogelai.jpg"
+            },
+            "doog1.jpg": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.doog1.jpg"
+            },
+            "dogacr.jpg": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.dogacr.jpg"
+            },
+            "planet2.png": {
+                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.planet2.png"
+            },
             "earth3.png": {
                 "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.earth3.png"
             }
