@@ -56,6 +56,21 @@
                 "earth3.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.earth3.png"
                 }
+            },
+            {
+                "planet2.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.planet2.png"
+                }
+            },
+            {
+                "planet1.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.planet1.png"
+                }
+            },
+            {
+                "tile.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.tile.png"
+                }
             }
         ],
         "sound": {},
