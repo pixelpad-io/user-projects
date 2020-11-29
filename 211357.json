@@ -110,7 +110,17 @@
         ],
         "library": {},
         "scene": {},
-        "material": [],
+        "material": [
+            {
+                "Material0.mat": "//Material0.mat\n\n"
+            },
+            {
+                "Material2.mat": "//Material2.mat\n\n"
+            },
+            {
+                "Material3.mat": "//Material3.mat\n\n"
+            }
+        ],
         "prefab": []
     }
 }
