@@ -46,11 +46,13 @@
                 "Script1": "class Script1 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             }
         ],
-        "model": {
-            "virus.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus.obj"
+        "model": [
+            {
+                "virus.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus.obj"
+                }
             }
-        },
+        ],
         "texture": [
             {
                 "folder0": [
@@ -81,10 +83,26 @@
                 ]
             }
         ],
-        "sound": {},
+        "sound": [
+            {
+                "cow.mp3": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cow.mp3"
+                }
+            },
+            {
+                "og.mp3": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.og.mp3"
+                }
+            },
+            {
+                "cat.mp3": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cat.mp3"
+                }
+            }
+        ],
         "library": {},
         "scene": {},
-        "material": {},
-        "prefab": {}
+        "material": [],
+        "prefab": []
     }
 }
