@@ -5,7 +5,7 @@
                 "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n\n\n\n\n"
             },
             {
-                "folder0": [
+                " folder0": [
                     {
                         "Script6": "class Script6 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
@@ -24,7 +24,7 @@
                 "Script3": "class Script3 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
-                "folder2": [
+                " folder2": [
                     {
                         "Script2": "class Script2 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
@@ -48,7 +48,7 @@
         ],
         "model": [
             {
-                "folder0": [
+                " folder0": [
                     {
                         "virus.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus.obj"
@@ -64,19 +64,19 @@
         ],
         "texture": [
             {
-                "folder0": [
+                " folder0": [
                     {
                         "planet1.png": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.planet1.png"
                         }
                     },
                     {
-                        "tile.png": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.tile.png"
-                        }
-                    },
-                    {
-                        "folder2": [
+                        " folder2": [
+                            {
+                                "tile.png": {
+                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.tile.png"
+                                }
+                            },
                             {
                                 "planet2.png": {
                                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.planet2.png"
@@ -94,14 +94,14 @@
         ],
         "sound": [
             {
-                "folder0": [
+                " folder0": [
                     {
                         "cat.mp3": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cat.mp3"
                         }
                     },
                     {
-                        "folder2": [
+                        " folder2": [
                             {
                                 "og.mp3": {
                                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.og.mp3"
@@ -120,7 +120,7 @@
         "library": {},
         "scene": [
             {
-                "scenefolder": [
+                " scenefolder": [
                     {
                         "Scene2.scn": "//Scene2.scn\n\n"
                     }
@@ -130,7 +130,7 @@
                 "Scene0.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":2.404575824737549,\"y\":3.7486724853515625,\"z\":4.010412693023682},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":720,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null}]}"
             },
             {
-                "scenefodler2": [
+                " scenefodler2": [
                     {
                         "Scene3.scn": "//Scene3.scn\n\n"
                     }
@@ -145,7 +145,7 @@
                 "Material0.mat": "//Material0.mat\n\n"
             },
             {
-                "materialsFodler": [
+                " materialsFodler": [
                     {
                         "Material3.mat": "//Material3.mat\n\n"
                     },
@@ -157,7 +157,7 @@
         ],
         "prefab": [
             {
-                "folder0": [
+                " folder0": [
                     {
                         "Prefab3.prefab": "//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n"
                     },
