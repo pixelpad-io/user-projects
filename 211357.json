@@ -155,6 +155,16 @@
                 ]
             }
         ],
-        "prefab": []
+        "prefab": [
+            {
+                "Prefab0.prefab": "//Prefab0.prefab\n\n"
+            },
+            {
+                "Prefab2.prefab": "//Prefab2.prefab\n\n//Prefab3.prefab\niojfojiawiofjewafjiawef\nfj\nawifwpaeijfe\neawjf\npwajifp\nwaejifweijfwaej\nfje\nwa3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n"
+            },
+            {
+                "Prefab3.prefab": "//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n//Prefab3.prefab\n\n"
+            }
+        ]
     }
 }
