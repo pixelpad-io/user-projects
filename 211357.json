@@ -85,11 +85,6 @@
         ],
         "sound": [
             {
-                "cow.mp3": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cow.mp3"
-                }
-            },
-            {
                 "folder0": [
                     {
                         "cat.mp3": {
@@ -102,6 +97,11 @@
                         }
                     }
                 ]
+            },
+            {
+                "cow.mp3": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cow.mp3"
+                }
             }
         ],
         "library": {},
