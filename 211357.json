@@ -20,9 +20,6 @@
                             {
                                 "folder3": [
                                     {
-                                        "Script4": "class Script4 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
-                                    },
-                                    {
                                         "Script9": "class Script9 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                                     }
                                 ]
