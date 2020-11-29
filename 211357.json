@@ -90,14 +90,18 @@
                 }
             },
             {
-                "og.mp3": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.og.mp3"
-                }
-            },
-            {
-                "cat.mp3": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cat.mp3"
-                }
+                "folder0": [
+                    {
+                        "cat.mp3": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.cat.mp3"
+                        }
+                    },
+                    {
+                        "og.mp3": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.og.mp3"
+                        }
+                    }
+                ]
             }
         ],
         "library": {},
