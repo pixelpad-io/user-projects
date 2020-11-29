@@ -109,7 +109,7 @@
             }
         ],
         "library": {},
-        "scene": {},
+        "scene": [],
         "material": [
             {
                 "Material0.mat": "//Material0.mat\n\n"
