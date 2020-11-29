@@ -50,16 +50,16 @@
             {
                 "folder0": [
                     {
+                        "virus2.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus2.obj"
+                        }
+                    },
+                    {
                         "virus.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus.obj"
                         }
                     }
                 ]
-            },
-            {
-                "virus2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus2.obj"
-                }
             }
         ],
         "texture": [
