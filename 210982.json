@@ -1,506 +1,122 @@
 {
     "assets": {
-        "code": {
-            "main": [
-                "ENABLE_EDITOR = true;",
-                "",
-                "class MainGame extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "    ",
-                "  }",
-                "}",
-                ""
-            ],
-            "Shoot": [
-                "class Shoot extends MonoBehaviour {",
-                "",
-                "  @SerializeField",
-                "  shootForce;",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    this.GetComponent(Rigidbody).velocity = Vector3.BtoV(this.transform.transformNode.forward.multiplyByFloats(this.shootForce, this.shootForce, this.shootForce), new Vector3());",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "  ",
-                "  }",
-                "",
-                "}",
-                ""
-            ],
-            "PlayerController": [
-                "class PlayerController extends MonoBehaviour {",
-                "",
-                "  @SerializeField",
-                "  rotateSpeed = 1;",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "",
-                "  }",
-                "",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "    Cursor.lockState = CursorLockMode.Locked;",
-                "",
-                "",
-                "    var mouseXInput = Input.GetAxis(\"Mouse X\");",
-                "    var mouseYInput = Input.GetAxis(\"Mouse Y\");",
-                "",
-                "    this.transform.Rotate(mouseYInput, 0, 0);",
-                "    this.transform.parent.Rotate(0, mouseXInput,0);",
-                "",
-                "    if (Input.GetMouseButtonDown(0))",
-                "    {",
-                "      var go = Instantiate(\"ShootBall\");",
-                "      go.transform.position = this.transform.parent.position.clone();",
-                "      go.transform.localRotation = this.transform.rotation.clone();",
-                "    }",
-                "",
-                "    var x = GameObject.FindObjectOfType(Frog);",
-                "    if (!x)",
-                "    {",
-                "      SceneManager.LoadScene(\"MainScene.scn\");",
-                "    }",
-                "  }",
-                "}",
-                ""
-            ],
-            "Frog": [
-                "class Frog extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "    ",
-                "  //  this.transform.localScale.y = Math.sin(Time.time);",
-                "  //  this.transform.localScale.x = Math.cos(Time.time);",
-                "  }",
-                "",
-                "  OnCollisionEnter(other : Collision)",
-                "  {",
-                "    if(other.relativeVelocity.magnitude > 5) ",
-                "    {",
-                "      Destroy(this.gameObject);",
-                "    }",
-                "  }",
-                "}",
-                ""
-            ]
-        },
-        "model": {
-            "ball.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.ball.obj"
-            },
-            "grass.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.grass.obj"
-            },
-            "sky.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.sky.obj"
-            },
-            "frog.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.frog.obj"
-            },
-            "mountain.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.mountain.obj"
+        "code": [
+            {
+                "Bleg": [
+                    {
+                        "main": "ENABLE_EDITOR = true;\n\nclass MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    \n  }\n}\n"
+                    },
+                    {
+                        "Shoot": "class Shoot extends MonoBehaviour {\n\n  @SerializeField\n  shootForce;\n\n  //Start is called before the first frame update\n  Start() {\n    this.GetComponent(Rigidbody).velocity = Vector3.BtoV(this.transform.transformNode.forward.multiplyByFloats(this.shootForce, this.shootForce, this.shootForce), new Vector3());\n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n\n}\n"
+                    },
+                    {
+                        "Frog": "class Frog extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    \n  //  this.transform.localScale.y = Math.sin(Time.time);\n  //  this.transform.localScale.x = Math.cos(Time.time);\n  }\n\n  OnCollisionEnter(other : Collision)\n  {\n    if(other.relativeVelocity.magnitude > 5) \n    {\n      Destroy(this.gameObject);\n    }\n  }\n}\n"
+                    },
+                    {
+                        "PlayerController": "class PlayerController extends MonoBehaviour {\n\n  @SerializeField\n  rotateSpeed = 1;\n\n  //Start is called before the first frame update\n  Start() {\n\n  }\n\n  //Update is called once per frame\n  Update() {\n    Cursor.lockState = CursorLockMode.Locked;\n\n\n    var mouseXInput = Input.GetAxis(\"Mouse X\");\n    var mouseYInput = Input.GetAxis(\"Mouse Y\");\n\n    this.transform.Rotate(mouseYInput, 0, 0);\n    this.transform.parent.Rotate(0, mouseXInput,0);\n\n    if (Input.GetMouseButtonDown(0))\n    {\n      var go = Instantiate(\"ShootBall\");\n      go.transform.position = this.transform.parent.position.clone();\n      go.transform.localRotation = this.transform.rotation.clone();\n    }\n\n    var x = GameObject.FindObjectOfType(Frog);\n    if (!x)\n    {\n      SceneManager.LoadScene(\"MainScene.scn\");\n    }\n  }\n}\n"
+                    }
+                ]
             }
-        },
-        "texture": {
-            "Crate.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.Crate.png"
-            },
-            "rpg_pack.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.rpg_pack.png"
-            },
-            "sky.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.sky.png"
-            },
-            "frog.jpg": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.frog.jpg"
+        ],
+        "model": [
+            {
+                "Flip": [
+                    {
+                        "ball.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.ball.obj"
+                        }
+                    },
+                    {
+                        "mountain.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.mountain.obj"
+                        }
+                    },
+                    {
+                        "frog.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.frog.obj"
+                        }
+                    },
+                    {
+                        "sky.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.sky.obj"
+                        }
+                    },
+                    {
+                        "grass.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.grass.obj"
+                        }
+                    }
+                ]
             }
-        },
-        "sound": {},
+        ],
+        "texture": [
+            {
+                "Textures": [
+                    {
+                        "frog.jpg": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.frog.jpg"
+                        }
+                    },
+                    {
+                        "sky.png": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.sky.png"
+                        }
+                    },
+                    {
+                        "rpg_pack.png": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.rpg_pack.png"
+                        }
+                    },
+                    {
+                        "Crate.png": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210982.Crate.png"
+                        }
+                    },
+                    {
+                        "SubTextures": []
+                    }
+                ]
+            }
+        ],
+        "sound": [],
         "library": {},
-        "scene": {
-            "Flip.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Grass\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":100,\"y\":1,\"z\":100},\"uniqueId\":48676,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"grass.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":20,\"y\":1,\"z\":20},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48684,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":1,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48687,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Sky\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":-113.43724822998047,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":50,\"y\":50,\"z\":50},\"uniqueId\":48689,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"sky.obj\",\"materialName\":\"sky.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountains\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":272.56564272367035,\"y\":0,\"z\":-47.7838874230018},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48703,\"ser_children\":[{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-272.5656433105469,\"y\":0,\"z\":458.9344177246094},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8994653224945068,\"y\":1.8994653224945068,\"z\":1.8994653224945068},\"uniqueId\":48690,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":458.9344177246094},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9731962084770203,\"y\":0.9731962084770203,\"z\":0.9731962084770203},\"uniqueId\":48691,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":249.49974060058594},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060508728027,\"y\":1.8777060508728027,\"z\":1.8777060508728027},\"uniqueId\":48692,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":-233.2788848876953},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060508728027,\"y\":1.8777060508728027,\"z\":1.8777060508728027},\"uniqueId\":48693,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-292.56878662109375,\"y\":0,\"z\":-233.2788848876953},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9252570867538452,\"y\":0.9252570867538452,\"z\":0.9252570867538452},\"uniqueId\":48694,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-235.82135009765625,\"y\":0,\"z\":-348.8769836425781},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.2831873893737793,\"y\":1.2831873893737793,\"z\":1.2831873893737793},\"uniqueId\":48695,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":343.7403869628906,\"y\":0,\"z\":-531.4220581054688},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.2831873769024265,\"y\":1.2831873893737793,\"z\":1.2831873769024265},\"uniqueId\":48696,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":455.9784851074219,\"y\":0,\"z\":-184.30075073242188},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060208218639,\"y\":1.8777060508728027,\"z\":1.8777060208218639},\"uniqueId\":48697,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":127.68667602539062,\"y\":0,\"z\":-415.8239440917969},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060208218639,\"y\":1.8777060508728027,\"z\":1.8777060208218639},\"uniqueId\":48698,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":286.9928894042969,\"y\":0,\"z\":-415.8239440917969},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9252571121747751,\"y\":0.9252570867538452,\"z\":0.9252571121747751},\"uniqueId\":48699,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":168.8226318359375,\"y\":0,\"z\":479.84417724609375},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.7736556601513813,\"y\":1.773655652999878,\"z\":1.7736556601513813},\"uniqueId\":48700,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":424.2124938964844,\"y\":0,\"z\":491.8426513671875},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":2.5070332674203053,\"y\":2.507033348083496,\"z\":2.5070332674203053},\"uniqueId\":48701,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":349.1468811035156,\"y\":0,\"z\":223.7499542236328},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.5122117590117168,\"y\":1.512211799621582,\"z\":1.5122117590117168},\"uniqueId\":48702,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.5142258405685425,\"y\":4.074954986572266,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-90.00000000000007},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-7.070121765136719,\"z\":1},\"uniqueId\":48704,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":10,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":2.8714377880096436,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48712,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":1.9808855056762695,\"y\":5.940030574798584,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48720,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.48553818464279175,\"y\":5.938290596008301,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48728,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-3.016632080078125,\"y\":5.938290596008301,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48736,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.5212854146957397,\"y\":5.940030574798584,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48744,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.6709696054458618,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":180},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48752,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-3.785433292388916,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":180},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48760,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null}]}"
-            ]
-        },
-        "material": {
-            "Crate.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"Crate.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "rpg_pack.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"rpg_pack.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":3.8100000000000107,\"roughness\":0.7899999999999976,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "sky.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"sky.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "frog.mat": [
-                "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"frog.jpg\",\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1}"
-            ],
-            "yellow.mat": [
-                "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.41994937445866465,\"b\":0},\"mainTexture\":\"\",\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1}"
-            ]
-        },
-        "prefab": {
-            "ShootBall.prefab": [
-                "{",
-                "   \"t\":\"Scene\",",
-                "   \"rootObjs\":[",
-                "      {",
-                "         \"t\":\"GameObject\",",
-                "         \"name\":\"Sphere\",",
-                "         \"components\":[",
-                "            {",
-                "               \"t\":\"Transform\",",
-                "               \"_position\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               },",
-                "               \"_eulerAngles\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               },",
-                "               \"_scale\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":1,",
-                "                  \"z\":1",
-                "               },",
-                "               \"uniqueId\":141475,",
-                "               \"ser_children\":[",
-                "                  ",
-                "               ]",
-                "            },",
-                "            {",
-                "               \"t\":\"Renderer\",",
-                "               \"meshName\":\"ball.obj\",",
-                "               \"materialName\":\"yellow.mat\",",
-                "               \"scale\":0.02,",
-                "               \"castShadows\":true,",
-                "               \"receiveShadows\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"Shoot\",",
-                "               \"shootForce\":\"25\"",
-                "            },",
-                "            {",
-                "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
-                "               \"_isKinematic\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"SphereCollider\",",
-                "               \"_isTrigger\":false,",
-                "               \"_layer\":1,",
-                "               \"_layerMask\":1",
-                "            }",
-                "         ],",
-                "         \"prefabName\":null",
-                "      }",
-                "   ]",
-                "}"
-            ],
-            "Robot.prefab": [
-                "{",
-                "   \"t\":\"Scene\",",
-                "   \"rootObjs\":[",
-                "      {",
-                "         \"t\":\"GameObject\",",
-                "         \"name\":\"GameObject\",",
-                "         \"components\":[",
-                "            {",
-                "               \"t\":\"Transform\",",
-                "               \"_position\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               },",
-                "               \"_eulerAngles\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               },",
-                "               \"_scale\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":3.435058529590714,",
-                "                  \"z\":0.33826457731096177",
-                "               },",
-                "               \"uniqueId\":39273,",
-                "               \"ser_children\":[",
-                "                  ",
-                "               ]",
-                "            },",
-                "            {",
-                "               \"t\":\"Renderer\",",
-                "               \"meshName\":\"box\",",
-                "               \"materialName\":\"\",",
-                "               \"scale\":1,",
-                "               \"castShadows\":true,",
-                "               \"receiveShadows\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"BoxCollider\",",
-                "               \"_isTrigger\":false,",
-                "               \"_layer\":1,",
-                "               \"_layerMask\":1,",
-                "               \"_size\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":1,",
-                "                  \"z\":1",
-                "               },",
-                "               \"_center\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               }",
-                "            },",
-                "            {",
-                "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
-                "               \"_isKinematic\":false",
-                "            }",
-                "         ],",
-                "         \"prefabName\":null",
-                "      },",
-                "      {",
-                "         \"t\":\"GameObject\",",
-                "         \"name\":\"GameObject\",",
-                "         \"components\":[",
-                "            {",
-                "               \"t\":\"Transform\",",
-                "               \"_position\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":-2.759924401067843,",
-                "                  \"z\":0.9942837638253071",
-                "               },",
-                "               \"_eulerAngles\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":33.12915463759282,",
-                "                  \"y\":180,",
-                "                  \"z\":180",
-                "               },",
-                "               \"_scale\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":3.435058529590714,",
-                "                  \"z\":0.33826457731096177",
-                "               },",
-                "               \"uniqueId\":39282,",
-                "               \"ser_children\":[",
-                "                  ",
-                "               ]",
-                "            },",
-                "            {",
-                "               \"t\":\"Renderer\",",
-                "               \"meshName\":\"box\",",
-                "               \"materialName\":\"\",",
-                "               \"scale\":1,",
-                "               \"castShadows\":true,",
-                "               \"receiveShadows\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"BoxCollider\",",
-                "               \"_isTrigger\":false,",
-                "               \"_layer\":1,",
-                "               \"_layerMask\":1,",
-                "               \"_size\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":1,",
-                "                  \"z\":1",
-                "               },",
-                "               \"_center\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               }",
-                "            },",
-                "            {",
-                "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
-                "               \"_isKinematic\":false",
-                "            }",
-                "         ],",
-                "         \"prefabName\":null",
-                "      },",
-                "      {",
-                "         \"t\":\"GameObject\",",
-                "         \"name\":\"GameObject\",",
-                "         \"components\":[",
-                "            {",
-                "               \"t\":\"Transform\",",
-                "               \"_position\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":7.67271004893747e-17,",
-                "                  \"y\":-2.652938581800744,",
-                "                  \"z\":-0.5849071821412712",
-                "               },",
-                "               \"_eulerAngles\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":-30.369697327822447,",
-                "                  \"y\":-180,",
-                "                  \"z\":180",
-                "               },",
-                "               \"_scale\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":3.435058529590714,",
-                "                  \"z\":0.33826457731096177",
-                "               },",
-                "               \"uniqueId\":39291,",
-                "               \"ser_children\":[",
-                "                  ",
-                "               ]",
-                "            },",
-                "            {",
-                "               \"t\":\"Renderer\",",
-                "               \"meshName\":\"box\",",
-                "               \"materialName\":\"\",",
-                "               \"scale\":1,",
-                "               \"castShadows\":true,",
-                "               \"receiveShadows\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"BoxCollider\",",
-                "               \"_isTrigger\":false,",
-                "               \"_layer\":1,",
-                "               \"_layerMask\":1,",
-                "               \"_size\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":1,",
-                "                  \"z\":1",
-                "               },",
-                "               \"_center\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               }",
-                "            },",
-                "            {",
-                "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
-                "               \"_isKinematic\":false",
-                "            }",
-                "         ],",
-                "         \"prefabName\":null",
-                "      },",
-                "      {",
-                "         \"t\":\"GameObject\",",
-                "         \"name\":\"GameObject\",",
-                "         \"components\":[",
-                "            {",
-                "               \"t\":\"Transform\",",
-                "               \"_position\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0.5705405506459839,",
-                "                  \"z\":-0.013957532225097262",
-                "               },",
-                "               \"_eulerAngles\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":85.20519998174817,",
-                "                  \"y\":180,",
-                "                  \"z\":180",
-                "               },",
-                "               \"_scale\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":3.435058529590714,",
-                "                  \"z\":0.33826457731096177",
-                "               },",
-                "               \"uniqueId\":39730,",
-                "               \"ser_children\":[",
-                "                  ",
-                "               ]",
-                "            },",
-                "            {",
-                "               \"t\":\"Renderer\",",
-                "               \"meshName\":\"box\",",
-                "               \"materialName\":\"\",",
-                "               \"scale\":1,",
-                "               \"castShadows\":true,",
-                "               \"receiveShadows\":false",
-                "            },",
-                "            {",
-                "               \"t\":\"BoxCollider\",",
-                "               \"_isTrigger\":false,",
-                "               \"_layer\":1,",
-                "               \"_layerMask\":1,",
-                "               \"_size\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":1,",
-                "                  \"y\":1,",
-                "                  \"z\":1",
-                "               },",
-                "               \"_center\":",
-                "               {",
-                "                  \"t\":\"Vector3\",",
-                "                  \"x\":0,",
-                "                  \"y\":0,",
-                "                  \"z\":0",
-                "               }",
-                "            },",
-                "            {",
-                "               \"t\":\"Rigidbody\",",
-                "               \"_mass\":10,",
-                "               \"_isKinematic\":false",
-                "            }",
-                "         ],",
-                "         \"prefabName\":null",
-                "      }",
-                "   ]",
-                "}"
-            ]
-        }
+        "scene": [
+            {
+                "Flip.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Grass\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":100,\"y\":1,\"z\":100},\"uniqueId\":48676,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"grass.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":20,\"y\":1,\"z\":20},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48684,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.7,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":1,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48687,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Sky\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":-113.43724822998047,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":50,\"y\":50,\"z\":50},\"uniqueId\":48689,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"sky.obj\",\"materialName\":\"sky.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountains\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":272.56564272367035,\"y\":0,\"z\":-47.7838874230018},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":48703,\"ser_children\":[{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-272.5656433105469,\"y\":0,\"z\":458.9344177246094},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8994653224945068,\"y\":1.8994653224945068,\"z\":1.8994653224945068},\"uniqueId\":48690,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":458.9344177246094},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9731962084770203,\"y\":0.9731962084770203,\"z\":0.9731962084770203},\"uniqueId\":48691,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":249.49974060058594},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060508728027,\"y\":1.8777060508728027,\"z\":1.8777060508728027},\"uniqueId\":48692,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-451.8748779296875,\"y\":0,\"z\":-233.2788848876953},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060508728027,\"y\":1.8777060508728027,\"z\":1.8777060508728027},\"uniqueId\":48693,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-292.56878662109375,\"y\":0,\"z\":-233.2788848876953},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9252570867538452,\"y\":0.9252570867538452,\"z\":0.9252570867538452},\"uniqueId\":48694,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-235.82135009765625,\"y\":0,\"z\":-348.8769836425781},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.2831873893737793,\"y\":1.2831873893737793,\"z\":1.2831873893737793},\"uniqueId\":48695,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":343.7403869628906,\"y\":0,\"z\":-531.4220581054688},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.2831873769024265,\"y\":1.2831873893737793,\"z\":1.2831873769024265},\"uniqueId\":48696,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":455.9784851074219,\"y\":0,\"z\":-184.30075073242188},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060208218639,\"y\":1.8777060508728027,\"z\":1.8777060208218639},\"uniqueId\":48697,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":127.68667602539062,\"y\":0,\"z\":-415.8239440917969},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8777060208218639,\"y\":1.8777060508728027,\"z\":1.8777060208218639},\"uniqueId\":48698,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":286.9928894042969,\"y\":0,\"z\":-415.8239440917969},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.689849016902239,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.9252571121747751,\"y\":0.9252570867538452,\"z\":0.9252571121747751},\"uniqueId\":48699,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":168.8226318359375,\"y\":0,\"z\":479.84417724609375},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.7736556601513813,\"y\":1.773655652999878,\"z\":1.7736556601513813},\"uniqueId\":48700,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":424.2124938964844,\"y\":0,\"z\":491.8426513671875},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":2.5070332674203053,\"y\":2.507033348083496,\"z\":2.5070332674203053},\"uniqueId\":48701,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Mountain\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":349.1468811035156,\"y\":0,\"z\":223.7499542236328},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":-2.6898492303456476,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.5122117590117168,\"y\":1.512211799621582,\"z\":1.5122117590117168},\"uniqueId\":48702,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"mountain.obj\",\"materialName\":\"rpg_pack.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.5142258405685425,\"y\":4.074954986572266,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-90.00000000000007},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-7.070121765136719,\"z\":1},\"uniqueId\":48704,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":10,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":2.8714377880096436,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48712,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":1.9808855056762695,\"y\":5.940030574798584,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48720,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.48553818464279175,\"y\":5.938290596008301,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48728,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-3.016632080078125,\"y\":5.938290596008301,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48736,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-1.5212854146957397,\"y\":5.940030574798584,\"z\":-0.04486124590039253},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-160.576733067429},\"_scale\":{\"t\":\"Vector3\",\"x\":0.32194932716176894,\"y\":-3.4852389541184152,\"z\":1},\"uniqueId\":48744,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-0.6709696054458618,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":180},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48752,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-3.785433292388916,\"y\":2.1102685928344727,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":180},\"_scale\":{\"t\":\"Vector3\",\"x\":0.3219493329524994,\"y\":-3.485239028930664,\"z\":1},\"uniqueId\":48760,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"Crate.mat\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null}]}"
+            }
+        ],
+        "material": [
+            {
+                "Flip": [
+                    {
+                        "yellow.mat": "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.41994937445866465,\"b\":0},\"mainTexture\":\"\",\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1}"
+                    },
+                    {
+                        "frog.mat": "{\"t\":\"Material\",\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"frog.jpg\",\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1}"
+                    },
+                    {
+                        "Crate.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"Crate.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":false}"
+                    },
+                    {
+                        "sky.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"sky.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+                    },
+                    {
+                        "rpg_pack.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"rpg_pack.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":3.8100000000000107,\"roughness\":0.7899999999999976,\"alphaMode\":0,\"hasAlpha\":false}"
+                    }
+                ]
+            }
+        ],
+        "prefab": [
+            {
+                "Bleg": [
+                    {
+                        "ShootBall.prefab": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      {\n         \"t\":\"GameObject\",\n         \"name\":\"Sphere\",\n         \"components\":[\n            {\n               \"t\":\"Transform\",\n               \"_position\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               },\n               \"_eulerAngles\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               },\n               \"_scale\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":1,\n                  \"z\":1\n               },\n               \"uniqueId\":141475,\n               \"ser_children\":[\n                  \n               ]\n            },\n            {\n               \"t\":\"Renderer\",\n               \"meshName\":\"ball.obj\",\n               \"materialName\":\"yellow.mat\",\n               \"scale\":0.02,\n               \"castShadows\":true,\n               \"receiveShadows\":false\n            },\n            {\n               \"t\":\"Shoot\",\n               \"shootForce\":\"25\"\n            },\n            {\n               \"t\":\"Rigidbody\",\n               \"_mass\":10,\n               \"_isKinematic\":false\n            },\n            {\n               \"t\":\"SphereCollider\",\n               \"_isTrigger\":false,\n               \"_layer\":1,\n               \"_layerMask\":1\n            }\n         ],\n         \"prefabName\":null\n      }\n   ]\n}"
+                    },
+                    {
+                        "Robot.prefab": "{\n   \"t\":\"Scene\",\n   \"rootObjs\":[\n      {\n         \"t\":\"GameObject\",\n         \"name\":\"GameObject\",\n         \"components\":[\n            {\n               \"t\":\"Transform\",\n               \"_position\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               },\n               \"_eulerAngles\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               },\n               \"_scale\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":3.435058529590714,\n                  \"z\":0.33826457731096177\n               },\n               \"uniqueId\":39273,\n               \"ser_children\":[\n                  \n               ]\n            },\n            {\n               \"t\":\"Renderer\",\n               \"meshName\":\"box\",\n               \"materialName\":\"\",\n               \"scale\":1,\n               \"castShadows\":true,\n               \"receiveShadows\":false\n            },\n            {\n               \"t\":\"BoxCollider\",\n               \"_isTrigger\":false,\n               \"_layer\":1,\n               \"_layerMask\":1,\n               \"_size\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":1,\n                  \"z\":1\n               },\n               \"_center\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               }\n            },\n            {\n               \"t\":\"Rigidbody\",\n               \"_mass\":10,\n               \"_isKinematic\":false\n            }\n         ],\n         \"prefabName\":null\n      },\n      {\n         \"t\":\"GameObject\",\n         \"name\":\"GameObject\",\n         \"components\":[\n            {\n               \"t\":\"Transform\",\n               \"_position\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":-2.759924401067843,\n                  \"z\":0.9942837638253071\n               },\n               \"_eulerAngles\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":33.12915463759282,\n                  \"y\":180,\n                  \"z\":180\n               },\n               \"_scale\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":3.435058529590714,\n                  \"z\":0.33826457731096177\n               },\n               \"uniqueId\":39282,\n               \"ser_children\":[\n                  \n               ]\n            },\n            {\n               \"t\":\"Renderer\",\n               \"meshName\":\"box\",\n               \"materialName\":\"\",\n               \"scale\":1,\n               \"castShadows\":true,\n               \"receiveShadows\":false\n            },\n            {\n               \"t\":\"BoxCollider\",\n               \"_isTrigger\":false,\n               \"_layer\":1,\n               \"_layerMask\":1,\n               \"_size\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":1,\n                  \"z\":1\n               },\n               \"_center\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               }\n            },\n            {\n               \"t\":\"Rigidbody\",\n               \"_mass\":10,\n               \"_isKinematic\":false\n            }\n         ],\n         \"prefabName\":null\n      },\n      {\n         \"t\":\"GameObject\",\n         \"name\":\"GameObject\",\n         \"components\":[\n            {\n               \"t\":\"Transform\",\n               \"_position\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":7.67271004893747e-17,\n                  \"y\":-2.652938581800744,\n                  \"z\":-0.5849071821412712\n               },\n               \"_eulerAngles\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":-30.369697327822447,\n                  \"y\":-180,\n                  \"z\":180\n               },\n               \"_scale\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":3.435058529590714,\n                  \"z\":0.33826457731096177\n               },\n               \"uniqueId\":39291,\n               \"ser_children\":[\n                  \n               ]\n            },\n            {\n               \"t\":\"Renderer\",\n               \"meshName\":\"box\",\n               \"materialName\":\"\",\n               \"scale\":1,\n               \"castShadows\":true,\n               \"receiveShadows\":false\n            },\n            {\n               \"t\":\"BoxCollider\",\n               \"_isTrigger\":false,\n               \"_layer\":1,\n               \"_layerMask\":1,\n               \"_size\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":1,\n                  \"z\":1\n               },\n               \"_center\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               }\n            },\n            {\n               \"t\":\"Rigidbody\",\n               \"_mass\":10,\n               \"_isKinematic\":false\n            }\n         ],\n         \"prefabName\":null\n      },\n      {\n         \"t\":\"GameObject\",\n         \"name\":\"GameObject\",\n         \"components\":[\n            {\n               \"t\":\"Transform\",\n               \"_position\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0.5705405506459839,\n                  \"z\":-0.013957532225097262\n               },\n               \"_eulerAngles\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":85.20519998174817,\n                  \"y\":180,\n                  \"z\":180\n               },\n               \"_scale\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":3.435058529590714,\n                  \"z\":0.33826457731096177\n               },\n               \"uniqueId\":39730,\n               \"ser_children\":[\n                  \n               ]\n            },\n            {\n               \"t\":\"Renderer\",\n               \"meshName\":\"box\",\n               \"materialName\":\"\",\n               \"scale\":1,\n               \"castShadows\":true,\n               \"receiveShadows\":false\n            },\n            {\n               \"t\":\"BoxCollider\",\n               \"_isTrigger\":false,\n               \"_layer\":1,\n               \"_layerMask\":1,\n               \"_size\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":1,\n                  \"y\":1,\n                  \"z\":1\n               },\n               \"_center\":\n               {\n                  \"t\":\"Vector3\",\n                  \"x\":0,\n                  \"y\":0,\n                  \"z\":0\n               }\n            },\n            {\n               \"t\":\"Rigidbody\",\n               \"_mass\":10,\n               \"_isKinematic\":false\n            }\n         ],\n         \"prefabName\":null\n      }\n   ]\n}"
+                    }
+                ]
+            }
+        ]
     }
 }
