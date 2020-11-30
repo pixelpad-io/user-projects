@@ -8,7 +8,7 @@
                 "Script0": "class Script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
-                "folder0": [
+                "Script3": [
                     {
                         "Script3": "class Script3 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
