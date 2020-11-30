@@ -30,15 +30,15 @@
                                     },
                                     {
                                         "Script1": "class Script1 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                                    },
+                                    {
+                                        "Script115": "class Script10 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                                     }
                                 ]
                             }
                         ]
                     }
                 ]
-            },
-            {
-                "Script11": "class Script10 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
                 "Script7": "class Script7 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
@@ -127,7 +127,7 @@
             {
                 "scenefolder": [
                     {
-                        "Scene2.scn": "//Scene2.scn\n\n"
+                        "Scene2.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
                     }
                 ]
             },
