@@ -18,7 +18,7 @@
         "sound": {},
         "library": {},
         "scene": {
-            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-0.012914011020958835,\"y\":-102.97285204991304,\"z\":-0.09916263682775929},\"_scale\":{\"t\":\"Vector3\",\"x\":0.1,\"y\":1,\"z\":0.1},\"uniqueId\":2586,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
+            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.17515818774700165,\"y\":-0.8734050989151001,\"z\":0.03879982978105545},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-0.012914011020958866,\"y\":-102.9728520499131,\"z\":-0.0991626368277593},\"_scale\":{\"t\":\"Vector3\",\"x\":0.1,\"y\":0.1,\"z\":0.1},\"uniqueId\":1449,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
         },
         "material": {},
         "prefab": {}
