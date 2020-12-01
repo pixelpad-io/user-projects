@@ -1,7 +1,8 @@
 {
     "assets": {
         "code": {
-            "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n",
+            "asteroidmove": "class asteroidmove extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    this.transform.translate(0,0,-0.1)\n  }\n}\n"
         },
         "model": {
             "spaceship.obj": {
@@ -18,7 +19,7 @@
         "sound": {},
         "library": {},
         "scene": {
-            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.17515818774700165,\"y\":-0.8734050989151001,\"z\":0.03879982978105545},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-0.012914011020958866,\"y\":-102.9728520499131,\"z\":-0.0991626368277593},\"_scale\":{\"t\":\"Vector3\",\"x\":0.1,\"y\":0.1,\"z\":0.1},\"uniqueId\":1449,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
+            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-6.212020862233431e-18,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5270,\"ser_children\":[{\"t\":\"GameObject\",\"name\":\"camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":25,\"z\":-140},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":5268,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null}]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
         },
         "material": {},
         "prefab": {}
