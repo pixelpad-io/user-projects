@@ -1,0 +1,26 @@
+{
+    "assets": {
+        "code": {
+            "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+        },
+        "model": {
+            "spaceship.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.spaceship.obj"
+            },
+            "asteroid.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.asteroid.obj"
+            },
+            "projectile.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.projectile.obj"
+            }
+        },
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {
+            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-0.012914011020958835,\"y\":-102.97285204991304,\"z\":-0.09916263682775929},\"_scale\":{\"t\":\"Vector3\",\"x\":0.1,\"y\":1,\"z\":0.1},\"uniqueId\":2586,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
+        },
+        "material": {},
+        "prefab": {}
+    }
+}
