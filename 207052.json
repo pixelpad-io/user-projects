@@ -1,0 +1,24 @@
+{
+    "assets": {
+        "code": {
+            "main": "class MainGame extends MonoBehaviour {\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+        },
+        "model": {
+            "spaceship.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.12330.207052.spaceship.obj"
+            },
+            "asteroid.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.12330.207052.asteroid.obj"
+            },
+            "projectile.obj": {
+                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.12330.207052.projectile.obj"
+            }
+        },
+        "texture": {},
+        "sound": {},
+        "library": {},
+        "scene": {},
+        "material": {},
+        "prefab": {}
+    }
+}
