@@ -28,17 +28,23 @@
                 }
             }
         ],
-        "texture": [],
+        "texture": [
+            {
+                "bluespaceship.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.12330.207052.bluespaceship.png"
+                }
+            }
+        ],
         "sound": [],
         "library": {},
         "scene": [
             {
-                "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":6653,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"ship\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SpaceshipMove\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":25,\"z\":-300},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":6654,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Sphere\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":86.99994659423828,\"y\":47.294708251953125,\"z\":133.28872680664062},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":6656,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"asteroid\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SphereCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"radius\":1},{\"t\":\"AsteroidMove\"}],\"prefabName\":null}]}"
+                "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":7029,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"ship\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SpaceshipMove\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":25,\"z\":-300},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":7030,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Sphere\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":86.99994659423828,\"y\":47.294708251953125,\"z\":133.28872680664062},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":7032,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"asteroid\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"SphereCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"radius\":1},{\"t\":\"AsteroidMove\"}],\"prefabName\":null}]}"
             }
         ],
         "material": [
             {
-                "ship.mat": "//Spaceship.mat\n\n"
+                "ship.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"bluespaceship\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": []
