@@ -5,7 +5,7 @@
                 "main": "class SpaceshipMove extends MonoBehaviour {\n  \n  //Update is called once per frame\n  Update() {\n    if (Input.GetKey(KeyCode.W)){\n      this.transform.Translate(0,1,0)\n    }\n    if (Input.GetKey(KeyCode.S)){\n      this.transform.Translate(0,-1,0)\n    }\n    if (Input.GetKey(KeyCode.A)){\n      this.transform.Translate(-1,0,0)\n    }\n    if (Input.GetKey(KeyCode.D)){\n      this.transform.Translate(1,0,0)\n    }\n  }\n}"
             },
             {
-                "shipmove": "class SpaceshipMove extends MonoBehaviour {\n  \n  //Update is called once per frame\n  Update() {\n    if (Input.GetKey(KeyCode.W)){\n      this.transform.Translate(0,1,0)\n    }\n    if (Input.GetKey(KeyCode.S)){\n      this.transform.Translate(0,-1,0)\n    }\n    if (Input.GetKey(KeyCode.A)){\n      this.transform.Translate(-1,0,0)\n    }\n    if (Input.GetKey(KeyCode.D)){\n      this.transform.Translate(1,0,0)\n    }\n  }\n}\n"
+                "shipmove": "class SpaceshipMove extends MonoBehaviour {\n  \n  //Update is called once per frame\n  Update() {\n    if (Input.GetKey(KeyCode.W)){\n      this.transform.Translate(0,1,0)\n    }\n    if (Input.GetKey(KeyCode.S)){\n      this.transform.Translate(0,-1,0)\n    }\n    if (Input.GetKey(KeyCode.A)){\n      this.transform.Translate(-1,0,0)\n    }\n    if (Input.GetKey(KeyCode.D)){\n      this.transform.Translate(1,0,0)\n    }\n  var newX = Mathf.Clamp(this.transform.position._x,-182,182);\n    var newY = Mathf.Clamp(this.transform.position._y, -74, 74);\n    this.transform.position = new Vector3(newX,newY,0);\n}\n}\n"
             }
         ],
         "model": [
@@ -20,7 +20,7 @@
         "library": {},
         "scene": [
             {
-                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":1866,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"model0\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-200},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":1867,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null}]}"
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":2677,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"model0\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"shipmove\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-200},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":2678,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null}]}"
             }
         ],
         "material": [],
