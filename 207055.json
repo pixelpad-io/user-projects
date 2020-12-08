@@ -1,27 +1,42 @@
 {
     "assets": {
-        "code": {
-            "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n",
-            "asteroidmove": "class asteroidmove extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    this.transform.Translate(0,0,-0.1)\n  }\n}\n"
-        },
-        "model": {
-            "spaceship.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.spaceship.obj"
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
-            "asteroid.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.asteroid.obj"
+            {
+                "asteroidmove": "class asteroidmove extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    this.transform.Translate(0,0,-0.1)\n  }\n}\n"
             },
-            "projectile.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.projectile.obj"
+            {
+                "spaceshipmove": "class spaceshipmove extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    if(Input.GetKey(KeyCode.W)){\n      this.transform.Translate(0,1,0)\n    }\n    if(Input.GetKey(KeyCode.S)){\n      this.transform.Translate(0,0,1)\n    }\n    if(Input.GetKey(KeyCode.A)){\n      this.transform.Translate(-1,0,0)\n    }\n    if(Input.GetKey(KeyCode.D)){\n      this.transform.Translate(1,0,0)\n    }\n}\n}"
             }
-        },
-        "texture": {},
-        "sound": {},
+        ],
+        "model": [
+            {
+                "spaceship.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.spaceship.obj"
+                }
+            },
+            {
+                "asteroid.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.asteroid.obj"
+                }
+            },
+            {
+                "projectile.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.14540.207055.projectile.obj"
+                }
+            }
+        ],
+        "texture": [],
+        "sound": [],
         "library": {},
-        "scene": {
-            "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-6.212020862233431e-18,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":2.1603191762732656},\"uniqueId\":8182,\"ser_children\":[{\"t\":\"GameObject\",\"name\":\"camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":25,\"z\":-140},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":8180,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null}]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"asteroid\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":75,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":8439,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"asteroid\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"asteroidmove\"}],\"prefabName\":null}]}"
-        },
-        "material": {},
-        "prefab": {}
+        "scene": [
+            {
+                "Space.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"spaceship\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":-6.212020862233431e-18,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":2.1603191762732656},\"uniqueId\":569,\"ser_children\":[{\"t\":\"GameObject\",\"name\":\"camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":25,\"z\":-140},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":567,\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"spaceshipmove\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":-1.0339757656912846e-25,\"z\":4.4145068045509106e-7},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":8.14772895620837e-18,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":0.46289458870887756},\"uniqueId\":707,\"ser_children\":[]},{\"t\":\"spaceshipmove\"}],\"prefabName\":null}]},{\"t\":\"Renderer\",\"meshName\":\"spaceship\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"asteroid\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":75,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":570,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"asteroid\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"asteroidmove\"}],\"prefabName\":null}]}"
+            }
+        ],
+        "material": [],
+        "prefab": []
     }
 }
