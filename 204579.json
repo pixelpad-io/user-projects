@@ -507,7 +507,7 @@
                 "PrinterGlass.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.6508096286913149,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1.149999999999996,\"roughness\":3.0000000000000013,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "PlasticPieces.mat": "//PlasticPieces.mat\n\n"
+                "PlasticPieces.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.7212253988952493,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":1.420000000000001,\"roughness\":0.8400000000000005,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": []
