@@ -1,0 +1,22 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": ""
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
+        "library": {
+            "194729": {}
+        },
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
