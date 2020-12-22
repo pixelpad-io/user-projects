@@ -8,14 +8,8 @@
         "model": [],
         "texture": [],
         "sound": [],
-        "library": {
-            "194729": {}
-        },
-        "scene": [
-            {
-                "MainScene.scn": ""
-            }
-        ],
+        "library": {},
+        "scene": [],
         "material": [],
         "prefab": []
     }
