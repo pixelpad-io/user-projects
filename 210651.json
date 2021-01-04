@@ -2,7 +2,7 @@
     "assets": {
         "code": [
             {
-                "main": "/*\r\nReminders for PixelPAD Union\r\n\r\n- Instance variables need to be initialized! Even basic vars such as integers/strings\r\n- There are no structs. Basic objects such as Vectors pass by reference by default\r\n- Specific Vectors like position, rotation can be set by simply setting their individual variables.\r\n    e.g. transform.position.x = 4 works\r\n- Instantiate is used to create GameObjects with a specific Component or as a prefab\r\n\r\n*/\r\n\r\n\r\n/*\r\n\r\n\r\n\r\n\r\n*/\r\n\r\nBABYLON.OBJFileLoader.SKIP_MATERIALS = true;"
+                "main": "/*\r\nReminders for PixelPAD Union\r\n\r\n- Instance variables need to be initialized! Even basic vars such as integers/strings\r\n- There are no structs. Basic objects such as Vectors pass by reference by default\r\n- Specific Vectors like position, rotation can be set by simply setting their individual variables.\r\n    e.g. transform.position.x = 4 works\r\n- Instantiate is used to create GameObjects with a specific Component or as a prefab\r\n\r\n*/\r\n\r\n\r\n/*\r\n\r\n\r\n\r\n\r\n*/\r\n"
             },
             {
                 "EngineDir": [
