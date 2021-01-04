@@ -287,6 +287,11 @@
                 "fence.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210651.fence.obj"
                 }
+            },
+            {
+                "wolf.glb": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.210651.wolf.glb"
+                }
             }
         ],
         "texture": [
