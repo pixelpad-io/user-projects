@@ -1,0 +1,26 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            }
+        ],
+        "model": [
+            {
+                "Dancer.glb": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.4892.211715.Dancer.glb"
+                }
+            }
+        ],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
