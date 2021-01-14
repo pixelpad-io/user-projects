@@ -5,7 +5,7 @@
                 "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
             {
-                "Animator": "class Animator extends MonoBehaviour {\n\n  _renderer : Renderer;\n  //Start is called before the first frame update\n  Start() {\n    this._renderer = this.GetComponent(Renderer); \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                "Animator": "class Animator extends MonoBehaviour {\n\n  _renderer : Renderer;\n  //Start is called before the first frame update\n  Start() {\n    this._renderer = this.GetComponent(Renderer); \n  }\n  \n  //Update is called once per frame\n  Update() {\n    this._renderer.animationGroups.forEach(ag =>\n    {\n      Debug.Log(ag.name);\n    });\n  }\n}\n"
             }
         ],
         "model": [
