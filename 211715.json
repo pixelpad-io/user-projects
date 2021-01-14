@@ -17,7 +17,7 @@
         "library": {},
         "scene": [
             {
-                "MainScene.scn": ""
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Dancer\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"861e24d4-e0a1-4426-a753-2adaf8d266b2\",\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"Dancer.glb\",\"materialName\":\"\",\"scale\":10,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true}],\"prefabName\":null}]}"
             }
         ],
         "material": [],
