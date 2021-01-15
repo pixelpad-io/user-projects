@@ -234,6 +234,9 @@
                         "NewCanvas": "class NewCanvas extends MonoBehaviour {\n\n  //Singleton pattern\n  public static get instance (): NewCanvas\n  {\n    if (NewCanvas._instance == null || NewCanvas._instance == undefined)\n    {\n      NewCanvas._instance = Instantiate(NewCanvas);      \n    }\n    return NewCanvas._instance;\n  }\n\n  private static _instance: NewCanvas;  \n\n  private _main : BABYLON.GUI.AdvancedDynamicTexture[];\n\n  Awake ()\n  {\n    this._main = new Array();\n    //Editor Canvas\n    var plane = BABYLON.Mesh.CreatePlane(\"plane\", 2, Engine.editorScene);\n    var editorCanvas = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane, Engine.canvas.width, Engine.canvas.height, true);\n    this._main.push(editorCanvas);\n   \n   \n    //2D scene Canvas\n    var canvas = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI(\"Canvas\", true, Engine.scene);\n    canvas.layer.layerMask = 3;\n    this._main.push(canvas);\n  }\n\n  Update ()\n  {\n\n  }\n\n  OnDestroy ()\n  {\n    this._main.forEach(canvas => {\n      canvas.dispose();\n    });\n\n    NewCanvas._instance = null;\n  }\n}\n"
                     },
                     {
+                        "Button": "class Button extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n    let c = this.GetComponentInParent(NewCanvas);\n    if (!c)\n    {\n      c = GameObject.FindObjectOfType(NewCanvas);\n    }\n    if (!c)\n    {\n      c = Instantiate(NewCanvas);\n    }\n\n    this.transform.SetParent(c.transform);\n\n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                    },
+                    {
                         "Label": "class Label extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
                     },
                     {
