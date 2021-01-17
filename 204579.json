@@ -754,7 +754,7 @@
             {
                 "Environment_Materials": [
                     {
-                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.4752509322271784,\"g\":0.38879980625751565,\"b\":0.10026343054725673},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":7.5,\"roughness\":0.5,\"alphaMode\":0,\"hasAlpha\":false}"
+                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.1924082197525594,\"g\":0.14925281128033083,\"b\":0.005218768771246496},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":7.5,\"roughness\":0.5,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "Windows.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.8351565843039128,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":3.570000000000003,\"roughness\":0.6100000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
