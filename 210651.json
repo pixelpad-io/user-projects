@@ -240,7 +240,7 @@
                         "Image": "class UIImage extends UGUIElement {\n\n  CreateBabGUI ()\n  {\n    \n  }\n}\n\n\n"
                     },
                     {
-                        "Button": "@ExecuteInEditMode\nclass Button extends UGUIElement { \n\n  CreateBabGUI() : BABYLON.GUI.Control {\n   \n   var button = BABYLON.GUI.Button.CreateSimpleButton(\"but1\", \"Click Me\");\n      button.width = \"100px\";\n      button.height = \"100px\";\n      button.color = \"white\";\n      button.fontSize = 50;\n      button.background = \"green\";\n      return button;\n    //this._babControls[0].linkWithMesh(this.transform.transformNode);\n  }\n\n \n}\n"
+                        "Button": "@ExecuteInEditMode\nclass Button extends UGUIElement {\n\n  CreateBabGUI(): BABYLON.GUI.Control {\n    var button = BABYLON.GUI.Button.CreateSimpleButton(\"but1\", \"Click Me\");\n    button.width = \"100px\";\n    button.height = \"100px\";\n    button.color = \"white\";\n    button.fontSize = 50;\n    button.background = \"green\";\n    return button;\n  }\n\n\n}\n"
                     },
                     {
                         "Label": "class Label extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
