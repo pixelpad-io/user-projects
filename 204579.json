@@ -682,13 +682,13 @@
                 }
             },
             {
-                "DarkWood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.DarkWood.obj"
+                "LightWood.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LightWood.obj"
                 }
             },
             {
-                "LightWood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LightWood.obj"
+                "DWood.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.DWood.obj"
                 }
             }
         ],
