@@ -228,6 +228,9 @@
             {
                 "UI": [
                     {
+                        "RectTransform": "class RectTransform extends Transform {\n\n  \n}\n"
+                    },
+                    {
                         "TextLabel": "class TextLabel extends MonoBehaviour\n{\n  //MUST HAVE A DEFAULT VALUE OR MIGHT CRASH!\n  public text : string = \"\";\n\n  private label : BABYLON.GUI.TextBlock;\n\n  Awake ()\n  {\n    this.label = new BABYLON.GUI.TextBlock();\n    this.label.color = \"white\";\n    this.label.fontSize = 30;\n    this.label.outlineColor = \"black\";\n    this.label.outlineWidth = 3;\n    this.label.shadowColor = \"black\";\n    this.label.shadowOffsetX = 2;\n    this.label.shadowOffsetY = 2;\n\n    Canvas.main.addControl(this.label);\n    this.label.linkWithMesh(this.renderer.GetMesh());\n  }\n\n  Update ()\n  {\n    this.label.text = this.text;\n    \n  }\n}"
                     },
                     {
