@@ -5,15 +5,19 @@
                 "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             }
         ],
-        "model": [],
+        "model": [
+            {
+                "raptor.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.5915.215240.raptor.obj"
+                }
+            }
+        ],
         "texture": [],
         "sound": [],
-        "library": {
-            "210786": {}
-        },
+        "library": {},
         "scene": [
             {
-                "MainScene.scn": ""
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
             }
         ],
         "material": [],
