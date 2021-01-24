@@ -1,148 +1,125 @@
 {
     "assets": {
-        "code": {
-            "main": [
-                "class MainGame extends MonoBehaviour {",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "  ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "  ",
-                "  }",
-                "}",
-                ""
-            ],
-            "MultiMaterial": [
-                "@ExecuteInEditMode",
-                "class MultiMaterial extends MonoBehaviour {",
-                "",
-                "  @SerializeField",
-                "  matNames : string[] = new Array()",
-                "  ",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    var r = this.GetComponent(Renderer);",
-                "    r.onChangedMesh.addOnce(e => {     ",
-                "",
-                "      var meshes = r.GetMeshes();",
-                "",
-                "      for (var i = 0; i < meshes.length; i++)",
-                "      {",
-                "        if (i < this.matNames.length)",
-                "        {",
-                "          meshes[i].material = Material.Get(this.matNames[i]).shader;",
-                "        }",
-                "      }",
-                "      ",
-                "    });",
-                "",
-                "  }",
-                "}",
-                ""
-            ],
-            "MainLight": [
-                "@ExecuteInEditMode",
-                "class MainLight extends MonoBehaviour {",
-                "",
-                "  @SerializeField",
-                "  intensity = 1;",
-                "",
-                "  //Start is called before the first frame update",
-                "  Start() {",
-                "    ",
-                "  }",
-                "  ",
-                "  //Update is called once per frame",
-                "  Update() {",
-                "    Lighting.mainLight.intensity = this.intensity;",
-                "  }",
-                "}",
-                ""
-            ]
-        },
-        "model": {
-            "plant6.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.plant6.obj"
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
             },
-            "window_big_corner.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_big_corner.obj"
+            {
+                "MultiMaterial": "@ExecuteInEditMode\nclass MultiMaterial extends MonoBehaviour {\n\n  @SerializeField\n  matNames : string[] = new Array()\n  \n  //Start is called before the first frame update\n  Start() {\n    var r = this.GetComponent(Renderer);\n    r.onChangedMesh.addOnce(e => {     \n\n      var meshes = r.GetMeshes();\n\n      for (var i = 0; i < meshes.length; i++)\n      {\n        if (i < this.matNames.length)\n        {\n          meshes[i].material = Material.Get(this.matNames[i]).shader;\n        }\n      }\n      \n    });\n\n  }\n}\n"
             },
-            "pilot_seat.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.pilot_seat.obj"
-            },
-            "floor_5.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.floor_5.obj"
-            },
-            "decorative_table_glass.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.decorative_table_glass.obj"
-            },
-            "desk.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.desk.obj"
-            },
-            "column_end.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.column_end.obj"
-            },
-            "storage_container_small.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.storage_container_small.obj"
-            },
-            "window_big_corner_plug.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_big_corner_plug.obj"
-            },
-            "floor_2.obj": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.floor_2.obj"
+            {
+                "MainLight": "@ExecuteInEditMode\nclass MainLight extends MonoBehaviour {\n\n  @SerializeField\n  intensity = 1;\n\n  //Start is called before the first frame update\n  Start() {\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    Lighting.mainLight.intensity = this.intensity;\n  }\n}\n"
             }
-        },
-        "texture": {
-            "robot.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.robot.png"
+        ],
+        "model": [
+            {
+                "plant6.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.plant6.obj"
+                }
             },
-            "base_color.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.base_color.png"
+            {
+                "window_big_corner.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_big_corner.obj"
+                }
             },
-            "leaves.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.leaves.png"
+            {
+                "pilot_seat.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.pilot_seat.obj"
+                }
             },
-            "lattice.png": {
-                "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.lattice.png"
+            {
+                "floor_5.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.floor_5.obj"
+                }
+            },
+            {
+                "decorative_table_glass.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.decorative_table_glass.obj"
+                }
+            },
+            {
+                "desk.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.desk.obj"
+                }
+            },
+            {
+                "column_end.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.column_end.obj"
+                }
+            },
+            {
+                "storage_container_small.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.storage_container_small.obj"
+                }
+            },
+            {
+                "window_big_corner_plug.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.window_big_corner_plug.obj"
+                }
+            },
+            {
+                "floor_2.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.floor_2.obj"
+                }
             }
+        ],
+        "texture": [
+            {
+                "robot.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.robot.png"
+                }
+            },
+            {
+                "base_color.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.base_color.png"
+                }
+            },
+            {
+                "leaves.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.leaves.png"
+                }
+            },
+            {
+                "lattice.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211003.lattice.png"
+                }
+            }
+        ],
+        "sound": [],
+        "library": {
+            "211749": {}
         },
-        "sound": {},
-        "library": {},
-        "scene": {
-            "GameScene.scn": [
-                "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Plant\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":6.1077561378479,\"y\":4.635379791259766,\"z\":1.251206874847412},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8307863543140452,\"y\":1.8307863543140452,\"z\":1.8307863543140452},\"uniqueId\":22045,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"plant6.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"nature_leaves.mat\",\"nature_root.mat\",\"nature_ground.mat\"]},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":0.6999999999999997,\"y\":1.720000000000001,\"z\":0.6899999999999997},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0.8600000000000003,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22053,\"ser_children\":[]},{\"t\":\"Light\",\"intensity\":0.3900000000000002,\"range\":25,\"frustrumSize\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-6.509536266326904,\"y\":0,\"z\":2.0431909561157227},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":180,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8307863543140452,\"y\":1.8307863543140452,\"z\":1.8307863543140452},\"uniqueId\":22056,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_big_corner.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"glass.mat\",\"white_emission.mat\",\"lattice.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"MainLight\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22057,\"ser_children\":[]},{\"t\":\"MainLight\",\"intensity\":0.6300000000000081}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"floor_5\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":11.877386093139648,\"y\":0,\"z\":-12.205798149108887},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22058,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"floor_5.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"lattice.matglass.matwhite_emission.mat\",\"lattice.mat\",\"base_color.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":-0.5,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":30,\"y\":1,\"z\":30},\"uniqueId\":22059,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"main_floor.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Storage_Container\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.772642970085144,\"y\":-1.5716267824172974,\"z\":-1.5740748643875122},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":180,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":2.2973726058810704,\"y\":2.0147288119109033,\"z\":2.2973726058810704},\"uniqueId\":22067,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"storage_container_small.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"floor_2\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":7.838099002838135,\"y\":0.11873508989810944,\"z\":-1.096781849861145},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22068,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"floor_2.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"lattice.mat\",\"white_emission.mat\"]}],\"prefabName\":null}]}"
-            ]
-        },
-        "material": {
-            "base_color.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"base_color.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "nature_ground.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.36211398885074186,\"g\":0.24590278464879156,\"b\":0.11864381765926454},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "nature_leaves.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"leaves.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.819999999999999,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":true}"
-            ],
-            "nature_root.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.5176775346597484,\"g\":0.4059496624913325,\"b\":0.2611263211485348},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "white_emission.mat": [
-                "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":13.169999999999984,\"roughness\":4.590000000000006,\"alphaMode\":0,\"hasAlpha\":false}"
-            ],
-            "lattice.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"lattice.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":true}"
-            ],
-            "glass.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":0.7099999999999997,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":2,\"hasAlpha\":true}"
-            ],
-            "main_floor.mat": [
-                "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.41184936057728294,\"g\":0.4118489487279224,\"b\":0.4118489487279224},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
-            ]
-        },
-        "prefab": {}
+        "scene": [
+            {
+                "GameScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Plant\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":6.1077561378479,\"y\":4.635379791259766,\"z\":1.251206874847412},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8307863543140452,\"y\":1.8307863543140452,\"z\":1.8307863543140452},\"uniqueId\":22045,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"plant6.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"nature_leaves.mat\",\"nature_root.mat\",\"nature_ground.mat\"]},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":0.6999999999999997,\"y\":1.720000000000001,\"z\":0.6899999999999997},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0.8600000000000003,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.999999999999986,\"y\":-45.00000000000002,\"z\":-4.72288274471469e-14},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22053,\"ser_children\":[]},{\"t\":\"Light\",\"lightType\":0,\"color\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"castShadows\":true,\"intensity\":0.3900000000000002,\"range\":25,\"coneAngle\":25,\"exponent\":25,\"shadowFrustrumSize\":25,\"shadowFrustrumLength\":25}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Corner\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":-6.509536266326904,\"y\":0,\"z\":2.0431909561157227},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":180,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1.8307863543140452,\"y\":1.8307863543140452,\"z\":1.8307863543140452},\"uniqueId\":22056,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"window_big_corner.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"glass.mat\",\"white_emission.mat\",\"lattice.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"MainLight\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22057,\"ser_children\":[]},{\"t\":\"MainLight\",\"intensity\":0.6300000000000081}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"floor_5\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":11.877386093139648,\"y\":0,\"z\":-12.205798149108887},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22058,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"floor_5.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"lattice.matglass.matwhite_emission.mat\",\"lattice.mat\",\"base_color.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Floor\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":-0.5,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":30,\"y\":1,\"z\":30},\"uniqueId\":22059,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"main_floor.mat\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":true}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"Storage_Container\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0.772642970085144,\"y\":-1.5716267824172974,\"z\":-1.5740748643875122},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":180,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":2.2973726058810704,\"y\":2.0147288119109033,\"z\":2.2973726058810704},\"uniqueId\":22067,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"storage_container_small.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":true,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\"]}],\"prefabName\":null},{\"t\":\"GameObject\",\"name\":\"floor_2\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":7.838099002838135,\"y\":0.11873508989810944,\"z\":-1.096781849861145},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":22068,\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"floor_2.obj\",\"materialName\":\"\",\"scale\":1,\"castShadows\":false,\"receiveShadows\":false,\"mergeMeshes\":false},{\"t\":\"MultiMaterial\",\"matNames\":[\"base_color.mat\",\"lattice.mat\",\"white_emission.mat\"]}],\"prefabName\":null}]}"
+            }
+        ],
+        "material": [
+            {
+                "base_color.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"base_color.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "nature_ground.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.36211398885074186,\"g\":0.24590278464879156,\"b\":0.11864381765926454},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "nature_leaves.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"leaves.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.819999999999999,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":true}"
+            },
+            {
+                "nature_root.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.5176775346597484,\"g\":0.4059496624913325,\"b\":0.2611263211485348},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "white_emission.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":13.169999999999984,\"roughness\":4.590000000000006,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "lattice.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"lattice.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":true}"
+            },
+            {
+                "glass.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":0.7099999999999997,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":2,\"hasAlpha\":true}"
+            },
+            {
+                "main_floor.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.41184936057728294,\"g\":0.4118489487279224,\"b\":0.4118489487279224},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            }
+        ],
+        "prefab": []
     }
 }
