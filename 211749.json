@@ -652,11 +652,6 @@
                 }
             },
             {
-                "LightWood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LightWood.obj"
-                }
-            },
-            {
                 "DWood.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.DWood.obj"
                 }
@@ -777,13 +772,13 @@
                 }
             },
             {
-                "Poster_4.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_4.obj"
+                "Light_Wood.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Light_Wood.obj"
                 }
             },
             {
-                "Light_Wood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Light_Wood.obj"
+                "Poster_4.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_4.obj"
                 }
             }
         ],
