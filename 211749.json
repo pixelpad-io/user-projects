@@ -637,36 +637,6 @@
                 ]
             },
             {
-                "P1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P1.obj"
-                }
-            },
-            {
-                "P2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P2.obj"
-                }
-            },
-            {
-                "P3.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P3.obj"
-                }
-            },
-            {
-                "P4.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P4.obj"
-                }
-            },
-            {
-                "P5.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P5.obj"
-                }
-            },
-            {
-                "P6.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.P6.obj"
-                }
-            },
-            {
                 "PlaySurface.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.PlaySurface.obj"
                 }
