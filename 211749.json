@@ -628,11 +628,6 @@
                         "PrintScreens.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.PrintScreens.obj"
                         }
-                    },
-                    {
-                        "Filament.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Filament.obj"
-                        }
                     }
                 ]
             },
@@ -784,28 +779,28 @@
         ],
         "texture": [
             {
-                "Poster1_TXT.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Poster1_TXT.jpg"
+                "Poster_1_TXT.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_1_TXT.jpg"
                 }
             },
             {
-                "Poster2_TXT.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Poster2_TXT.jpg"
+                "Poster_2_TXT.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_2_TXT.jpg"
                 }
             },
             {
-                "Poster3_TXT.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Poster3_TXT.jpg"
+                "Poster_3_TXT.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_3_TXT.jpg"
                 }
             },
             {
-                "Poster4_TXT.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Poster4_TXT.jpg"
+                "Poster_4_TXT.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_4_TXT.jpg"
                 }
             },
             {
-                "Poster5_TXT.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Poster5_TXT.jpg"
+                "Poster_5_TXT.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_5_TXT.jpg"
                 }
             }
         ],
