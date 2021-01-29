@@ -2,7 +2,7 @@
     "assets": {
         "code": [
             {
-                "main": ""
+                "main": "class SimpleSwitch extends MonoBehaviour\r\n{\r\n    Start()\r\n    {\r\n        SceneManager.LoadScene(\"ftcintro_1.scn\");\r\n    }\r\n}"
             }
         ],
         "model": [],
@@ -12,7 +12,11 @@
             "210786": {},
             "211749": {}
         },
-        "scene": [],
+        "scene": [
+            {
+                "SimpleScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
+            }
+        ],
         "material": [],
         "prefab": []
     }
