@@ -2,7 +2,7 @@
     "assets": {
         "code": [
             {
-                "main": "class SimpleSwitch extends MonoBehaviour\r\n{\r\n    Start()\r\n    {\r\n        SceneManager.LoadScene(\"ftcintro_1.scn\");\r\n    }\r\n}"
+                "main": "\r\n@RegisterAsComponent\r\nclass SimpleSwitch extends MonoBehaviour\r\n{\r\n    Start()\r\n    {\r\n        SceneManager.LoadScene(\"ftcintro_1.scn\");\r\n    }\r\n}"
             }
         ],
         "model": [],
@@ -14,7 +14,7 @@
         },
         "scene": [
             {
-                "SimpleScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
+                "SimpleScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"GameObject\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"a9b7ba1e-100c-4645-b971-9bd992dae057\",\"ser_children\":[]}],\"prefabName\":null,\"_activeSelf\":true}]}"
             }
         ],
         "material": [],
