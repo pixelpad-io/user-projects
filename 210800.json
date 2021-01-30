@@ -2,7 +2,7 @@
     "assets": {
         "code": [
             {
-                "main": "\r\n@RegisterAsComponent\r\nclass SimpleSwitch extends MonoBehaviour\r\n{\r\n    Start()\r\n    {\r\n        SceneManager.LoadScene(\"ftcintro_1.scn\");\r\n    }\r\n}"
+                "main": ""
             }
         ],
         "model": [],
