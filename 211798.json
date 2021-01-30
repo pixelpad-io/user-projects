@@ -11,12 +11,12 @@
         "library": {},
         "scene": [
             {
-                "MainScene.scn": ""
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
             }
         ],
         "material": [
             {
-                "Red.mat": "//Red.mat\n\n"
+                "Red.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": []
