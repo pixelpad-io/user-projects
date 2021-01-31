@@ -2,7 +2,7 @@
     "assets": {
         "code": [
             {
-                "main": "@RegisterAsComponent\nclass Simple extends MonoBehaviour\n{\n    \n}"
+                "main": ""
             }
         ],
         "model": [],
