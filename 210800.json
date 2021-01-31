@@ -2,14 +2,15 @@
     "assets": {
         "code": [
             {
-                "main": ""
+                "main": "@RegisterAsComponent\nclass Simple extends MonoBehaviour\n{\n    \n}"
             }
         ],
         "model": [],
         "texture": [],
         "sound": [],
         "library": {
-            "210786": {}
+            "210786": {},
+            "211749": {}
         },
         "scene": [
             {
