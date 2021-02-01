@@ -8,9 +8,7 @@
         "model": [],
         "texture": [],
         "sound": [],
-        "library": {
-            "210786": {}
-        },
+        "library": {},
         "scene": [
             {
                 "MainScene.scn": ""
