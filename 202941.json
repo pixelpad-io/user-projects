@@ -1,18 +1,19 @@
 {
     "assets": {
-        "code": {
-            "main": [
-                ""
-            ]
-        },
-        "model": {},
-        "texture": {},
-        "sound": {},
+        "code": [
+            {
+                "main": ""
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
         "library": {
-            "194729": {}
+            "194729": {},
+            "216876": {}
         },
-        "scene": {},
-        "material": {},
-        "prefab": {}
+        "scene": [],
+        "material": [],
+        "prefab": []
     }
 }
