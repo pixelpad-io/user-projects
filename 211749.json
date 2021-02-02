@@ -613,11 +613,6 @@
                         "NDesktopScreen.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.NDesktopScreen.obj"
                         }
-                    },
-                    {
-                        "PrintScreens.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.PrintScreens.obj"
-                        }
                     }
                 ]
             },
@@ -634,61 +629,6 @@
             {
                 "BasePlayArea.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.BasePlayArea.obj"
-                }
-            },
-            {
-                "DWood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.DWood.obj"
-                }
-            },
-            {
-                "Toolbox1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Toolbox1.obj"
-                }
-            },
-            {
-                "Toolbox3.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Toolbox3.obj"
-                }
-            },
-            {
-                "Toolbox2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Toolbox2.obj"
-                }
-            },
-            {
-                "LMetal1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LMetal1.obj"
-                }
-            },
-            {
-                "LMetal2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LMetal2.obj"
-                }
-            },
-            {
-                "TMetal1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.TMetal1.obj"
-                }
-            },
-            {
-                "TMetal2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.TMetal2.obj"
-                }
-            },
-            {
-                "LiMetal.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.LiMetal.obj"
-                }
-            },
-            {
-                "Desktop1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Desktop1.obj"
-                }
-            },
-            {
-                "Desktop2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.Desktop2.obj"
                 }
             },
             {
@@ -709,51 +649,6 @@
             {
                 "DoorHandle.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__PIXELPAD_ASSET__.17479.204579.DoorHandle.obj"
-                }
-            },
-            {
-                "Dark_Metal.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Dark_Metal.obj"
-                }
-            },
-            {
-                "Dark_Metal2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Dark_Metal2.obj"
-                }
-            },
-            {
-                "Light_Metal1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Light_Metal1.obj"
-                }
-            },
-            {
-                "Light_Metal2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Light_Metal2.obj"
-                }
-            },
-            {
-                "Poster_1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_1.obj"
-                }
-            },
-            {
-                "Poster_2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_2.obj"
-                }
-            },
-            {
-                "Poster_3.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_3.obj"
-                }
-            },
-            {
-                "Poster_5.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_5.obj"
-                }
-            },
-            {
-                "Poster_6.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_6.obj"
                 }
             },
             {
@@ -791,26 +686,6 @@
                 ]
             },
             {
-                "Light_Wood.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Light_Wood.obj"
-                }
-            },
-            {
-                "Poster_4.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Poster_4.obj"
-                }
-            },
-            {
-                "DarkMetal_1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.DarkMetal_1.obj"
-                }
-            },
-            {
-                "DarkMetal_2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.DarkMetal_2.obj"
-                }
-            },
-            {
                 "NewToolbox": [
                     {
                         "FrontFrame.obj": {
@@ -828,11 +703,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "Screen_2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.Screen_2.obj"
-                }
             },
             {
                 "NewComputer": [
