@@ -11,7 +11,7 @@
                 "MainLight": "@ExecuteInEditMode\nclass MainLight extends MonoBehaviour {\n\n  @SerializeField\n  intensity = 1;\n\n  //Start is called before the first frame update\n  Start() {\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    Lighting.mainLight.intensity = this.intensity;\n  }\n}\n"
             },
             {
-                "SimpleRotateCam": "class SimpleRotateCam extends MonoBehaviour {\n\n  @SerializeField\n  speed = 10;\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    //Cursor.lockState = CursorLockMode.Locked;\n    let hor = Input.GetAxis(\"Mouse X\");\n    let ver = Input.GetAxis(\"Mouse Y\");\n    this.transform.parent.Rotate(0, Time.deltaTime * hor * this.speed, 0, BABYLON.Space.WORLD);\n    this.transform.parent.Rotate(Time.deltaTime * hor * this.speed, 0,0, BABYLON.Space.LOCAL);\n  }\n}\n"
+                "SimpleRotateCam": "class SimpleRotateCam extends MonoBehaviour {\n\n  @SerializeField\n  speed = 10;\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    //Cursor.lockState = CursorLockMode.Locked;\n    let hor = Input.GetAxis(\"Mouse X\");\n    let ver = Input.GetAxis(\"Mouse Y\");\n    this.transform.parent.Rotate(0, Time.deltaTime * hor * this.speed, 0, BABYLON.Space.WORLD);\n    this.transform.parent.Rotate(Time.deltaTime * ver * this.speed, 0,0, BABYLON.Space.LOCAL);\n  }\n}\n"
             }
         ],
         "model": [
