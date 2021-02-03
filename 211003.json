@@ -11,7 +11,7 @@
                 "MainLight": "@ExecuteInEditMode\nclass MainLight extends MonoBehaviour {\n\n  @SerializeField\n  intensity = 1;\n\n  //Start is called before the first frame update\n  Start() {\n    \n  }\n  \n  //Update is called once per frame\n  Update() {\n    Lighting.mainLight.intensity = this.intensity;\n  }\n}\n"
             },
             {
-                "SimpleRotateCam": "class SimpleRotateCam extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    let ver = Input.GetAxis(\"Horizontal\");\n    let hor = Input.GetAxis(\"Vertical\");\n    \n  }\n}\n"
+                "SimpleRotateCam": "class SimpleRotateCam extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n    let ver = Input.GetAxis(\"Horizontal\");\n    let hor = Input.GetAxis(\"Vertical\");\n    this.transform.parent.Rotate(0, Time.deltaTime, 0, BABYLON.Space.WORLD);\n  }\n}\n"
             }
         ],
         "model": [
