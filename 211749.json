@@ -5,7 +5,7 @@
                 "main": ""
             },
             {
-                "LightSettings": "@RegisterAsComponent \n@ExecuteInEditMode\nclass LightSettings extends MonoBehaviour {\n  //Start is called before the first frame update\n  Start() {\n    Lighting.mainLight.intensity = 0;\n  }\n}\n"
+                "LightSettings.ts": "@RegisterAsComponent \n@ExecuteInEditMode\nclass LightSettings extends MonoBehaviour {\n  //Start is called before the first frame update\n  Start() {\n    Lighting.mainLight.intensity = 0;\n    \n  }\n}\n"
             }
         ],
         "model": [
