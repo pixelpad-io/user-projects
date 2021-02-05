@@ -2,7 +2,10 @@
     "assets": {
         "code": [
             {
-                "main.ts": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n\n\n\n\n\n\n\n\n\n\n\n\n"
+                "main.ts": ""
+            },
+            {
+                "main.ts": ""
             },
             {
                 "Script0.ts": "class Script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
@@ -18,7 +21,7 @@
                 ]
             },
             {
-                "Script7.ts": "class Script7 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+                "hello.ts": "class Script7 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n\n"
             },
             {
                 "folder2": [
@@ -51,7 +54,7 @@
             {
                 "folder0": [
                     {
-                        "virus2.obj": {
+                        "virus3.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.1.211357.virus2.obj"
                         }
                     },
