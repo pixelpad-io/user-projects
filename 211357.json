@@ -2,10 +2,7 @@
     "assets": {
         "code": [
             {
-                "main.ts": ""
-            },
-            {
-                "main.ts": ""
+                "main": "\r\n\r\n"
             },
             {
                 "Script0.ts": "class Script0 extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
