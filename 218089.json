@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": ">>>animal = input(\"What's your favorite animal? \")\n>>>joke = \"Why did the \" +animal+ \" cross the road?\"\n>>>print(joke)\n"
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
