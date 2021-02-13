@@ -830,11 +830,6 @@
                 }
             },
             {
-                "RoomT.png": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613200586.RoomT.png"
-                }
-            },
-            {
                 "MTexture.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613209567.MTexture.png"
                 }
@@ -842,6 +837,11 @@
             {
                 "BTexture.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613211352.BTexture.png"
+                }
+            },
+            {
+                "RoomT.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613212132.RoomT.png"
                 }
             }
         ],
