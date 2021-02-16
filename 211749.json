@@ -964,7 +964,7 @@
             {
                 "Environment_Materials": [
                     {
-                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.45580582617584076,\"g\":0.45580537037001456,\"b\":0.45580537037001456},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":15.299999999999885,\"roughness\":-0.13999999999999924,\"alphaMode\":0,\"hasAlpha\":false}"
+                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.023522107540748117,\"g\":0.03593442863092536,\"b\":0.04921942699357584},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":4.3699999999999,\"roughness\":0.530000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "Windows.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.8351565843039128,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":3.570000000000003,\"roughness\":0.6100000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
@@ -994,7 +994,7 @@
                         "ColorMetal_3.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.648492451023158,\"b\":0.13655556887030318},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":45.60000000000001,\"roughness\":0.3099999999999996,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
-                        "LightMetal.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"MTexture\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":2.959999999999871,\"roughness\":0.299999999999999,\"alphaMode\":0,\"hasAlpha\":false}"
+                        "LightMetal.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1.3599999999998869,\"roughness\":0.5499999999999992,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "PrinterGlass.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.6508096286913149,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":11.790000000000049,\"roughness\":0.7900000000000036,\"alphaMode\":0,\"hasAlpha\":false}"
