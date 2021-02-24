@@ -917,6 +917,11 @@
                 "PlayArea.jpg": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613505736.PlayArea.jpg"
                 }
+            },
+            {
+                "texture0.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614132456.texture0.png"
+                }
             }
         ],
         "sound": [],
@@ -964,7 +969,7 @@
             {
                 "Environment_Materials": [
                     {
-                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.06697944874732327,\"g\":0.10109434780029154,\"b\":0.13760777464189433},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":4.3699999999999,\"roughness\":0.530000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
+                        "DarkWood.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.06697944874732327,\"g\":0.10109434780029154,\"b\":0.13760777464189433},\"mainTexture\":\"texture0\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":4.3699999999999,\"roughness\":0.530000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "Windows.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0,\"g\":0.8351565843039128,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":3.570000000000003,\"roughness\":0.6100000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
