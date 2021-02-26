@@ -565,11 +565,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "Panels.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613464455.Panels.obj"
-                }
             }
         ],
         "texture": [
