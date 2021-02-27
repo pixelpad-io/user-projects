@@ -594,11 +594,6 @@
                 }
             },
             {
-                "BTexture.png": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613211352.BTexture.png"
-                }
-            },
-            {
                 "Processor.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613257028.Processor.png"
                 }
@@ -621,6 +616,11 @@
             {
                 "Metal_T.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614388001.Metal_T.png"
+                }
+            },
+            {
+                "Bench_T.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614388161.Bench_T.png"
                 }
             }
         ],
@@ -767,7 +767,7 @@
                 "DoorFrontFace.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9361822397167148,\"b\":0.6599832329312529},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.120000000000001,\"roughness\":0.3400000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "BenchSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"BTexture\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8464820260675947,\"g\":0.8464811795855687,\"b\":0.8464811795855687},\"specularPower\":11.600000000000003,\"roughness\":0.7900000000000003,\"alphaMode\":0,\"hasAlpha\":false}"
+                "BenchSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"Bench_T\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8464820260675947,\"g\":0.8464811795855687,\"b\":0.8464811795855687},\"specularPower\":11.600000000000003,\"roughness\":0.7900000000000003,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "BenchSideSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.676776830166552,\"g\":0.6767761533897219,\"b\":0.6767761533897219},\"specularPower\":3.179999999999998,\"roughness\":2.8600000000000017,\"alphaMode\":0,\"hasAlpha\":false}"
