@@ -440,6 +440,11 @@
             {
                 "Environment": [
                     {
+                        "PArea.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614626171.PArea.obj"
+                        }
+                    },
+                    {
                         "_Bench2_.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614378245._Bench2_.obj"
                         }
@@ -565,11 +570,6 @@
                         }
                     }
                 ]
-            },
-            {
-                "PArea.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614626171.PArea.obj"
-                }
             }
         ],
         "texture": [
