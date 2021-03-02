@@ -634,23 +634,8 @@
                 }
             },
             {
-                "PA_Text.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614626666.PA_Text.jpg"
-                }
-            },
-            {
-                "PA_Normal.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614642379.PA_Normal.jpg"
-                }
-            },
-            {
                 "Test.jpg": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614645072.Test.jpg"
-                }
-            },
-            {
-                "PA_Test.png": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614645369.PA_Test.png"
                 }
             },
             {
