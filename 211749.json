@@ -639,11 +639,6 @@
                 }
             },
             {
-                "Room_Text.jpg": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614669030.Room_Text.jpg"
-                }
-            },
-            {
                 "Room_T.jpg": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614671305.Room_T.jpg"
                 }
