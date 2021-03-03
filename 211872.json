@@ -8,7 +8,10 @@
         "model": [],
         "texture": [],
         "sound": [],
-        "library": {},
+        "library": {
+            "210786": {},
+            "211749": {}
+        },
         "scene": [],
         "material": [],
         "prefab": []
