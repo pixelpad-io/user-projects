@@ -573,6 +573,11 @@
                         "Flagpole.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614626974.Flagpole.obj"
                         }
+                    },
+                    {
+                        "_PopUp_Can.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614757380._PopUp_Can.obj"
+                        }
                     }
                 ]
             },
@@ -584,11 +589,6 @@
             {
                 "ReferenceHuman.glb": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614736326.ReferenceHuman.glb"
-                }
-            },
-            {
-                "_PopUp_Can.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614757380._PopUp_Can.obj"
                 }
             }
         ],
