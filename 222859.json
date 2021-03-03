@@ -1,0 +1,26 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {Blob = ball.obj\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            }
+        ],
+        "model": [
+            {
+                "Ball.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.17207.222859.1614783542.Ball.obj"
+                }
+            }
+        ],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
