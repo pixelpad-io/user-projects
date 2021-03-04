@@ -807,7 +807,7 @@
                 "DoorFrontFace.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9361822397167148,\"b\":0.6599832329312529},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.120000000000001,\"roughness\":0.3400000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "BenchSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"Bench_Text\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8464820260675947,\"g\":0.8464811795855687,\"b\":0.8464811795855687},\"specularPower\":10.120000000000037,\"roughness\":0.5800000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
+                "BenchSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.7616292932471582,\"g\":0.7616285316178649,\"b\":0.7616285316178649},\"mainTexture\":\"Bench_Text\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8464820260675947,\"g\":0.8464811795855687,\"b\":0.8464811795855687},\"specularPower\":10.120000000000037,\"roughness\":0.5800000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": [
