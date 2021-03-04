@@ -770,19 +770,10 @@
                         "PlasticPieces.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.5574778267998468,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":11.980000000000048,\"roughness\":0.8899999999999899,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
-                        "Board.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.6352335245263341,\"g\":0.8339485368314661,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":5.939999999999978,\"roughness\":1.5900000000000007,\"alphaMode\":0,\"hasAlpha\":false}"
-                    },
-                    {
                         "ComputerScreen.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.10326360259907308,\"g\":0.7766180360678724,\"b\":0.9843681383692893},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":1.6100000000000056,\"roughness\":0.6099999999999999,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "ComputerPlastic.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.1287689398770625,\"g\":0.1218619227505353,\"b\":0.1218619227505353},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":1.0900000000000039,\"roughness\":0.6900000000000412,\"alphaMode\":0,\"hasAlpha\":false}"
-                    },
-                    {
-                        "LightsBase.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.40054512742851744,\"g\":0.5265165042944955,\"b\":0.495819643839772},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":2.0300000000000065,\"roughness\":4.310000000000004,\"alphaMode\":0,\"hasAlpha\":false}"
-                    },
-                    {
-                        "LightBulb.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9901856043293387,\"b\":0.725390286503212},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9886478455416362,\"g\":1,\"b\":0.4690640783230885},\"specularPower\":6.43,\"roughness\":1.9200000000000006,\"alphaMode\":0,\"hasAlpha\":false}"
                     }
                 ]
             },
@@ -808,22 +799,10 @@
                 "DarkMetal2.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0.1899999999999988,\"roughness\":0.5099999999999998,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "Toolbox2.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9949748817004985,\"g\":0.3217503542675703,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8606244853791223,\"g\":0.8335740559219312,\"b\":0.8335740559219312},\"specularPower\":7.120000000000031,\"roughness\":0.6599999999999999,\"alphaMode\":0,\"hasAlpha\":false}"
-            },
-            {
-                "Toolbox3.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.4561732459682517,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":7.329999999999988,\"roughness\":0.8400000000000005,\"alphaMode\":0,\"hasAlpha\":false}"
-            },
-            {
                 "LightMetal2.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":5.620000000000071,\"roughness\":0.2700000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "Desktop2.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"BTexture\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":27.310000000000006,\"roughness\":0.3700000000000022,\"alphaMode\":0,\"hasAlpha\":false}"
-            },
-            {
-                "DoorFrame.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.23483505820748107,\"g\":0.21091986118412742,\"b\":0.0869051801016548},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":7.629999999999994,\"roughness\":0.3400000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
-            },
-            {
-                "DoorFrontFace.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9361822397167148,\"b\":0.6599832329312529},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.120000000000001,\"roughness\":0.3400000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "BenchSurface.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.7616292932471582,\"g\":0.7616285316178649,\"b\":0.7616285316178649},\"mainTexture\":\"Bench_Text\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.8464820260675947,\"g\":0.8464811795855687,\"b\":0.8464811795855687},\"specularPower\":10.120000000000037,\"roughness\":0.5800000000000001,\"alphaMode\":0,\"hasAlpha\":false}"
