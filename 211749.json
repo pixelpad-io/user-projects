@@ -440,6 +440,36 @@
             {
                 "Environment": [
                     {
+                        "Bench_2.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614836333.Bench_2.obj"
+                        }
+                    },
+                    {
+                        "Bench_1.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614836320.Bench_1.obj"
+                        }
+                    },
+                    {
+                        "_DScreen.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833353._DScreen.obj"
+                        }
+                    },
+                    {
+                        "Desktop.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833287.Desktop.obj"
+                        }
+                    },
+                    {
+                        "_DKeyboard.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833473._DKeyboard.obj"
+                        }
+                    },
+                    {
+                        "Vice_.obj": {
+                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833267.Vice_.obj"
+                        }
+                    },
+                    {
                         "STrophy.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614830519.STrophy.obj"
                         }
@@ -457,16 +487,6 @@
                     {
                         "_PArea.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614643890._PArea.obj"
-                        }
-                    },
-                    {
-                        "_Bench2_.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614378245._Bench2_.obj"
-                        }
-                    },
-                    {
-                        "_Bench1_.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614378231._Bench1_.obj"
                         }
                     },
                     {
@@ -505,11 +525,6 @@
                         }
                     },
                     {
-                        "Vise.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613208745.Vise.obj"
-                        }
-                    },
-                    {
                         "WB_Frame.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613465254.WB_Frame.obj"
                         }
@@ -532,21 +547,6 @@
                     {
                         "PosterFrame.obj": {
                             "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613465266.PosterFrame.obj"
-                        }
-                    },
-                    {
-                        "Dcomputer.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613203155.Dcomputer.obj"
-                        }
-                    },
-                    {
-                        "DKeyboard.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1613203143.DKeyboard.obj"
-                        }
-                    },
-                    {
-                        "CScreen.obj": {
-                            "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__PIXELPAD_ASSET__.6400.211749.CScreen.obj"
                         }
                     },
                     {
@@ -594,36 +594,6 @@
             {
                 "ReferenceHuman.glb": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614736326.ReferenceHuman.glb"
-                }
-            },
-            {
-                "Vice_.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833267.Vice_.obj"
-                }
-            },
-            {
-                "Desktop.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833287.Desktop.obj"
-                }
-            },
-            {
-                "_DScreen.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833353._DScreen.obj"
-                }
-            },
-            {
-                "_DKeyboard.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614833473._DKeyboard.obj"
-                }
-            },
-            {
-                "Bench_1.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614836320.Bench_1.obj"
-                }
-            },
-            {
-                "Bench_2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614836333.Bench_2.obj"
                 }
             }
         ],
