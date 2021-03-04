@@ -1,0 +1,38 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start(frame) {postMessage Playground\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            },
+            {
+                "Script0.ts": "//Script0.ts\n\n"
+            }
+        ],
+        "model": [
+            {
+                "model0.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19667.223596.1614891279.model0.obj"
+                }
+            },
+            {
+                "v.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19667.223596.1614891387.v.obj"
+                }
+            }
+        ],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "Scene0.scn": "//Scene0.scn\nFloat32Array\n"
+            }
+        ],
+        "material": [
+            {
+                "Material0.mat": "//Material0.mat\n\n"
+            }
+        ],
+        "prefab": []
+    }
+}
