@@ -681,6 +681,11 @@
                 "T_Poster6.jpg": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614892554.T_Poster6.jpg"
                 }
+            },
+            {
+                "T_NormalMat.jpg": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1614981159.T_NormalMat.jpg"
+                }
             }
         ],
         "sound": [],
@@ -749,7 +754,7 @@
                         "DarkMetal.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"Metal_Text\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":22.739999999999938,\"roughness\":0.6299999999999999,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
-                        "MatArea.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.365649738548539,\"g\":0.36564937289880045,\"b\":0.36564937289880045},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":80,\"vScale\":80,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1.9699999999995734,\"roughness\":2.2699999999999654,\"alphaMode\":0,\"hasAlpha\":false}"
+                        "MatArea.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.365649738548539,\"g\":0.36564937289880045,\"b\":0.36564937289880045},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"T_NormalMat\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":1.9699999999995734,\"roughness\":2.2699999999999654,\"alphaMode\":0,\"hasAlpha\":false}"
                     },
                     {
                         "ColorMetal_1.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":2.6600000000002972,\"roughness\":0.4800000000000002,\"alphaMode\":0,\"hasAlpha\":false}"
