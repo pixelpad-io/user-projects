@@ -788,7 +788,7 @@
                 ]
             },
             {
-                "Poster1.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"T_Poster3\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":4.220000000000016,\"vScale\":-4.110000000000019,\"uOffset\":0.38999999999999946,\"vOffset\":0.06999999999999926,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":30.909999999999993,\"roughness\":0.7000000000000204,\"alphaMode\":0,\"hasAlpha\":false}"
+                "Poster1.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"T_Poster3\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":-4.220000000000016,\"vScale\":-4.110000000000019,\"uOffset\":0.6199999999999997,\"vOffset\":0.06999999999999926,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":30.909999999999993,\"roughness\":0.7000000000000204,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "Poster2.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"T_Poster5\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":3.9600000000000004,\"vScale\":-4.110000000000019,\"uOffset\":1.5100000000000005,\"vOffset\":1.06,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":9.980000000000553,\"roughness\":0.7799999999999987,\"alphaMode\":0,\"hasAlpha\":false}"
