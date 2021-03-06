@@ -1,0 +1,29 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            },
+            {
+                "Test.ts": "//Test.ts\n\n  //Start is called before the first frame update\n  Start() {\n  self.sprite = sprite(\"IDK.png)\")\n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}"
+            }
+        ],
+        "model": [],
+        "texture": [
+            {
+                "IDK.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19207.223924.1615068773.IDK.png"
+                }
+            }
+        ],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
