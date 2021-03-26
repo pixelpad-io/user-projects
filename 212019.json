@@ -14,7 +14,7 @@
         },
         "scene": [
             {
-                "MainScene.scn": ""
+                "MainScene.scn": "//MainScene.scn"
             }
         ],
         "material": [],
