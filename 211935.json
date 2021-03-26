@@ -12,7 +12,11 @@
             "210786": {},
             "211749": {}
         },
-        "scene": [],
+        "scene": [
+            {
+                "MainScene.scn": "//MainScene.scn\n\n"
+            }
+        ],
         "material": [],
         "prefab": []
     }
