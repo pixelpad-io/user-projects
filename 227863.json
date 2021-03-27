@@ -11,7 +11,7 @@
         "library": {},
         "scene": [
             {
-                "MainScene.scn": "consolelog(\"1234\");"
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[]}"
             }
         ],
         "material": [],
