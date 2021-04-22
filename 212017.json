@@ -14,7 +14,7 @@
                 "CamPivot.ts": "\nclass CamPivot extends MonoBehaviour {\n  mouse: Mouse;\n\n  Start() {\n    this.mouse = GameObject.FindObjectOfType(Mouse);\n\n  }\n\n  Update() {\n    this.transform.position = this.mouse.transform.position;\n  }\n}"
             },
             {
-                "RotatingSword.ts": "//RotatingSword.ts\n\nclass RotatingSword extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update ()\n  {\n    this.transform.Rotate(0,)\n  }\n\n}"
+                "RotatingSword.ts": "//RotatingSword.ts\n\nclass RotatingSword extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update ()\n  {\n    this.transform.Rotate(0,this.speed, 0);\n  }\n\n}"
             }
         ],
         "model": [
