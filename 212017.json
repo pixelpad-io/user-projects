@@ -14,7 +14,7 @@
                 "CamPivot.ts": "\nclass CamPivot extends MonoBehaviour {\n  mouse: Mouse;\n\n  Start() {\n    this.mouse = GameObject.FindObjectOfType(Mouse);\n\n  }\n\n  Update() {\n    this.transform.position = this.mouse.transform.position;\n  }\n}"
             },
             {
-                "Sword.ts": "@RegisterAsComponent\nclass Sword extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update() {\n    this.transform.Rotate(0, this.speed, 0);\n  }\n\n  OnTriggerEnter (other : Collider)\n  {\n    \n  }\n\n}"
+                "Sword.ts": "@RegisterAsComponent\nclass Sword extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update() {\n    this.transform.Rotate(0, this.speed, 0);\n  }\n\n  OnTriggerEnter (other : Collider)\n  {\n    Debug.Log(other.name);\n  }\n\n}"
             }
         ],
         "model": [
