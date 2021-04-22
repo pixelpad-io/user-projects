@@ -15,6 +15,9 @@
             },
             {
                 "Sword.ts": "@RegisterAsComponent\nclass Sword extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update() {\n    this.transform.Rotate(0, this.speed, 0);\n  }\n\n \n\n}"
+            },
+            {
+                "SwordCollider.ts": "@RegisterAsComponent\nclass SwordCollider extends MonoBehaviour {\n\n  @SerializeField\n  speed = 5;\n\n\n  Update() {\n    this.transform.Rotate(0, this.speed, 0);\n  }\n\n \n\n}"
             }
         ],
         "model": [
