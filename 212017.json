@@ -20,7 +20,7 @@
                 "SwordCollider.ts": "@RegisterAsComponent\nclass SwordCollider extends MonoBehaviour {\n\n\n\n\n\n}"
             },
             {
-                "Bullet.ts": "//Bullet.ts\n\nclass Bullet extends MonoBehaviour\n{\n  Update ()\n  {\n\n  }\n\n  OnTriggerEnter(other : Collider)\n  {\n    if (other.GetComponent(Doozy))\n    {\n      Destroy(other.gameObject);\n    }\n    Destroy(this.gameObject);\n  }\n}"
+                "Bullet.ts": "//Bullet.ts\n\nclass Bullet extends MonoBehaviour\n{\n  Update ()\n  {\n\n  }\n\n  OnTriggerEnter(other : Collider)\n  {\n    if (other.GetComponent(Mouse))\n    {\n      return;\n    }\n    if (other.GetComponent(Doozy))\n    {\n      Destroy(other.gameObject);\n    }\n    Destroy(this.gameObject);\n  }\n}"
             }
         ],
         "model": [
