@@ -23,7 +23,7 @@
                 "Bullet.ts": "//Bullet.ts\n\nclass Bullet extends MonoBehaviour\n{\n  @SerializeField\n  speed = 5;\n\n  Update ()\n  {\n    this.transform.Translate(0,0,this.speed * Time.deltaTime);\n  }\n\n  OnTriggerEnter(other : Collider)\n  {\n    \n    if (other.GetComponentInParent(Doozy))\n    {\n      Destroy(other.GetComponentInParent(Doozy).gameObject);\n    }\n    \n  }\n}"
             },
             {
-                "Spawner.ts": "//Spawner.ts\n\nclass Spawner extends MonoBehaviour\n{\n  @SerializeField\n  spawnInterval = 3;\n\n  spawnTimer = 0;\n\n  Start ()\n  {\n\n  }\n\n  Update ()\n  {\n    this.spawnTimer += Time.deltaTime;\n    if (this.spawnTimer > this.spawnInterval)\n    {\n      this.Spawn();\n    }\n  }\n\n  Spawn ()\n  {\n\n  }\n}\n"
+                "Spawner.ts": "//Spawner.ts\n\nclass Spawner extends MonoBehaviour\n{\n  @SerializeField\n  spawnInterval = 3;\n\n  spawnTimer = 0;\n\n  Start ()\n  {\n\n  }\n\n  Update ()\n  {\n    this.spawnTimer += Time.deltaTime;\n    if (this.spawnTimer > this.spawnInterval)\n    {\n      this.Spawn();\n    }\n  }\n\n  Spawn ()\n  {\n    let x = Random.Range(-30,30, false);\n    let y = Random.Range(-30,30, false);\n\n    Instantiate(\"Doozy\", new Vector3(x,0,y));\n  }\n}\n"
             }
         ],
         "model": [
