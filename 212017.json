@@ -18,6 +18,9 @@
             },
             {
                 "SwordCollider.ts": "@RegisterAsComponent\nclass SwordCollider extends MonoBehaviour {\n\n\n\n\n\n}"
+            },
+            {
+                "Bullet.ts": "//Bullet.ts\n\nclass Bullet extends MonoBehaviour\n{\n  Update ()\n  {\n\n  }\n\n  OnTriggerEnter(other : Collider)\n  {\n    if (other.GetComponent(Doozy))\n    {\n      \n    }\n  }\n}"
             }
         ],
         "model": [
@@ -128,7 +131,7 @@
         ],
         "prefab": [
             {
-                "Box.prefab": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"06bc15f2-88b8-4c82-a05a-5502f3bd011d\",\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":true,\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1}}],\"prefabName\":null,\"_activeSelf\":true}]}"
+                "Box.prefab": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"name\":\"Bullet\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"06bc15f2-88b8-4c82-a05a-5502f3bd011d\",\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":true,\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1}}],\"prefabName\":null,\"_activeSelf\":true}]}"
             }
         ]
     }
