@@ -65,6 +65,11 @@
                 "PixelHead2.glb": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619926955.PixelHead2.glb"
                 }
+            },
+            {
+                "Diner.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619989071.Diner.obj"
+                }
             }
         ],
         "texture": [
@@ -81,6 +86,11 @@
             {
                 "PixelHead.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619924944.PixelHead.png"
+                }
+            },
+            {
+                "SyntyApocalypse.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619989011.SyntyApocalypse.png"
                 }
             }
         ],
