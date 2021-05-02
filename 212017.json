@@ -63,11 +63,6 @@
                 }
             },
             {
-                "PixelRed.glb": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619925198.PixelRed.glb"
-                }
-            },
-            {
                 "PixelHead2.glb": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.4892.212017.1619926955.PixelHead2.glb"
                 }
