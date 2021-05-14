@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "print(\"how do you do\")\nanswer == (\"good\")\nif answer = (\"good\")\nprint (\"ok\")"
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
