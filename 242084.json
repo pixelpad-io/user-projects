@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "print (\"what is a laptop?\")\nanswer == (\"a thing\")\nif answer = (\"a thing\")\nprint (\"ok\")"
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": ""
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
