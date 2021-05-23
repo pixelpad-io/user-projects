@@ -26,7 +26,7 @@
                 "Spawner.ts": "//Spawner.ts\n\nclass Spawner extends MonoBehaviour\n{\n  @SerializeField\n  spawnInterval = 3;\n\n  spawnTimer = 0;\n\n  Start ()\n  {\n\n  }\n\n  Update ()\n  {\n    this.spawnTimer += Time.deltaTime;\n    if (this.spawnTimer > this.spawnInterval)\n    {\n      this.Spawn();\n      this.spawnTimer = 0;\n      \n    }\n  }\n\n  Spawn ()\n  {\n    let x = Random.Range(-30,30, false);\n    let z = Random.Range(-30,30, false);\n\n    Instantiate(\"Doozy\", new Vector3(x,0,z));\n  }\n}\n"
             },
             {
-                "OverlapTest.ts": "//OverlapTest.ts\n@RegisterAsComponent\nclass Cube extends MonoBehaviour {\n\n  other: BoxCollider;\n  c1: BoxCollider;\n\n  Start() {\n    this.other = GameObject.Find(\"Box2\").GetComponent(BoxCollider);\n  }\n\n  Update() {\n    var matrix = this.transform.transformNode.getWorldMatrix();\n    var c1 = this.GetComponent(BoxCollider).bounds.minimum;\n    var c2 = this.other.bounds.boundingBox;\n\n    var position = BABYLON.Vector3.TransformCoordinates(c1, matrix);\n\n    this.other.transform.position = Vector3.BtoV(position);\n  }\n}"
+                "OverlapTest.ts": "//OverlapTest.ts\n@RegisterAsComponent\nclass Cube extends MonoBehaviour {\n\n  other: BoxCollider;\n  c1: BoxCollider;\n\n  Start() {\n    this.other = GameObject.Find(\"Box2\").GetComponent(BoxCollider);\n  }\n\n  Update() {\n    var matrix = this.transform.transformNode.getWorldMatrix();\n    var c1 = this.GetComponent(BoxCollider).bounds;\n    var c2 = this.other.bounds;\n\n    var position = BABYLON.Vector3.TransformCoordinates(c1.minimum, matrix);\n\n    this.other.transform.position = Vector3.BtoV(position);\n  }\n}"
             }
         ],
         "model": [
