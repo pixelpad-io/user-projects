@@ -12,7 +12,13 @@
                 }
             }
         ],
-        "texture": [],
+        "texture": [
+            {
+                "texture0.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.17207.278250.1624845268.texture0.png"
+                }
+            }
+        ],
         "sound": [],
         "library": {},
         "scene": [
