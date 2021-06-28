@@ -21,11 +21,7 @@
         ],
         "sound": [],
         "library": {},
-        "scene": [
-            {
-                "MainScene.scn": ""
-            }
-        ],
+        "scene": [],
         "material": [],
         "prefab": []
     }
