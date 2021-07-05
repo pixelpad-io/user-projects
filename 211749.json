@@ -904,7 +904,7 @@
                 "Poster6.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"GlobalPoster_1\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":-1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":19,\"roughness\":0.7,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "Arena.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+                "Arena.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.5133332398201182,\"g\":0.5133327264868784,\"b\":0.5133327264868784},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":0,\"b\":0},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": [
