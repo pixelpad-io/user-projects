@@ -789,7 +789,7 @@
                 "Flip.scn": "//Flip.scn\n\n"
             },
             {
-                "Arena.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Arena (Clone)\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"89f84e5c-4241-4419-a762-7362ee348d70\",\"ser_children\":[null,null,null]}],\"prefabName\":\"Arena.prefab\",\"_activeSelf\":true}]}"
+                "Arena.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Arena (Clone)\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"89f84e5c-4241-4419-a762-7362ee348d70\",\"ser_children\":[null,null,null]}],\"prefabName\":\"Arena.prefab\",\"_activeSelf\":true},{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":269.94970703125,\"z\":-589.1158447265625},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":15.93686760650878,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"b9e662f2-3355-45a5-b709-3ac71c0a2e2d\",\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null,\"_activeSelf\":true}]}"
             }
         ],
         "material": [
