@@ -787,6 +787,9 @@
             },
             {
                 "Flip.scn": "//Flip.scn\n\n"
+            },
+            {
+                "Arena.scn": "//Arena.scn\n\n"
             }
         ],
         "material": [
