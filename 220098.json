@@ -1,0 +1,20 @@
+{
+    "assets": {
+        "code": [
+            {
+                "main": "class MainGame extends MonoBehaviour {\n\n  //Start is called before the first frame update\n  Start() {\n  \n  }\n  \n  //Update is called once per frame\n  Update() {\n  \n  }\n}\n"
+            }
+        ],
+        "model": [],
+        "texture": [],
+        "sound": [],
+        "library": {},
+        "scene": [
+            {
+                "MainScene.scn": "{\"t\":\"Scene\",\"rootObjs\":[{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Camera\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"ad2cf937-0652-4788-9d87-1a0251c22744\",\"ser_children\":[]},{\"t\":\"Camera\"}],\"prefabName\":null,\"_activeSelf\":true},{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Box\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":34.019028890980984,\"y\":-0.000003013041667344232,\"z\":-27.563467056441684},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"1af4194f-3ceb-40f8-9f41-514dab69fa62\",\"ser_children\":[]},{\"t\":\"Renderer\",\"meshName\":\"box\",\"materialName\":\"\",\"scale\":1,\"castShadows\":true,\"receiveShadows\":false,\"mergeMeshes\":true},{\"t\":\"BoxCollider\",\"_isTrigger\":false,\"_center\":{\"t\":\"Vector3\",\"x\":0,\"y\":0,\"z\":0},\"_layer\":1,\"_layerMask\":1,\"_size\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1}},{\"t\":\"Rigidbody\",\"_mass\":10,\"_restitution\":0.5,\"_friction\":0.5,\"_isKinematic\":false,\"_freezeRotation\":false}],\"prefabName\":null,\"_activeSelf\":true},{\"t\":\"GameObject\",\"isStatic\":false,\"name\":\"Light\",\"components\":[{\"t\":\"Transform\",\"_position\":{\"t\":\"Vector3\",\"x\":10,\"y\":14,\"z\":-10},\"_eulerAngles\":{\"t\":\"Vector3\",\"x\":44.99999999999999,\"y\":-45.00000000000001,\"z\":-4.497983566394945e-15},\"_scale\":{\"t\":\"Vector3\",\"x\":1,\"y\":1,\"z\":1},\"uniqueId\":\"658b8ec9-be5c-4ec7-bd4d-5f824f7570b2\",\"ser_children\":[]},{\"t\":\"Light\",\"lightType\":0,\"color\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"castShadows\":true,\"intensity\":0.7,\"range\":25,\"coneAngle\":25,\"exponent\":25,\"shadowFrustrumSize\":25,\"shadowFrustrumLength\":25}],\"prefabName\":null,\"_activeSelf\":true}]}"
+            }
+        ],
+        "material": [],
+        "prefab": []
+    }
+}
