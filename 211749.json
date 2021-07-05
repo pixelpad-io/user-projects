@@ -791,6 +791,11 @@
                 "GlobalPoster_3.jpg": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1616708505.GlobalPoster_3.jpg"
                 }
+            },
+            {
+                "ColorAtlas.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625527240.ColorAtlas.png"
+                }
             }
         ],
         "sound": [],
@@ -925,6 +930,9 @@
             },
             {
                 "Poster6.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"GlobalPoster_1\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":-1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":19,\"roughness\":0.7,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "Arena_Matte.mat": "//Arena_Matte.mat\n\n"
             }
         ],
         "prefab": [
