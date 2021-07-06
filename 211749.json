@@ -932,7 +932,7 @@
                 "Poster6.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"GlobalPoster_1\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":-1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":19,\"roughness\":0.7,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "ArenaMatte.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9916269676806654,\"g\":1,\"b\":0.7678171249581336},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":100,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+                "ArenaMatte.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.31438445860112596,\"g\":0.3143844699385312,\"b\":0.31438415555406124},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":100,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "ArenaYellowShine.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9525082261862042,\"b\":0},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.8937154709337755,\"b\":0.0076773351825949465},\"specularPower\":0,\"roughness\":0.1,\"alphaMode\":0,\"hasAlpha\":true}"
