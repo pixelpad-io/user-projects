@@ -968,7 +968,7 @@
                 "ArenaMatteMiddle.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9092384811954431,\"g\":0.986554130923595,\"b\":1},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0.42000000000000026,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":1,\"b\":0.918371634002837},\"specularPower\":78.79,\"roughness\":0.14000000000000054,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "ArenaMatteUpper.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.8969464421554468,\"b\":0.8120112987822928},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":-0.59,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.7155097766116614,\"b\":0.1844540304792318},\"specularPower\":80,\"roughness\":0.10000000000000006,\"alphaMode\":0,\"hasAlpha\":true}"
+                "ArenaMatteUpper.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.8969464421554468,\"b\":0.8120112987822928},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0.1999999999999999,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.7155097766116614,\"b\":0.1844540304792318},\"specularPower\":80,\"roughness\":0.10000000000000006,\"alphaMode\":0,\"hasAlpha\":true}"
             }
         ],
         "prefab": [
