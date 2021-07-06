@@ -965,10 +965,10 @@
                 "ArenaMatteBase.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.5883883476483184,\"g\":0.5454558791714523,\"b\":0.3217579648898006},\"specularPower\":98.94000000000003,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "ArenaMatteMiddle.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9092384811954431,\"g\":0.986554130923595,\"b\":1},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":1,\"b\":0.918371634002837},\"specularPower\":78.79,\"roughness\":0.14000000000000054,\"alphaMode\":0,\"hasAlpha\":false}"
+                "ArenaMatteMiddle.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9092384811954431,\"g\":0.986554130923595,\"b\":1},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0.42000000000000026,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":1,\"b\":0.918371634002837},\"specularPower\":78.79,\"roughness\":0.14000000000000054,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "ArenaMatteUpper.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.9924790599361233,\"g\":1,\"b\":0.8827219769009476},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.972368523177587,\"g\":1,\"b\":0.4938132472483464},\"specularPower\":72.87999999999998,\"roughness\":0.18000000000000002,\"alphaMode\":0,\"hasAlpha\":false}"
+                "ArenaMatteUpper.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.8969464421554468,\"b\":0.8120112987822928},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":-0.010000000000000247,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.7155097766116614,\"b\":0.1844540304792318},\"specularPower\":80,\"roughness\":0.10000000000000006,\"alphaMode\":0,\"hasAlpha\":true}"
             }
         ],
         "prefab": [
