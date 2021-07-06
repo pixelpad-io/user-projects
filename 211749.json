@@ -655,6 +655,31 @@
                 "M_ColorBoxButton.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1617697768.M_ColorBoxButton.obj"
                 }
+            },
+            {
+                "arena_blueaccent.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625536424.arena_blueaccent.obj"
+                }
+            },
+            {
+                "arena_hangingmonitors.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625536439.arena_hangingmonitors.obj"
+                }
+            },
+            {
+                "arena_matte.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625536447.arena_matte.obj"
+                }
+            },
+            {
+                "arena_purpleaccent.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625536459.arena_purpleaccent.obj"
+                }
+            },
+            {
+                "arena_yellowaccent.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625536467.arena_yellowaccent.obj"
+                }
             }
         ],
         "texture": [
