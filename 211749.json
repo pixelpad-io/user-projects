@@ -1117,7 +1117,7 @@
                 "ArenaBrightFloor.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.7483710410999105,\"g\":0.9150985556998745,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.1803279126824895,\"g\":0.6243297858622141,\"b\":0.8270368862987783},\"specularPower\":8.790000000000003,\"roughness\":1.4,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "FTCTVAds.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"arenaFTCflipped.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.4369858319252946,\"b\":0},\"specularPower\":40,\"roughness\":0.1,\"alphaMode\":0,\"hasAlpha\":false}"
+                "FTCTVAds.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"mainTexture\":\"arenaFTCflipped.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.4369858319252946,\"b\":0},\"specularPower\":40,\"roughness\":0.8400000000000005,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": [
