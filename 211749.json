@@ -766,18 +766,8 @@
                 }
             },
             {
-                "arena3Mainfloor2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626407551.arena3Mainfloor3.obj"
-                }
-            },
-            {
                 "arena3Mainfloor1.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626407607.arena3Mainfloor1.obj"
-                }
-            },
-            {
-                "arena3Orangemesh.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626407618.arena3Orangemesh.obj"
                 }
             },
             {
@@ -803,6 +793,16 @@
             {
                 "arenafloor3.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626408148.arenafloor3.obj"
+                }
+            },
+            {
+                "arena3Orangemesh.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626448950.arena3Orangemesh.obj"
+                }
+            },
+            {
+                "arena3Mainfloor2.obj": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626449007.arena3Mainfloor2.obj"
                 }
             }
         ],
@@ -1074,7 +1074,7 @@
                 "ArenaYellowShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.5353553390593273,\"g\":0.3531928065291255,\"b\":0.21136773715358748},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.9684582425360877,\"g\":0.4283458538317961,\"b\":0},\"specularPower\":40.23,\"roughness\":1.6700000000000013,\"alphaMode\":0,\"hasAlpha\":true}"
             },
             {
-                "ArenaBlueShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.2993588824220458,\"g\":1,\"b\":0.9956639442358536},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":1,\"b\":0.9645499952112568},\"specularPower\":40.45,\"roughness\":0.7900000000000004,\"alphaMode\":0,\"hasAlpha\":false}"
+                "ArenaBlueShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.483205998154955,\"g\":0.7136398838020298,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0,\"g\":1,\"b\":0.9645499952112568},\"specularPower\":40.45,\"roughness\":0.7900000000000004,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "ArenaPurpleShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0,\"b\":0.0363261355917448},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.892000263928395,\"g\":0,\"b\":1},\"specularPower\":40.57000000000001,\"roughness\":1.81,\"alphaMode\":0,\"hasAlpha\":true}"
