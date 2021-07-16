@@ -1,0 +1,31 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "# not broken!\r\nself.a = a()\r\nself.a.sprite = sprite('nosprite.png')\r\nself.a.scaleX = self.a.scaleY = 5\r\n\r\nself.a1 = a()\r\nself.a1.sprite = sprite('yessprite.png')\r\nself.a1.scaleX = self.a1.scaleY = 0.5\r\nself.a1.x = -200",
+                    "loop": ""
+                }
+            },
+            {
+                "a": {
+                    "type": "object script",
+                    "start": "#a start\n\n",
+                    "loop": "#a loop\n\n"
+                }
+            }
+        ],
+        "room": [],
+        "texture": [
+            {
+                "yessprite.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6539.220525.1626451736.yessprite.png"
+                }
+            }
+        ],
+        "sound": [],
+        "function": []
+    }
+}
