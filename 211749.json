@@ -1080,7 +1080,7 @@
                 "ArenaPurpleShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.7583838671049046,\"g\":0,\"b\":1},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.892000263928395,\"g\":0,\"b\":1},\"specularPower\":40.57000000000001,\"roughness\":1.81,\"alphaMode\":0,\"hasAlpha\":true}"
             },
             {
-                "PlayMat.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.27019029611437195,\"g\":0.2701900259240758,\"b\":0.2701900259240758},\"mainTexture\":\"\",\"alpha\":0,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.4469669784754297,\"g\":0.4469669914110088,\"b\":0.4469665444440174},\"specularPower\":20.510000000000012,\"roughness\":0.1,\"alphaMode\":0,\"hasAlpha\":false}"
+                "PlayMat.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.27019029611437195,\"g\":0.2701900259240758,\"b\":0.2701900259240758},\"mainTexture\":\"FTCArenaScreens.png\",\"alpha\":0,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.4469669784754297,\"g\":0.4469669914110088,\"b\":0.4469665444440174},\"specularPower\":20.510000000000012,\"roughness\":0.1,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
                 "ArenaMatte.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.31438445860112596,\"g\":0.3143844699385312,\"b\":0.31438415555406124},\"mainTexture\":\"ColorAtlas.png\",\"alpha\":0,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":1,\"b\":1},\"specularPower\":100,\"roughness\":1,\"alphaMode\":0,\"hasAlpha\":false}"
@@ -1099,6 +1099,9 @@
             },
             {
                 "OrangeSkyboxMat.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9999948665033399,\"b\":0.99999},\"mainTexture\":\"orangeSkyBox.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":0,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.6484579769799903,\"b\":0},\"specularPower\":19.180000000000007,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+            },
+            {
+                "FTCArenaScreenMAT.mat": "//FTCArenaScreenMAT.mat\n\n"
             }
         ],
         "prefab": [
