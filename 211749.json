@@ -930,6 +930,11 @@
                 "orangeSkyBox.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626406972.orangeSkyBox.png"
                 }
+            },
+            {
+                "FTCArenaScreens.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626408241.FTCArenaScreens.png"
+                }
             }
         ],
         "sound": [],
