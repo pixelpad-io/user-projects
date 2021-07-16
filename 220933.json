@@ -1,0 +1,17 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "#",
+                    "loop": ""
+                }
+            }
+        ],
+        "room": [],
+        "texture": [],
+        "sound": [],
+        "function": []
+    }
+}
