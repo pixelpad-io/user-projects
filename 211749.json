@@ -403,7 +403,7 @@
                 ]
             },
             {
-                "_empty_": [
+                "ArenaAssets_Iteration2": [
                     {
                         "_empty_": [
                             {
@@ -420,6 +420,56 @@
                                                                         "_empty_": [
                                                                             {
                                                                                 "_empty_": []
+                                                                            },
+                                                                            {
+                                                                                "arena2_blue.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625866723.arena2_blue.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_main.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867045.arena_main.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_platform.mtl": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867054.arena_platform.mtl"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_yellow.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867069.arena_yellow.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_purple.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867101.arena2_purple.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_floor2.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867205.arena2_floor2.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena_floor3.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867755.arena_floor3.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_platformmesh.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867894.arena2_platformmesh.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_pillars.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625868239.arena2_pillars.obj"
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "arena2_yellow2.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625869943.arena2_yellow2.obj"
+                                                                                }
                                                                             }
                                                                         ]
                                                                     }
@@ -701,56 +751,6 @@
                 }
             },
             {
-                "arena2_blue.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625866723.arena2_blue.obj"
-                }
-            },
-            {
-                "arena2_main.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867045.arena_main.obj"
-                }
-            },
-            {
-                "arena2_platform.mtl": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867054.arena_platform.mtl"
-                }
-            },
-            {
-                "arena2_yellow.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867069.arena_yellow.obj"
-                }
-            },
-            {
-                "arena2_purple.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867101.arena2_purple.obj"
-                }
-            },
-            {
-                "arena2_floor2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867205.arena2_floor2.obj"
-                }
-            },
-            {
-                "arena_floor3.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867755.arena_floor3.obj"
-                }
-            },
-            {
-                "arena2_platformmesh.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625867894.arena2_platformmesh.obj"
-                }
-            },
-            {
-                "arena2_pillars.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625868239.arena2_pillars.obj"
-                }
-            },
-            {
-                "arena2_yellow2.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625869943.arena2_yellow2.obj"
-                }
-            },
-            {
                 "arena_skybox.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625875800.arena_skybox.obj"
                 }
@@ -874,6 +874,11 @@
             {
                 "purpleSkybox.png": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625876166.purpleSkybox.png"
+                }
+            },
+            {
+                "orangeSkyBox.png": {
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1626406972.orangeSkyBox.png"
                 }
             }
         ],
