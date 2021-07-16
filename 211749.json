@@ -470,6 +470,11 @@
                                                                                 "arena2_yellow2.obj": {
                                                                                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625869943.arena2_yellow2.obj"
                                                                                 }
+                                                                            },
+                                                                            {
+                                                                                "arena_skybox.obj": {
+                                                                                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625875800.arena_skybox.obj"
+                                                                                }
                                                                             }
                                                                         ]
                                                                     }
@@ -748,11 +753,6 @@
             {
                 "M_ColorBoxButton.obj": {
                     "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1617697768.M_ColorBoxButton.obj"
-                }
-            },
-            {
-                "arena_skybox.obj": {
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6400.211749.1625875800.arena_skybox.obj"
                 }
             }
         ],
@@ -1043,7 +1043,7 @@
                 "ArenaBlackShine.mat": "{\"t\":\"Material\",\"isPBR\":true,\"mainColor\":{\"t\":\"Color\",\"r\":0.3157221600845883,\"g\":0.20010414729006148,\"b\":0.45580582617584076},\"mainTexture\":\"\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":1,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.25033512957539944,\"g\":0,\"b\":0.5883883476483184},\"specularPower\":63.770000000000024,\"roughness\":0.5400000000000006,\"alphaMode\":0,\"hasAlpha\":false}"
             },
             {
-                "PurpleSkyboxMat.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":0.9104609143839317,\"g\":0.023586590383699146,\"b\":1},\"mainTexture\":\"purpleSkybox.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":0,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":0.922569815632381,\"g\":0.4213341548011321,\"b\":1},\"specularPower\":0,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
+                "OrangeSkyboxMat.mat": "{\"t\":\"Material\",\"isPBR\":false,\"mainColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.9999948665033399,\"b\":0.99999},\"mainTexture\":\"orangeSkyBox.png\",\"alpha\":1,\"normalTexture\":\"\",\"uScale\":0,\"vScale\":1,\"uOffset\":1,\"vOffset\":1,\"specularColor\":{\"t\":\"Color\",\"r\":1,\"g\":0.6484579769799903,\"b\":0},\"specularPower\":19.180000000000007,\"roughness\":0,\"alphaMode\":0,\"hasAlpha\":false}"
             }
         ],
         "prefab": [
