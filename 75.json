@@ -1,0 +1,31 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "k = bubu()\r\nk.x = 200\r\n",
+                    "loop": ""
+                }
+            },
+            {
+                "bubu": {
+                    "type": "object script",
+                    "start": "self.sprite = new_sprite(\"but.jpg\")",
+                    "loop": "#bubu loop\n\n"
+                }
+            }
+        ],
+        "room": [],
+        "texture": [
+            {
+                "but.jpg": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6604.221094.1626630288.but.jpg"
+                }
+            }
+        ],
+        "sound": [],
+        "function": []
+    }
+}
