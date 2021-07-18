@@ -9,7 +9,7 @@
                 }
             },
             {
-                "MyScript": {
+                "MyScriptE": {
                     "type": "object script",
                     "start": "#MyScript start\n\n",
                     "loop": "#MyScript loop\n\n"
