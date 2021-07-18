@@ -16,7 +16,15 @@
                 }
             }
         ],
-        "room": [],
+        "room": [
+            {
+                "MyRoom": {
+                    "type": "room script",
+                    "start": "#MyRoom start\n\n",
+                    "loop": "#MyRoom loop\n\n"
+                }
+            }
+        ],
         "texture": [],
         "sound": [],
         "function": []
