@@ -23,13 +23,6 @@
                     "start": "#MyRoom start\n\n",
                     "loop": "#MyRoom loop\n\n"
                 }
-            },
-            {
-                "MyRoom2E": {
-                    "type": "room script",
-                    "start": "#MyRoom2 start\n\n",
-                    "loop": "#MyRoom2 loop\n\n"
-                }
             }
         ],
         "texture": [],
