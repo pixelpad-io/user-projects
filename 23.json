@@ -1,0 +1,17 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "print(' '.join([i[::-1] for i in 'olleh dlrow'.split()]))",
+                    "loop": ""
+                }
+            }
+        ],
+        "room": [],
+        "texture": [],
+        "sound": [],
+        "function": []
+    }
+}
