@@ -1,0 +1,17 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "k = [-1, -2, 3, 1, -4, 5]\r\nprint(sorted(k, key=abs))\r\n\r\nprint(max([4, -5], key=abs))",
+                    "loop": ""
+                }
+            }
+        ],
+        "room": [],
+        "texture": [],
+        "sound": [],
+        "function": []
+    }
+}
