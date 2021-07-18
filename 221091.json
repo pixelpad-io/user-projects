@@ -4,7 +4,7 @@
             {
                 "Game": {
                     "type": "game script",
-                    "start": "",
+                    "start": "obj = MyScriptE()\r\nobj.sprite = sprite('MySprite')",
                     "loop": ""
                 }
             },
@@ -21,7 +21,7 @@
             {
                 "MySprite.png": {
                     "type": "image",
-                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6539.221091.1626629993.MySprite.png"
+                    "uri": "https://imgur.com/Zsq6qHR"
                 }
             }
         ],
