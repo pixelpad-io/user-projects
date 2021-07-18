@@ -14,13 +14,6 @@
                     "start": "#MyClass start\n\n",
                     "loop": "#MyClass loop\n\n"
                 }
-            },
-            {
-                "MyClass2E": {
-                    "type": "object script",
-                    "start": "#MyClass2 start\n\n",
-                    "loop": "#MyClass2 loop\n\n"
-                }
             }
         ],
         "room": [],
