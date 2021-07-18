@@ -11,13 +11,20 @@
             {
                 "MyScriptE": {
                     "type": "object script",
-                    "start": "#MyScript start\n\n",
+                    "start": "#MyScript start\n\n#stuff here",
                     "loop": "#MyScript loop\n\n"
                 }
             }
         ],
         "room": [],
-        "texture": [],
+        "texture": [
+            {
+                "MySprite.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/test.pixelpad.io/__ASSET__.6539.221091.1626629993.MySprite.png"
+                }
+            }
+        ],
         "sound": [],
         "function": []
     }
