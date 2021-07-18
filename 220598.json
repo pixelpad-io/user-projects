@@ -4,7 +4,7 @@
             {
                 "Game": {
                     "type": "game script",
-                    "start": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+                    "start": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
                     "loop": ""
                 }
             }
