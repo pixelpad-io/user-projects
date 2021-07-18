@@ -16,7 +16,7 @@
                 }
             },
             {
-                "MyClass2": {
+                "MyClass2E": {
                     "type": "object script",
                     "start": "#MyClass2 start\n\n",
                     "loop": "#MyClass2 loop\n\n"
