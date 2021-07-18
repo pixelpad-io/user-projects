@@ -1,0 +1,1028 @@
+{
+    "assets": {
+        "script": [
+            {
+                "Game": {
+                    "type": "game script",
+                    "start": "# current time\r\nself.t = time_ms()\r\n# general purpose frame counter\r\nself.c = 0\r\nself.deaths = 0\r\n\r\nself.debug = False\r\nself.showgrid = False\r\n# create grid guides\r\nif self.showgrid:\r\n    for i in range(-20, 21):\r\n        for j in range(-10, 11):\r\n            temp = Slate()\r\n            temp.x = i*100\r\n            temp.y = j*100\r\n            temp.sprite = new_sprite(\"Guide.png\") \r\n            temp.persistent = True\r\n            temp.scaleX = 0.6\r\n            temp.scaleY = 0.6\r\n            temp.z = 150\r\n\r\nself.travelid = None\r\nself.fpslog = int(self.t/1000)\r\nself.fpscount = 0\r\n\r\nself.dark = False\r\nself.water_height = None\r\n\r\nself.prog = ProgTracker()\r\nself.npcs = []\r\nself.e = False\r\nself.p = Player()\r\nself.bg = Background()\r\n\r\nself.deaths = 0\r\nself.start_time = datetime.datetime.now()\r\n\r\nself.bossdead = False\r\nself.music = SoundManager()\r\nself.music.persistent = True\r\nself.music.visible = False\r\nset_room('Starting_Room')",
+                    "loop": "self.t = time_ms()\r\nself.c += 1\r\n\r\nself.fpscount += 1\r\nntime = int(self.t/1000)\r\n\r\nif ntime > self.fpslog:\r\n    self.fpslog = ntime\r\n    print(f\"Frames elapsed in last second: {self.fpscount}\")\r\n    self.fpscount = 0"
+                }
+            },
+            {
+                "Player": {
+                    "type": "object script",
+                    "start": "# initialise pos, sprite\n\nself.x = 0\nself.y = 0\nself.z = 11\nself.sprite = new_sprite(\"debug.png\")\nself.scaleX = 1\nself.scaleY = 1\nself.rad = self.scaleX*20\nself.persistent = True\n\n# velocity values\nself.xv = 0\nself.yv = 0\nself.boostx, self.boosty = 0, 0\n\n# For camera offset\nself.y_off = 0\nself.x_off = 0\n\n# store previous values\nself.x0 = 0\nself.y0 = 0\n\n# sprite that user normally sees\nself.spr_obj = Psprite()\n# flag for determining animation vs static\nself.moving = False\n\n# for debug mode\nself.visible = game.debug\n\n#store death spritesheet\nself.death_anim = new_sprite(\"Player_Death.png\", 3, 3)\nself.dead = False\nself.dead_c = 0\n\nself.xMOD = 0\nself.yMOD = 0\nself.cxMOD = 0\nself.cyMOD = 0\n\nself.xext = 0\nself.yext = 0\nself.cxext = 0\nself.cyext = 0\n\nself.fall_vel = 0\n\nself.dash_cool = game.t\nself.damage_cool = game.t\nself.dmgF = True\n\nself.echo_cool = game.t\n\nself.hp = 5\nself.healthbar = HealthInd()\nself.healthbar.sprite = self.healthbar.spritemap[self.hp]\nself.healthbar.prev_h = self.hp\n\nself.inv = list()",
+                    "loop": "#Death animation\n\nif self.dead:\n    if self.dead_c >= 60:\n        set_room(get_room().__name__)\n        self.hp = 5\n        self.dead = False\n        self.dead_c = 0\n        set_animation(self.spr_obj, self.spr_obj.anim)\n        return\n\n    self.dead_c += 1\n    ind = self.dead_c // 15\n    set_animation(self.spr_obj, new_animation(self.death_anim, 0, ind, ind))\n    return\n    \n\n\ncamX, camY = camera_x(), camera_y()\nxdist = (mouse_x()+camX) - self.x\nydist = (mouse_y()+camY) - self.y\n\n# for arrow key movement\nkeys = [key_is_pressed('arrowRight'), \n        key_is_pressed('arrowLeft'), \n        key_is_pressed('arrowUp'),\n        key_is_pressed('arrowDown')]\n\n# store previous position for movement rotation\nself.x0, self.y0 = self.x, self.y\n\n# prevent 0 trig errors\nif not xdist and not ydist:\n    xdist = 1\n\n# get hypotenuse and adjust x & y for hyp of length 1\nmagn = hyp(xdist, ydist)\nxdist, ydist = xdist/magn, ydist/magn\n\n\n# move unless mouse is right on top of player\nif mouse_is_pressed('left') and not magn < 25:\n    do_move(self, xdist, ydist)\n\n# allow for arrow-key movement\nelif any(keys):\n    xdist=ydist=0\n    if keys[0]: xdist = 1\n    if keys[1]: xdist = -1\n    if keys[2]: ydist = 1\n    if keys[3]: ydist = -1\n    magn = hyp(xdist, ydist)\n    xdist, ydist = xdist/magn, ydist/magn\n\n    do_move(self, xdist, ydist)\n\nelse:\n    # \"water resistance\" deteriorate velocity\n    self.xv = deter(self.xv, 0.95)\n    self.yv = deter(self.yv, 0.95)\n    \n# dash\nif ((key_was_pressed(' ') or mouse_was_pressed('right')) and game.t > self.dash_cool):\n    self.boostx = xdist*16\n    self.boosty = ydist*16\n    self.dash_cool = game.t + 600\n\n#for external movement modifiers(boosters, jelly)\nself.xext = (self.xMOD if abs(self.xMOD)>abs(self.xext) else self.xext)\nself.yext = (self.yMOD if abs(self.yMOD)>abs(self.yext) else self.yext)\n\n#current (ugly fix)\nself.cxext = (self.cxMOD if abs(self.cxMOD)>abs(self.cxext) else self.cxext)\nself.cyext = (self.cyMOD if abs(self.cyMOD)>abs(self.cyext) else self.cyext)\n\n# deteriorate boost velocity\nself.boostx, self.boosty = deter(self.boostx, 0.94), deter(self.boosty, 0.94)\n#deteriorate external modif & current\nself.xext, self.yext = deter(self.xext, 0.96), deter(self.yext, 0.96)\nself.cxext, self.cyext = deter(self.cxext, 0.96), deter(self.cyext, 0.94)\n# final movement values in x and y\na, b = (self.xv+self.boostx+self.xext+self.cxext), (self.yv+self.boosty+self.yext+self.cyext)\n\nif game.water_height is not None:\n    if self.y > game.water_height:\n        self.fall_vel -= 0.5\n        b += self.fall_vel\n    else:\n        self.fall_vel = min(0, self.fall_vel+0.5)\n\nself.x += a\nself.y += b\n\nself.xMOD, self.yMOD = 0, 0\nself.cxMOD, self.cyMOD = 0, 0\n\n# start or stop animation based on speed\nif abs(a) + abs(b) > 2:\n    if not self.moving:\n        set_animation(self.spr_obj, self.spr_obj.anim)\n        self.moving = True\nelse:\n    if self.moving:\n        self.spr_obj.sprite = self.spr_obj.static\n        self.moving = False\n\n# distance from camera after move\ndistX = self.x - camX\ndistY = self.y - camY\n\n# update camera position either moves camera with delay\n# following player or caps at set limits\nnew_camX = camX + (distX - distX/1.1) + self.x_off\nnew_camX = min(max(new_camX, game.cam_limit_x[0]), game.cam_limit_x[1])\n\nnew_camY = camY + (distY - distY/1.1) + self.y_off\nnew_camY = max(min(new_camY, game.cam_limit_y[0]), game.cam_limit_y[1])\n\nset_camera(new_camX, new_camY)\n\n\n# rotate in direction of movement\nDx, Dy = self.x-self.x0, self.y-self.y0\nk0 = angle_helper(Dx, Dy)\nif k0 != -361:\n    self.angle = k0\n\nupdate_spr(self.spr_obj, self.x, self.y, self.angle)\n\nif game.npcs:\n    npc_dists = [get_dist(o.x, o.y, self.x, self.y) for o in game.npcs]\n    near = min(npc_dists)\n    if near < 150:\n        n = game.npcs[npc_dists.index(near)]\n        if not n.e_popup:\n            create_e(n)\n        if key_was_pressed('e'):\n            if isinstance(n, Pedestal):\n                place_gem(n)\n            else:\n                create_msg(n)\n    else:\n        if game.e:\n            destroy(game.e)\n        for o in game.npcs:\n            if o.e_popup:\n                o.e_popup = False\n\nif game.prog.echo:\n    if key_was_pressed('f') and game.t > self.echo_cool:\n        if any(keys):\n            angle = self.angle\n        else:\n            a = get_angle(ydist) - 90\n            angle = a if xdist > 0 else -a\n        make_echo(self.x, self.y, angle)\n        self.echo_cool = game.t + 700\n\n# damage invincibility management\nif self.damage_cool < game.t and not self.dmgF:\n    self.dmgF = True\n    self.spr_obj.alpha = 1\n   \n# death check\nif self.hp < 1:\n    self.dead = True\n    # stop movement\n    self.angle = 0\n    update_spr(self.spr_obj, self.x, self.y, self.angle)\n    self.xv = self.yv = self.boostx = self.boosty\n    self.xext = self.yext = self.xMOD = self.yMOD = self.cxext = self.cyext = 0\n    self.cxMOD = self.cyMOD = 0\n    game.deaths += 1\n\n\n# Empty lines because I don't like it when code \n# is at the bottom of the screen"
+                }
+            },
+            {
+                "Conventions": {
+                    "type": "object script",
+                    "start": "#This is for storing reference for future ease of use.\n\n#==================== Z REFERENCE =======================\n#Place any non-zero Z values here for reference, so we don't end up \n#setting objects to z-403285245 to place objects on top.\n#BACKGROUND: -10\n#pedestals: -8\n#gems (on pedestal): -7\n#waves: -6\n#Dark area (black tiles): -5\n#Spikes: 8\n#Tiles: 9\n#Player sprite: 10\n#Player debug: 11\n#Dark gradients: 24\n#Text boxes: 25\n#Health indicator: 26\n#Gem (in inventory): 26\n#If you come across an undocumented Z-value, add it here.",
+                    "loop": ""
+                }
+            },
+            {
+                "gameplay": [
+                    {
+                        "Block": {
+                            "type": "object script",
+                            "start": "#Block start\n",
+                            "loop": "\n# Exit the loop early if far from player\npdistx = self.x - game.p.x\npdisty = self.y - game.p.y\n\n\nif abs(pdistx) > 2200 or abs(pdisty) > 1600:\n    if self.visible:\n        self.visible = False\n    return\nelse:\n    if not self.visible:\n        self.visible = True\n\npl = get_collision(self, \"Player\")\nif pl:\n    p_nf, p_sf, p_wf, p_ef = pl.y0+pl.rad, pl.y0-pl.rad, pl.x0-pl.rad, pl.x0+pl.rad\n\n    if p_nf < self.sf or p_sf > self.nf:\n        pl.y = pl.y0\n\n    elif p_ef < self.wf or p_wf >= self.ef:\n        pl.x = pl.x0\n    \n    # \"friction\" slowdown while colliding\n    pl.xv = deter(pl.xv, 0.84)\n    pl.yv = deter(pl.yv, 0.84)\n\nal = get_collision(self, \"Anglerfish\")\nif al:\n    a_nf, a_sf, a_wf, a_ef = al.y0+40, al.y0-40, al.x0-40, al.x0+40\n\n    if a_nf < self.sf or a_sf > self.nf:\n        al.y = al.y0\n\n    elif a_ef < self.wf or a_wf >= self.ef:\n        al.x = al.x0"
+                        }
+                    },
+                    {
+                        "Booster": {
+                            "type": "object script",
+                            "start": "#Booster start\n\nself.disp = Slate()\nspritesheet = sprite(\"boostersheet.png\", 4, 3)\nself.anim = animation(spritesheet, 15, 0, 10)\nset_animation(self.disp, self.anim)\n\nfilterConfig = {\n    \"threshold\": 0.7,\n    \"bloomScale\" : 2,\n    \"brightness\" : 0.4,\n    \"blur\" : 2,\n    \"quality\" : 10,\n}\n\nadvBloom = new_adv_bloom_filter(filterConfig)\nadd_filter(self.disp, advBloom)\n\nself.sprite = sprite('debug.png')\nself.visible = game.debug\n\nself.scaleX = 1.4\nself.scaleY = 1.4",
+                            "loop": "#Booster loop\n\nk = get_collision(self, \"Player\")\nif k:\n    boost(k, self.force, self.angle)\n"
+                        }
+                    },
+                    {
+                        "Bumper": {
+                            "type": "object script",
+                            "start": "#Bumper start\n\nself.disp = Slate()\nself.disp.scaleX = self.disp.scaleY = 0.6\nspritesheet = sprite(\"bouncesheet.png\", 2, 1)\nself.anim = animation(spritesheet, 2, 0, 1)\nset_animation(self.disp, self.anim)\n\nfilterConfig = {\n    \"threshold\": 0.825,\n    \"bloomScale\" : 2,\n    \"brightness\" : 0.3,\n    \"blur\" : 2,\n    \"quality\" : 10,\n}\n\nadvBloom = new_adv_bloom_filter(filterConfig)\nadd_filter(self.disp, advBloom)\n\nself.sprite = sprite('debug.png')\nself.visible = game.debug\n\nself.fl = False\nself.scaleX = 1.3\nself.scaleY = 1.3",
+                            "loop": "#Bumper loop\nk = get_collision(self, \"Player\")\nif k and not self.fl:\n    boost(k, self.force, k.angle-180)\n    self.fl = True\n\nif not k:\n    self.fl = False\n\n"
+                        }
+                    },
+                    {
+                        "Current": {
+                            "type": "object script",
+                            "start": "self.sprite = new_sprite(\"debug.png\")\nself.alpha = 0.3\nself.visible = game.debug\n\n#if temporary\nself.temp = False\nself.exp_time = 0\n\n# offset from game counter to create particles right away\nself.count_offset = game.c%40 + 1",
+                            "loop": "#Current loop\n\nif not (game.c - self.count_offset)%40:\n    for i in range(self.dense):\n        fx = random.randrange(self.x-self.w, self.x+self.w)\n        fy = random.randrange(self.y-self.h, self.y+self.h)\n        spr = 'current_particle_dark.png' if game.dark else 'current_particle.png'\n        make_particle(fx, fy, self.xa, self.ya, spr, self)\n\nk = get_collision(self, \"Player\")\nif k and not k.dead:\n    k.cxMOD += self.xa\n    k.cyMOD += self.ya\n\nif self.temp and game.t>self.exp_time:\n    destroy(self)"
+                        }
+                    },
+                    {
+                        "textbox_inst": {
+                            "type": "object script",
+                            "start": "#TextBox start\n\nself.sprite = sprite('text_box.png')\n\n# TextBox class that created instance\nself.parent = None",
+                            "loop": "#TextBox loop\n\nself.parent.do_loop()"
+                        }
+                    },
+                    {
+                        "Spike": {
+                            "type": "object script",
+                            "start": "#Spike start\n\nself.fading = False\nif game.dark:\n    self.sprite = sprite(\"Spike1_dark.png\")\n    self.alpha = 0\nelse:\n    self.sprite = sprite(\"Spike1.png\")",
+                            "loop": "#Spike loop\nl = get_collision(self, \"Player\")\nif l and l.dmgF:\n    boost(l, 8, l.angle-180)\n    damage(1)\n\nif game.dark:\n    if get_collision(self, 'Echolocation'):\n        self.alpha = 1\n        self.fading = True\n    if self.fading:\n        self.alpha -= 0.01\n        if self.alpha <= 0:\n            self.alpha = 0\n            self.fading = False"
+                        }
+                    },
+                    {
+                        "Hurtbox": {
+                            "type": "object script",
+                            "start": "self.sprite = new_sprite(\"debug.png\")\nself.alpha = 0\n#if temporary\nself.temp = False\nself.exp_time = 0\n#Func holds a function that describes player movement after hurtbox collision.\n#Can be redefined externally.\nself.func = lambda a, l: boost(l, 10, l.angle-180)\n\nif game.debug:\n    self.alpha = 0.8",
+                            "loop": "#Hurtbox loop\nk = get_collision(self, \"Player\")\n\nif k and k.dmgF and not (k.dead):\n    damage(self.dmg)\n    self.func(self, k)\n\nif self.temp and game.t > self.exp_time:\n    destroy(self)"
+                        }
+                    },
+                    {
+                        "Anglerfish": {
+                            "type": "object script",
+                            "start": "self.scale = 1\n\nself.sprite = sprite(\"Anglerfish_dark.png\") if game.dark else sprite(\"Anglerfish.png\")\n\nself.light = Slate()\nself.light.sprite = new_sprite(\"Anglerfish_light.png\")\nfilterConfig = {\n    \"threshold\": 0.5,\n    \"bloomScale\" : 2,\n    \"brightness\" : 1,\n    \"blur\" : 2,\n    \"quality\" : 10,\n}\nadvBloom = new_adv_bloom_filter(filterConfig)\nadd_filter(self.light, advBloom)\n\n\nself.scaleX = self.scale\nself.scaleY = self.scale\n\ntransform(self.light, self.x, self.y, self.scale, self.scale)\nself.alpha = 0\nself.disabled = False\nself.fading = False\n\nself.x0 = 0\nself.y0 = 0\n\nself.h = make_hurtbox(self.x+30, self.y, 20, 20, 2)\nself.h.parent = self\nself.h.func = lambda s, pl: boost(pl, 10, s.parent.angle-90)",
+                            "loop": "if self.disabled:\n    return\nself.x0 = self.x\nself.y0 = self.y\n\ndx = game.p.x - self.x \ndy = game.p.y - self.y\n\n# reaction uppon approach\nif hyp(dx, dy) < 200:\n    if not game.dark:\n        self.alpha = min(1, self.alpha+0.1)\n    self.angle = angle_helper(dx, dy) + 90\n    mod = 2/hyp(dx, dy)    \n    self.x += dx*mod\n    self.y += dy*mod\n    if dx < 0:\n        self.scaleY = -self.scale\n    else:\n        self.scaleY = self.scale\nelse:\n    if not game.dark:\n        self.alpha = max(0, self.alpha-0.1)\n\ntransform(self.light, self.x, self.y)\nself.light.angle = self.angle\nself.light.scaleY = self.scaleY\n\nhitbox_rotate(self.h, self, self.angle, 30)\n\nif game.dark:\n    if get_collision(self, 'Echolocation'):\n        self.alpha = 1\n        self.fading = True\n    if self.fading:\n        self.alpha -= 0.02\n        if self.alpha <= 0:\n            self.alpha = 0\n            self.fading = False"
+                        }
+                    },
+                    {
+                        "Jellyfish": {
+                            "type": "object script",
+                            "start": "if game.dark:\n    spritesheet = sprite(\"jelly_dark.png\", 1, 8)\nelse:\n    spritesheet = sprite(\"jelly.png\", 1, 8)\n\nself.anim = animation(spritesheet, 4, 0, 7)\n\nself.fading = False\nif game.dark:\n    self.alpha = 0\nelse:\n    set_animation(self, self.anim)\n\nself.scaleX = 0.5\nself.scaleY = 0.5\n\n#bounce cap\nself.bounce_h = Jellycap()\nself.bounce_h.scaleX = 1.3\nself.bounce_h.scaleY = 0.5",
+                            "loop": "if game.dark:\n    if get_collision(self, 'Echolocation'):\n        self.alpha = 1\n        self.fading = True\n        set_animation(self, self.anim)\n    if self.fading:\n        self.alpha -= 0.01\n        if self.alpha <= 0:\n            self.alpha = 0"
+                        }
+                    },
+                    {
+                        "Jellycap": {
+                            "type": "object script",
+                            "start": "#Helper class - special kind of booster for jellyfish caps\nself.sprite = new_sprite(\"debug.png\")\nself.z = 100\nif not game.debug:\n    self.alpha = 0\n    \n#prevent double collisions\nself.mcf = False\n",
+                            "loop": "#Jellycap loop\nk = get_collision(self, \"Player\")\nif k and not self.mcf:\n    f0 = (2*self.angle) - (k.angle-180)\n    boost(k, 20, f0)\n    self.mcf = True\n\nif not k:\n    self.mcf = False\n"
+                        }
+                    },
+                    {
+                        "Echolocation": {
+                            "type": "object script",
+                            "start": "self.sprite = sprite('sonar_beam.png')\nself.angle = game.p.angle\nself.scaleX = 0.3\nself.scaleY = 0.5\n\nself.deathtime = game.c + 40",
+                            "loop": "self.x += self.xvel\r\nself.y += self.yvel\r\nself.scaleX += 0.09\r\nself.scaleY += 0.06\r\n\r\nif game.dark:\r\n    t_col = get_collision_list(self, 'Tile')\r\n    if t_col:\r\n        for t in t_col:\r\n            t.alpha = 1\r\n            t.fading = True\r\n            t.visible = True\r\n\r\nif game.c > self.deathtime:\r\n    destroy(self)"
+                        }
+                    },
+                    {
+                        "travelgate_inst": {
+                            "type": "object script",
+                            "start": "#travel_gate start\n\n# reference to TravelGate class that created instance\nself.parent = None",
+                            "loop": "#travel_gate loop\n\nif get_collision(self, 'Player'):\n    self.parent.travel()"
+                        }
+                    },
+                    {
+                        "Nautilus": {
+                            "type": "object script",
+                            "start": "#Nautilus start\n\nself.hitbox = make_hurtbox(0, 0, 150, 180, 1, lambda a, l: boost(l, 20, l.angle-180))\n#self.hitbox.alpha = 1\nself.hurtbox = Slate()\nself.hurtbox.sprite = new_sprite(\"debug.png\")\nself.hurtbox.scaleX = 2.5\nself.hurtbox.scaleY = 1.8\nself.scaleX = -2\nself.scaleY = 2\nself.alpha = 1\nself.hurtbox.visible = False\nself.hp = 15\nself.vulnerable = True\n\nself.gate = make_current(1800, -500, 500, 1100, -25, 0)\n#Store animations\nself.idleAnim = new_animation(new_sprite(\"N_Idle.png\", 3, 2), 8, 0, 5)\nself.spikeAnim = new_animation(new_sprite(\"N_Spike_Shoot.png\", 5, 4), 8, 0, 16)\nself.summonAnim = new_animation(new_sprite(\"N_Summon.png\", 4, 4), 8, 0, 15)\nself.shockwaveAnim = new_animation(new_sprite(\"N_Shockwave.png\", 4, 4), 8, 0, 13)\nself.dashAnim = new_animation(new_sprite(\"N_Spike.png\", 4, 4), 4, 0, 14)\nself.hurtAnim = new_animation(new_sprite(\"N_Hit.png\", 3, 2), 8, 0, 5)\nself.deathAnim = new_sprite(\"N_Death.png\", 4, 4)\n\n#dict for mapping attack id to animation\nself.animdict = {\n    0: self.spikeAnim,\n    1: self.dashAnim,\n    2: self.summonAnim,\n    3: self.shockwaveAnim\n}\n\nset_animation(self, self.idleAnim)\nself.z = 5\nself.counter = 0\n\n#order: spikes, dash, summon, shockwave\nself.timedict = [60, 120, 90, 120]\nself.weights = [\n    [60, 10, 30, 0],\n    [30, 15, 30, 25],\n    [5, 40, 25, 30],\n    [0, 50, 0, 50]\n]\n\nself.attackdict = {\n    0: summon_spike,\n    1: dash,\n    2: summon_sfish,\n    3: shockwave\n}\n\nself.wlevel = 0\n\nself.clock =  0\nself.wanderc = 1\nself.t = 0\nself.xv = 0\nself.yv = 0\n\nself.resetX = 0\nself.resetY = 0\nself.resettime = 0\nself.inDash = False\nself.dashEnd = 0\nself.ispending = False\nself.pending = 0\nself.attdelay = 0\n\n#health bar\nself.bossbar = new_sprite(\"BossBar.png\", 16, 1)\nself.barobj = Slate()\nself.barobj.z = 10\nupdate_bar(self.barobj, self.hp, self)\n\nself.dead = False\nself.death_t = 0\n\n\n\n\n\n\n\n\n",
+                            "loop": "\nif self.dead:\n    if self.death_t > 120:\n        return\n    self.death_t += 1\n    k = self.death_t//8\n    self.scaleX = -2\n    self.scaleY = 2\n    set_animation(self, new_animation(self.deathAnim, 0, k, k))\n    return\n    \n#distance check\nif abs(self.x - game.p.x) > 1800:\n    return None\n#damaged by player\npl = get_collision(self.hurtbox, \"Player\")\nif self.vulnerable and pl:\n    #Player must be boosting\n    if pl.boostx or pl.boosty:\n        self.hp -= 1\n        update_bar(self.barobj, self.hp, self)\n        wander(self, 4)\n        boost(pl, 35, -90)\n        \n    else:\n        boost(pl, 10, -90)\n\nif self.hp <= 0:\n    self.dead = True\n    destroy(self.barobj)\n    destroy(self.gate)\n    destroy(self.hurtbox)\n    destroy(self.hitbox)\n    self.time0 = int(time.time())\n    game.bossdead = True\n    make_gem(self.x, self.y, 'gem_rainbow.png', scale=0.6)\n#move healthbar\nself.barobj.x = camera_x()\nself.barobj.y = camera_y()+300\n\n#Attacking\nif self.clock >= 80:\n    if self.wlevel == 3 or random.randint(0, 1):\n        self.pending = gen_att(self.weights[self.wlevel])\n        self.ispending = True\n        self.attdelay = 60\n        self.wlevel = 0\n        if self.pending < 2:\n            self.scaleX = -3\n            self.scaleY = 3\n        set_animation(self, self.animdict[self.pending])\n    else:\n        self.clock = 1\n        self.wlevel += 1\n\nif self.clock == 0:\n    self.vulnerable = True\n    set_animation(self, self.idleAnim)\n    self.scaleX = -2\n    self.scaleY = 2\n\n#Timing for attack events\nself.clock += 1\nif self.ispending:\n    self.clock = -1 * self.timedict[self.pending]\n    self.attdelay -= 1\n    if not self.attdelay:\n        self.vulnerable = False\n        self.attackdict[self.pending](self)\n        self.ispending = False\n        \n\n\n\n#Random \"wandering\"\nif self.wanderc > 90 and not self.inDash:\n\n    n = random.randrange(1, 4)\n    if n==1:\n        wander(self)\n        self.wanderc = 0\n    else:\n        self.wanderc -= 15\n  \n#Dash helpers\n#For appearing on the other side of screen\nif self.inDash and self.resettime == self.t:\n    self.x = self.resetX\n    self.y = self.resetY\n\n#Ending dash\nif self.inDash and self.dashEnd == self.t:\n    self.xv = 0\n    self.yv = 0\n    self.inDash = False\n    wander(self)\n\nself.wanderc += 1\nself.t += 1\n\n#move\nself.x += self.xv\nself.y += self.yv\n\n#hit/hurtbox alignment\nhitbox_rotate(self.hitbox, self, self.angle+210, 60)\nhitbox_rotate(self.hurtbox, self, self.angle-35, 75)\n\n\n\n\n\n"
+                        }
+                    },
+                    {
+                        "Swordfish": {
+                            "type": "object script",
+                            "start": "#Swordfish start\n\nself.active = False\nself.alert = True\n\nself.fading = False\nself.alpha = 1\nself.sprite = sprite(\"Swordfish.png\")\n\n\nself.h = make_hurtbox(self.x+30, self.y, 20, 20, 2)\nself.h.parent = self\nself.h.func = lambda s, pl: boost(pl, 10, s.parent.angle-90)",
+                            "loop": "#Swordfish loop\nif not self.ai:\n    return\n\nif self.alert and not self.active:\n    Dx, Dy = game.p.x - self.x, game.p.y - self.y\n    k = angle_helper(Dx, Dy) + 90\n    if abs((self.angle - k)%360) < 10:\n        self.active = True\n\nif self.alert and self.active:\n    i = (20*math.cos(math.radians(self.angle)))\n    j = (20*math.sin(math.radians(self.angle)))\n    self.x += i\n    self.y += j\n    self.h.x += i\n    self.h.y += j\n    k = get_collision(self.h, \"Block\")\n    if k:\n        self.alert = False\n        destroy(self.h)\n\n\n\n\nif self.fading and (not self.alert) and self.active:\n    self.alpha -= 0.01\n    if self.alpha <= 0:\n        destroy(self)"
+                        }
+                    },
+                    {
+                        "boss_spike": {
+                            "type": "object script",
+                            "start": "self.wait = game.t + 800\nself.idle = True\nself.sprite = new_sprite(\"Boss_Spike.png\")\nself.scaleX = 1\nself.scaleY = 1",
+                            "loop": "#boss_spike loop\nif self.idle and game.t > self.wait:\n    self.idle = False\n    Dx, Dy = game.p.x - self.x, game.p.y - self.y\n    theta = angle_helper(Dx, Dy)\n    self.angle = theta\n    self.xv = math.cos(math.radians(self.angle+90)) * 20\n    self.yv = math.sin(math.radians(self.angle+90)) * 20\n\nif not self.idle:\n    self.x += self.xv\n    self.y += self.yv\n\n\npl = get_collision(self, \"Player\")\nif pl:\n    damage(1)\n    destroy(self)\n    boost(pl, 10, self.angle)\n\nif game.t - self.wait > 3000:\n    destroy(self)\n"
+                        }
+                    }
+                ]
+            },
+            {
+                "Art": [
+                    {
+                        "Psprite": {
+                            "type": "object script",
+                            "start": "#Hitbox start\nself.z = 10\nself.scaleX = 0.7\nself.scaleY = 0.7\n\n\nself.static = sprite('player_still.png')\nspritesheet = sprite('dynamic_squid.png', 4, 4)\nself.anim = animation(spritesheet, 10, 0, 12)\n\nself.sprite = self.static\n# set_animation(self, self.anim)\n\nself.persistent = True",
+                            "loop": "#Psprite loop\n\n"
+                        }
+                    },
+                    {
+                        "Tile": {
+                            "type": "object script",
+                            "start": "# Empty (at least for now) class that is used to make tiles\r\n# Sprite gets set anyways\r\n\r\n\r\nif game.dark:\r\n    self.alpha = 0\r\nself.fading = False",
+                            "loop": "if game.dark:\r\n    if self.fading:\r\n        self.alpha -= 0.01\r\n        if self.alpha <= 0:\r\n            self.alpha = 0\r\n            self.visible = False\r\n            self.fading = False"
+                        }
+                    },
+                    {
+                        "Particle": {
+                            "type": "object script",
+                            "start": "self.scaleX = 1.3\nself.scaleY = 1.3",
+                            "loop": "#Particle loop\nif not (self.nb>=self.y>=self.sb) or not (self.wb<=self.x<=self.eb):\n    destroy(self)\n\nself.x += self.xv\nself.y += self.yv"
+                        }
+                    },
+                    {
+                        "Slate": {
+                            "type": "object script",
+                            "start": "#A blank object that can be used in any way by any other object.",
+                            "loop": ""
+                        }
+                    },
+                    {
+                        "Pedestal": {
+                            "type": "object script",
+                            "start": "self.sprite = sprite('pedestal.png')\nself.e_popup = False\nself.e_offset = 250\nself.z = -8\nself.has_gem = False",
+                            "loop": "#Pedestal loop\n\n"
+                        }
+                    },
+                    {
+                        "Gem": {
+                            "type": "object script",
+                            "start": "self.in_inv = False\nself.placed = False\nself.persistent = True\n\nfilterConfig = {\n    \"threshold\": 0.8,\n    \"bloomScale\" : 5,\n    \"brightness\" : 0.7,\n    \"blur\" : 2,\n    \"quality\" : 10,\n}\n\nself.bloom_filter = new_adv_bloom_filter(filterConfig)\nself.filterid = add_filter(self, self.bloom_filter)",
+                            "loop": "if get_collision(self, 'Player') and not self.placed and not self.in_inv:\n    self.in_inv = True\n    self.z = 26\n    game.p.inv.append(self)\n    remove_filter(self, self.filterid)\n    self.filterid = None\n    if not game.prog.gem1_pick:\n        game.prog.gem1_pick = True\n    elif not game.prog.gem2_pick:\n        game.prog.gem2_pick = True\n    elif not game.prog.gem3_pick:\n        game.prog.gem3_pick = True\n\nif self.in_inv:\n    self.x = camera_x() - 460\n    self.y = camera_y() + 300\n\nif self.placed:\n    if self.persistent:\n        self.persistent = False\n        if self.filterid is None: # just placed, make filter again\n            self.filterid = add_filter(self, self.bloom_filter)"
+                        }
+                    },
+                    {
+                        "HealthInd": {
+                            "type": "object script",
+                            "start": "self.spritemap = {\n    5: sprite('health_5.png'),\n    4: sprite('health_4.png'),\n    3: sprite('health_3.png'),\n    2: sprite('health_2.png'),\n    1: sprite('health_1.png'),\n    0: sprite('health_0.png'),\n}\n\nself.persistent = True\n\nself.x = -460\nself.y = 180\nself.scaleX = self.scaleY = 0.2\n\n# just here for reference, gets set by player class\nself.prev_h = None\n\nself.z = 26",
+                            "loop": "if game.p.hp != self.prev_h:\n    self.sprite = self.spritemap[max(0, game.p.hp)]\nself.prev_h = game.p.hp\n\nself.x = camera_x() - 540\nself.y = camera_y() + 260"
+                        }
+                    },
+                    {
+                        "Background": {
+                            "type": "object script",
+                            "start": "#Background start\n\nself.x = 0\nself.y = 0\nself.scaleX = 0.6\nself.scaleY = 0.6\nself.z = -10\nself.persistent = True",
+                            "loop": "#Background loop\n\nif game.dark == self.visible:\n    self.visible = not self.visible"
+                        }
+                    }
+                ]
+            },
+            {
+                "Whale": {
+                    "type": "object script",
+                    "start": "sprite_sheet = sprite('whalesheet.png', 1, 4)\nself.anim = animation(sprite_sheet, 4, 0, 3)\nset_animation(self, self.anim)\n\nself.e_offset = 100\n\nself.x, self.y = 1500, -420\nself.visible = True\n\nself.msg = 'Hi! I\\'m a whale!'\nself.msg_duration = 1200\n\nself.parent = None",
+                    "loop": "try:\n    # Exit the loop early if far from player\n    pdist = get_dist(self.x, self.y, game.p.x, game.p.y)\n    if pdist > 1700:\n        if self.visible:\n            self.visible = False\n        return\n    else:\n        if not self.visible:\n            self.visible = True\nexcept AttributeError: # Whale created before player in Game start\n    pass\n\nif self.visible:\n    d = game.c % 100\n    \n    if 0 <= d < 50:\n        self.y += 0.5\n    if 50 <= d < 100:\n        self.y -= 0.5\n\nif self.parent is not None:\n    self.parent.update_loop()"
+                }
+            },
+            {
+                "SoundManager": {
+                    "type": "object script",
+                    "start": "#SONG CREDIT: Terminus by meganeko\n\n#SoundManager start\nself.queue = []\n\n#Uses time in seconds\nself.orig = game.t // 1000\nself.cplaying = None\n#Maps songs to their length for scheduling\n#Key: mood no. -1\nself.sl = [40, 36, 33, 36, 16, 29, 29, 30]\n\n#Store current song.\nself.song = None\n\n",
+                    "loop": "#SoundManager loop\n\nself.orig = game.t // 1000"
+                }
+            }
+        ],
+        "room": [
+            {
+                "Demo_Room": {
+                    "type": "room script",
+                    "start": "#Demo_Room start\n\ngame.bg = Background()\nlevel = ['...CCC...','..BL.RB..','...L.R...','...L.R...', '...L.R...','...L.R...', '...LXR...', '...L.R...','.VCC.CCV.', '.L.....R.', '.VBNBNNV.']\n        \nmake_map(level)\n\nw = Whale()\n\nbigwhale = Whale()\nbigwhale.scaleX = bigwhale.scaleY = 3.5\nbigwhale.x = bigwhale.y = -700\n\ncreateblock(0, 600, 300, 95)\n\nmake_current(0, 0, 200, 200, 5, 2)\nmake_current(500, -500, 400, 400, 0, 9)\nmake_booster(500, 0, 225)\nmake_booster(0, -500, -45)\nmake_bumper(-250, 500)\n\ngame.cam_limit_x = (-1310, 1310)\ngame.cam_limit_y = (504, -504)\n\nTextBox('Welcome to the demo room', 1500)",
+                    "loop": "#Demo_Room loop\n\n"
+                }
+            },
+            {
+                "Menu": {
+                    "type": "room script",
+                    "start": "#Menu start\n\n",
+                    "loop": "#Menu loop\n\n"
+                }
+            },
+            {
+                "Stage1": [
+                    {
+                        "Starting_Room": {
+                            "type": "room script",
+                            "start": "self.roomid = '0-1'\n\ngame.npcs.clear()\ngame.dark = False\n\ngame.cam_limit_x = (290, 1610)\ngame.cam_limit_y = (-110, -290)\n\nif game.travelid == '0-0':\n    smooth_tp(1900, -450)\nelse:\n    smooth_tp(0, 0)\n\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCCCCC6',\n    'L....................R',\n    'L..X.................R',\n    'L....................R',\n    'L....................R',\n    'L....................2CCCC',\n    'L.........................',\n    'L.........................',\n    '5VBNVBNNVNBBNVNVNBNBNVBNVN'\n]\nmake_map(lvlmap)\n\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.scaleX = 2\n\n# Make colliders\ncolliders = [\n    (0, -400, 95, 900),\n    (1050, 0, 2200, 95),\n    (1250, -800, 2600, 95), \n    (2300, -250, 495, 595),\n]\n\n# From top left\nblockgroup(-300, 200, colliders)\n\nmake_dark_gradient(2000, -450, 500, 400, 20)\n\nself.gate = TravelGate(2220, -450, 60, 400, self.roomid, 'Hub_Room')\n\nplay_track(game.music, 1)\n\n\n\n\n",
+                            "loop": "#Starting_Room loop\n\n"
+                        }
+                    },
+                    {
+                        "Hub_Room": {
+                            "type": "room script",
+                            "start": "self.roomid = '0-0'\n\ngame.npcs.clear()\ngame.dark = False\ngame.water_height = None\n\ngame.cam_limit_x = (10, 1810)\ngame.cam_limit_y = (-110, -1090)\n\nif game.travelid == '0-1':\n    smooth_tp(-350, -50)\nelif game.travelid == '1-0':\n    smooth_tp(1700, -1300)\nelif game.travelid == '0-2':\n    smooth_tp(2200, -750)\nelif game.travelid == '2-0':\n    smooth_tp(1550, -50)\nelse:\n    smooth_tp(0, 0)\n\nlvlmap = [\n    '     7CCCCCCCCCCC6             ',\n    'CCCCC3...........R  L..R       ',\n    '......X..........R  L..R       ',\n    '.................R  L..R       ',\n    'NVBBV1...........R  L..R       ',\n    '     L...........2CC3..2C6     ',\n    '     5NNNNNNNN1..........R     ',\n    '     7CCCCCCCC3..........R     ',\n    '     L...................2CCCCC',\n    '     L.........................',\n    '     L.........................',\n    '     L...................0VNBVB',\n    '     5VNNNNNNNVNNBNVB1...R     ',\n    '                     L...R     ',\n    '                     L...R     ',\n    '                     L...R     ',\n    '                     L...R     ',\n]\nmake_map(lvlmap)\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = -100, -300\ngame.bg.scaleX = 2\ngame.bg.scaleY = 1.5\n\n# from (0, 0)\ncolliders = [\n    (-350, 150, 600, 195),\n    (-350, -700, 595, 1095),\n    (500, 200, 1300, 95),\n    (300, -1300, 895, 695),\n    (400, -450, 900, 200),\n    (1250, -50, 395, 595),\n    (1800, -50, 295, 595),\n    (1550, 200, 400, 100)\n]\nblockgroup(0, 0, colliders)\n\n# from (900, -300)\ncolliders = [\n    (1250, -150, 595, 395),\n    (200, -900, 895, 495),\n    (1250, -850, 595, 595)\n]\nblockgroup(900, -300, colliders)\n\nWinona(1500, -800)\n\nmake_dark_gradient(-350, -50, 600, 400, 20, direction=False)\nTravelGate(-560, -50, 60, 400, self.roomid, 'Starting_Room')\n\nmake_dark_gradient(1700, -1200, 500, 500, 20, vert=True)\nTravelGate(1700, -1400, 500, 60, self.roomid, 'R1_0')\n\nmake_dark_gradient(2150, -750, 600, 400, 20)\nTravelGate(2400, -750, 60, 400, self.roomid, 'R0_2')\n\nmake_dark_gradient(1550, -100, 400, 500, 20, vert=True, direction=False)\nTravelGate(1550, 100, 400, 60, self.roomid, 'R2_0')\n\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n",
+                            "loop": "#Room1 loop\n\n"
+                        }
+                    },
+                    {
+                        "R0_2": {
+                            "type": "room script",
+                            "start": "self.roomid = '0-2'\n\ngame.npcs.clear()\ngame.dark = False\n\ngame.cam_limit_x = (-110, 1110)\ngame.cam_limit_y = (-110, -490)\n\nif game.travelid == '0-0':\n    smooth_tp(-500, -50)\nelse:\n    smooth_tp(0, 0)\n\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCCCCC6',\n    'CCCC3...................R',\n    '.......X................R',\n    '........................R',\n    'NNVB1...................R',\n    '    L...................R',\n    '    L...................R',\n    '    L...................R',\n    '    L...................R',\n    '    L...................R',\n    '    5VBNVBNNVVBVVNNBNBNB4',\n]\nmake_map(lvlmap)\n\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\n\n# Make colliders\ncolliders = [\n    (-200, -50, 495, 195),\n    (-200, -700, 495, 695),\n    (1000, 0, 2100, 95),\n    (2000, -500, 95, 1100),\n    (1000, -1000, 2100, 95)\n]\n\n# From top left\nblockgroup(-300, 200, colliders)\n\nWatson(500, -500)\nmake_simple_npc(800, -100, 'Whale', 'I wonder what the surface looks like...', facingr=False)\nmsg = 'My friend Wilhelm left to find the gems. I haven\\'t seen \\nhim in a while...'\nmake_simple_npc(30, -750, 'Whale', msg , facingr=True)\n\nmake_dark_gradient(-500, -50, 500, 400, 20, direction=False)\nTravelGate(-700, -50, 60, 400, self.roomid, 'Hub_Room')\n\n\n\nplay_track(game.music, 1)",
+                            "loop": "#R0_2 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_0": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-0'\n\ngame.cam_limit_x = (-10, 1610)\ngame.cam_limit_y = (290, -190)\n\nif game.travelid == '0-0':\n    smooth_tp(750, 400)\nelif game.travelid == '1-1':\n    smooth_tp(1950, -250)\nelif game.travelid == '1-10':\n    smooth_tp(-400, -250)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '            L..R         ',\n    '            L..R         ',\n    '            L..R         ',\n    '            L..R         ',\n    '    7CCCCCCC3..2CCCCCCCC6',\n    '    L...................R',\n    '    L.X.................R',\n    'CCCC3...................2CCCC',\n    '.............................',\n    '.............................',\n    'NVBB1...................0VBNN',\n    '    5BNVBNNVNBBNVNVNBNBN4'\n]\nmake_map(lvlmap)\n\ngame.bg.sprite = sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, -100\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\n# make colliders\ncolliders = [\n    (-200, -150, 495, 395),\n    (-200, -650, 495, 195),\n    (400, 200, 895, 495),\n    (1550, 200, 995, 495),\n    (1000, -700, 2100, 95),\n    (2200, -150, 495, 395),\n    (2200, -650, 495, 195)\n]\n\n# from top left\nblockgroup(-200, 200, colliders)\n\nmake_current(575, -150, 350, 600, 1, -12)\nmake_current(925, -150, 350, 600, -5, 12)\n\nmake_current(1800, -250, 600, 300, -9, 0)\n\nmake_dark_gradient(2000, -250, 500, 400, 20)\nTravelGate(2220, -250, 60, 400, self.roomid, 'R1_1')\n\nmake_dark_gradient(750, 400, 400, 500, 20, direction=False, vert=True)\nTravelGate(750, 600, 400, 60, self.roomid, 'Hub_Room')\n\nmake_dark_gradient(-400, -250, 500, 400, 20, direction=False)\nTravelGate(-600, -250, 60, 400, self.roomid, 'R1_10')\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#1_0 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_1": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\n\ngame.dark = False\n\nself.roomid = '1-1'\n\ngame.cam_limit_x = (-110, 1610)\ngame.cam_limit_y = (90, -90)\n\n# room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '1-0':\n    smooth_tp(-500, 50)\nelif game.travelid == '1-2':\n    smooth_tp(2100, 0)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCCCCCC6    ',\n    '    L....................R    ',\n    'CCCC3....................2CCCC',\n    '..............................',\n    '.......X.NBVN....VBNB.........',\n    'NVBV1.........................',\n    '    L....................0VNBB',\n    '    L....................R    ',\n    '    5VBNVBNNVNBBNVNVNBNBN4    '\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (750, 400, 2200, 95),\n    (950, -400, 2600, 95), \n    (350, 0, 395, 95),\n    (1150, 0, 395, 95),\n    (-500, 300, 495, 295),\n    (-500, -250, 495, 395),\n    (2000, 300, 495, 295),\n    (2000, -300, 495, 295),\n]\n\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, 0\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\n# create objects\nmake_current(750, 240, 2000, 220, 0, -8)\nmake_current(750, -240, 2000, 220, 0, 8)\n\nfor xc in range(200, 501, 100):\n    make_spike(xc, 90, \"S\")\n    make_spike(xc, -90, \"N\")\n\nfor xc in range(1000, 1301, 100):\n    make_spike(xc, 90, \"S\")\n    make_spike(xc, -90, \"N\")\n\nmake_booster(0, -300, -90)\nmake_booster(0, 300, -90)\n\nmake_booster(600, -300, -45)\nmake_booster(600, 300, -135)\n\n\n# make gradients over exits/entrances\nmake_dark_gradient(2000, 0, 500, 500, 20)\nTravelGate(2220, 0, 60, 500, self.roomid, 'R1_2')\n\nmake_dark_gradient(-500, 50, 500, 400, 20, direction=False)\nTravelGate(-700, 50, 60, 400, self.roomid, 'R1_0')\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n\n",
+                            "loop": "#1_0 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_2": {
+                            "type": "room script",
+                            "start": "# npc list for player to check\ngame.npcs.clear()\n\n# whether room is dark\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-2'\n\n# lowest(left) x + 640, highest(right) x - 640\ngame.cam_limit_x = (-110, 1610)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (90, -90)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '1-1':\n    smooth_tp(-500, 50)\nelif game.travelid == '1-3':\n    smooth_tp(2100, 0)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCCCCCC6',\n    '    L....................R',\n    'CCCC3...O................2CCCC',\n    '........O.....................',\n    '.......X......................',\n    '.........................0VNNB',\n    'NNBV1....................R',\n    '    L....................R',\n    '    5VBNVBNNVNBBNVNVNBNBN4'\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (750, 400, 2200, 95),\n    (950, -400, 2600, 95), \n    (100, 150, 95, 195),\n    (-500, 300, 495, 295),\n    (-500, -300, 495, 295),\n    (2000, 300, 495, 295),\n    (2000, -250, 495, 395),\n]\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, 0\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\n# room objects\nmake_current(900, 0, 1800, 700, -19, 0)\nmake_booster(0, -300, -90)\nmake_booster(400, -300, -45)\nmake_booster(400, 0, -90)\nmake_booster(700, 100, -90)\nmake_booster(1000, 100, 255)\nmake_booster(1300, 100, 270)\nmake_booster(1600, 100, 270)\nmake_spike(180, 100, \"W\")\nmake_spike(180, 200, \"W\")\n\nmake_dark_gradient(2000, 50, 500, 400, 20)\nTravelGate(2200, 50, 60, 400, self.roomid, 'R1_3')\n\nmake_dark_gradient(-500, 0, 500, 500, 20, direction=False)\nTravelGate(-700, 0, 60, 500, self.roomid, 'R1_1')\n\n\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_2 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_3": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-3'\n\ngame.cam_limit_x = (-110, 1210)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (90, -490)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\n\nif game.travelid == '1-2':\n    smooth_tp(-600, 50)\nelif game.travelid == '1-4':\n    smooth_tp(1650, -650)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCCCCCC6',\n    '    L......RL.....RL.....R',\n    'CCCC3......RL.....RL.....R',\n    '...........67.....67.....R',\n    '.......X.................R',\n    'NVBB1......45.....45.....R',\n    '    L......RL.....RL.....R',\n    '    L......RL.....RL.....R',\n    '    5VBNVBNNVNBBNVNVNB1..R',\n    '                      L..R',\n    '                      L..R',\n    '                      L..R',\n    '                      L..R',\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (-500, 300, 495, 295),\n    (-500, -250, 495, 395),\n    (750, 400, 2200, 95),\n    (600, -600, 1895, 495),\n    (450, 200, 195, 295),\n    (450, -200, 195, 295),\n    (1150, 200, 195, 295),\n    (1150, -200, 195, 295),\n    (1800, -200, 95, 1300),\n]\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, 0\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\n# make room objects\nmake_anglerf(600, 0)\nmake_anglerf(1200, 0)\n\n\n# gradients over exits/entrances\nmake_dark_gradient(-500, 50, 500, 400, 20, direction=False)\nTravelGate(-700, 50, 60, 400, self.roomid, 'R1_2')\n\nmake_dark_gradient(1650, -600, 400, 500, 20, vert=True)\nTravelGate(1650, -800, 400, 60, self.roomid, 'R1_4')\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_3 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_4": {
+                            "type": "room script",
+                            "start": "self.roomid = '1-4'\n\ngame.npcs.clear()\ngame.dark = False\n\n\n# lowest(left) x + 640, highest(right) x - 640\ngame.cam_limit_x = (290, 310)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (290, -690)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '1-3':\n    smooth_tp(750, 550)\nelif game.travelid == '1-5':\n    smooth_tp(-150, -900)\nelse:\n    smooth_tp(0, 0)\n\n# X is (0, 0)\nlvlmap = [\n    '         L..R',\n    '         L..R',\n    '         L..R',\n    '         L..R',\n    '7CCCCCCCCC..R',\n    'L...........R',\n    'L..X........R',\n    'L...........R',\n    'L...........R',\n    'L...........R',\n    'L...........R',\n    'L...........R',\n    'L..0VBNNBNBN4',\n    'L..R          ',\n    'L..R          ',\n    'L..R          ',\n    'L..R          ',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (450, 200, 995, 495),\n    (1200, -200, 95, 1300),\n    (750, -1000, 995, 495),\n    (0, -600, 95, 1300)\n\n]\n# from top left\nblockgroup(-300, 200, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, 500\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\nWilhelm(200, -200)\n\n# gradients over exits/entrances\nmake_dark_gradient(-150, -800, 400, 500, 20, vert=True)\nself.gate = TravelGate(-150, -1000, 400, 60, self.roomid, 'R1_5')\n\nmake_dark_gradient(750, 400, 400, 500, 20, vert=True, direction=False)\nself.gate = TravelGate(750, 600, 400, 60, self.roomid, 'R1_3')\n\n\n# set room music\n\nplay_track(game.music, 2)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_4 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_5": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = True\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-5'\n\ngame.cam_limit_x = (-10, 1110)\ngame.cam_limit_y = (290, -290)\n\nif game.travelid == '1-4':\n    smooth_tp(750, 400)\nelif game.travelid == '1-6':\n    smooth_tp(-400, -250)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '            L..R        ',\n    '            L..R        ',\n    '            L..R        ',\n    '            L..R        ',\n    '    7CCCCCCCW..WCCCCCCC6',\n    '    L.......L..........R',\n    '    L.X.....L..........R',\n    'CCCCA.......L..........R',\n    '...........NLVNNBBB....R',\n    '........R..............R',\n    'NVBBA...R..............R',\n    '    L...R..............R',\n    '    5BNVBNNVNBBNVNVNBNB4',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-200, -150, 495, 395),\n    (-200, -650, 495, 195),\n    (400, 200, 895, 495),\n    (1550, 200, 995, 495),\n    (1000, -800, 2100, 95),\n    (1900, -400, 95, 900),\n\n    (800, -200, 95, 495),\n    (1050, -400, 795, 95),\n    (400, -650, 95, 395)\n]\n# from top left\nblockgroup(-200, 200, colliders)\n\nmake_light_gradient(750, 500, 200, 300, 25, vert=True, direction=False)\nTravelGate(750, 600, 400, 60, self.roomid, 'R1_4')\n\nmake_light_gradient(-500, -250, 300, 200, 25, direction=False)\nTravelGate(-600, -250, 60, 400, self.roomid, 'R1_6')\n\n# set room music\n\nplay_track(game.music, 2)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_5 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_6": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = True\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-6'\n\n# lowest(left) x + 640, highest(right) x - 640\ngame.cam_limit_x = (290, 1610)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (90, -490)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '1-5':\n    smooth_tp(2000, 50)\nelif game.travelid == '1-7':\n    smooth_tp(-100, -600)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    'LCCCCCCCCCCCCCCCCCCCC6',\n    'L....................R',\n    'L.............RCCCL..DCCCC',\n    'L.............R...L.......',\n    'L..X.CCCCCCC..R...L.......',\n    'L....R.....L..RCCCL..DVNNB',\n    'L....R.....L.........R',\n    'L....R.....L.........R',\n    'S...SBNNVNBBNVNVNBNBN4',\n    'L...R                 ',\n    'L...R                 ',\n    'L...R                 ',\n    'L...R                 ',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (750, 400, 2200, 95),\n    (950, -600, 1795, 495), \n    (2000, 300, 495, 295),\n    (2000, -250, 495, 395),\n    (-300, -200, 95, 1300),\n    (1300, 50, 495, 395),\n    (800, -150, 95, 395),\n    (500, -200, 695, 495)\n]\nblockgroup(0, 0, colliders)\n\n# room objects\nmake_anglerf(1650, 220)\nmake_spike(1580, 0, 'W')\nmake_spike(1580, -100, 'W')\nfor i in range(5):\n    make_spike(1100 + (100*i), -180, 'N', scale=2-(0.2*i))\nmake_jelly(900, -300, -45)\nfor x in range(2):\n    for i in range(3):\n        make_spike(200 + (100*i) + (400*x), 80, 'S')\nmake_current(500, 200, 700, 300, 0, -8)\nmake_jelly(500, 100, 0)\n\nmake_light_gradient(2100, 50, 300, 200, 25)\nTravelGate(2200, 50, 60, 400, self.roomid, 'R1_5')\n\nmake_light_gradient(-100, -700, 300, 300, 25, vert=True)\nTravelGate(-100, -800, 500, 60, self.roomid, 'R1_7')\n\n\n# set room music\n\nplay_track(game.music, 2)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_6 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_7": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = True\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-7'\n\ngame.cam_limit_x = (-810, 10)\ngame.cam_limit_y = (190, -790)\n\nif game.travelid == '1-6':\n    smooth_tp(0, 400)\nelif game.travelid == '1-8':\n    smooth_tp(-1200, -650)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '            L...R    ',\n    '            L...R    ',\n    '            L...R    ',\n    '            L...R    ',\n    '            W...WCCC6',\n    '            L.X.....R',\n    '            L.......R',\n    '            L.......R',\n    '            L.......R',\n    '    LCCCCCCCL.......R',\n    'CCCCA...............R',\n    '..............NVBNVVR',\n    '..............R      ',\n    'NVBBA.........R      ',\n    '    L.........R      ',\n    '    L.........R      ',\n    '    5BNVBNNVNBB      ',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-600, 50, 895, 995),\n    (400, 300, 495, 495),\n    (600, -250, 95, 800),\n    (300, -850, 695, 595),\n    (-500, -1100, 1100, 95),\n    (-1200, -950, 495, 395),\n    (-1200, -450, 495, 195)\n\n]\nblockgroup(0, 0, colliders)\n\nmake_anglerf(-10, -480)\nmake_current(0, -400, 400, 400, -12, -7)\nmake_bumper(-100, -400)\nmake_anglerf(-600, -800)\n\nmake_light_gradient(0, 400, 300, 300, 25, vert=True, direction=False)\nTravelGate(0, 500, 500, 60, self.roomid, 'R1_6')\n\nmake_light_gradient(-1300, 650, 300, 200, 25, direction=False)\nTravelGate(-1400, -650, 60, 400, self.roomid, 'R1_8')\n\n# set room music\n\nplay_track(game.music, 3)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_7 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_8": {
+                            "type": "room script",
+                            "start": "self.roomid = '1-8'\n\ngame.npcs.clear()\ngame.dark = False\n\ngame.cam_limit_x = (290, 1410)\ngame.cam_limit_y = (490, -290)\n\nif game.travelid == '1-7':\n    smooth_tp(1850, -450)\nelif game.travelid == '1-10':\n    smooth_tp(-150, 600)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    'L..R                    ',\n    'L..R                    ',\n    'L..R                    ',\n    'L..R                    ',\n    'L..2CCCCCCCCCCCCCCCCC6  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L..X.................R  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L....................2CC',\n    '5NVBBBNNVNBBNVNVNN1.....',\n    '                  L.....',\n    '                  5VNBBB',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-300, 200, 95, 1300),\n    (900, 600, 1895, 495),\n    (1900, 50, 295, 795),\n    (600, -500, 1895, 295),\n    (1750, -600, 600, 95),\n]\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, 0\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\nfor i in range(7):\n    make_spike(1730, -300 + (100*i), 'E', 1 + ((i*0.1) * ((-1)**i)))\n\nmake_current(1360, -100, 300, 500, 15, 0)\nmake_current(800, 100, 300, 500, 15, 0)\nmake_current(250, -100, 300, 500, 15, 0)\n\nif not game.prog.gem1_pick:\n    make_gem(-100, 300, 'gem_blue.png')\n\nmake_dark_gradient(1800, -450, 500, 400, 20)\nTravelGate(2000, -450, 60, 400, self.roomid, 'R1_7')\n\nmake_dark_gradient(-150, 600, 400, 500, 20, vert=True, direction=False)\nTravelGate(-150, 800, 500, 60, self.roomid, 'R1_10')\n\n\n# set room music\n\nplay_track(game.music, 3)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_8 loop\n\n"
+                        }
+                    },
+                    {
+                        "R1_10": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '1-10'\n\ngame.cam_limit_x = (390, 1410)\ngame.cam_limit_y = (-10, -590)\n\nif game.travelid == '1-9':\n    smooth_tp(0, -750)\nelif game.travelid == '1-0':\n    smooth_tp(1900, -250)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCC6',\n    'L.................R',\n    'L.................R',\n    'L.X...............R',\n    'L.................2CCCC',\n    'L......................',\n    'L......................',\n    'L.................0VBNN',\n    'L...0NNVNBBNVNBNBN4',\n    'L...R              ',\n    'L...R              ',\n    'L...R              ',\n    'L...R              ',\n]\nmake_map(lvlmap)\n\ngame.bg.sprite = sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 300, -100\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\ngame.bg.z = -10\n\n# make colliders\ncolliders = [\n    (900, 0, 1900, 95),\n    (0, -600, 95, 1295),\n    (1100, -1000, 1495, 495),\n    (2000, -750, 495, 195),\n    (2000, -200, 495, 495),\n\n]\n# from top left\nblockgroup(-200, 300, colliders)\n\nmake_current(700, -100, 1700, 700, 20, 0)\n\nmake_dark_gradient(1800, -250, 500, 400, 20)\nTravelGate(2000, -250, 60, 400, self.roomid, 'R1_0')\n\nmake_dark_gradient(0, -700, 500, 500, 20, vert=True)\nTravelGate(0, -900, 500, 60, self.roomid, 'R1_9')\n\n# set room music\n\nplay_track(game.music, 2)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R1_10 loop\n\n"
+                        }
+                    }
+                ]
+            },
+            {
+                "Stage2": [
+                    {
+                        "R2_0": {
+                            "type": "room script",
+                            "start": "self.roomid = '2-0'\n\ngame.npcs.clear()\ngame.dark = False\n\nself.placed = game.prog.gem1_place\nself.water_rising = False\nif not self.placed:\n    game.water_height = -370\n\ngame.cam_limit_x = (291, 1009)\ngame.cam_limit_y = (-110, -690)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '2-1':\n    smooth_tp(1500, 50)\nelif game.travelid == '0-0':\n    smooth_tp(-100, -800)\nelse:\n    smooth_tp(0, 0)\n\n# X is (0, 0)\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCCCC',\n    'L...................',\n    'L..X................',\n    'L..............0VNNB',\n    'L..............R',\n    'L..............R',\n    'L..............R',\n    'L..............R',\n    'L..0BNNNVNBBVBN4',\n    'L..R                 ',\n    'L..R                 ',\n    'L..R                 ',\n    'L..R                 ',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (750, 200, 2200, 95),\n    (600, -800, 1295, 495), \n    (-300, -400, 95, 1300),\n    (1400, -350, 495, 595),\n\n]\nblockgroup(0, 0, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 1300, -1400\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\nif not self.placed:\n    self.water = list()\n    spritesheet = sprite('wavesheet.png', 4, 1)\n    anim = animation(spritesheet, 5, 0, 3)\n    for i in range(4):\n        s = Slate()\n        s.x = 600*i\n        s.y = -400\n        s.z = -6\n        set_animation(s, anim)\n        self.water.append(s)\n\nped = make_pedestal(600, -420, 0.5, self.placed)\nif self.placed:\n    g = make_gem(ped.x, ped.y + (270 * ped.scaleY), 'gem_blue.png')\n    g.placed = True\n    g.z = -7\n\n# gradients over exits/entrances\nmake_dark_gradient(1400, 50, 500, 400, 20)\nif game.prog.gem1_place:\n    TravelGate(1600, 50, 60, 400, self.roomid, 'R2_1')\nelse:\n    self.exitblock = createblock(1600, 50, 60, 400)\n\nmake_dark_gradient(-150, -800, 400, 500, 20, vert=True)\nTravelGate(-150, -1000, 400, 60, self.roomid, 'Hub_Room')\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "if game.prog.gem1_place and not self.placed:\n    self.placed = True\n    self.water_rising = True\n    destroy(self.exitblock)\n    TravelGate(1600, 50, 60, 400, self.roomid, 'R2_1')\n\nif self.water_rising:\n    if self.water[0].y < 270:\n        game.water_height += 4\n        for w in self.water:\n            w.y += 4"
+                        }
+                    },
+                    {
+                        "R2_1": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\r\ngame.dark = False\r\ngame.water_height = None\r\n\r\nself.roomid = '2-1'\r\n\r\ngame.cam_limit_x = (-108, 1108)\r\ngame.cam_limit_y = (-10, -90)\r\n\r\n# room IDs and spawn locations for rooms that lead to this room\r\nif game.travelid == '2-0':\r\n    smooth_tp(-450, 50)\r\nelif game.travelid == '2-2':\r\n    smooth_tp(1500, 50)\r\nelse:\r\n    smooth_tp(0, 0)\r\n\r\n\r\n# X is (0, 0)\r\nlvlmap = [\r\n    '    7CCCCCCCCCCCCCCC6    ',\r\n    'CCCC3...............2CCCC',\r\n    '.........................',\r\n    '.......X.................',\r\n    'NVBV1...............0NVBB',\r\n    '    L...............R    ',\r\n    '    L...............R    ',\r\n    '    5VBNVBNNVNBBNVNB4    '\r\n]\r\nmake_map(lvlmap)\r\n\r\n\r\n# make colliders\r\ncolliders = [\r\n    (750, 300, 2200, 95),\r\n    (950, -400, 2600, 95), \r\n    (-500, 300, 495, 295),\r\n    (-500, -250, 495, 395),\r\n    (1500, 300, 495, 295),\r\n    (1500, -250, 495, 395),\r\n]\r\n\r\nblockgroup(0, 0, colliders)\r\n\r\n# background configuration\r\ngame.bg.sprite = sprite(\"ocean_bg.png\")\r\ngame.bg.x, game.bg.y = -150, 1700\r\ngame.bg.scaleX = game.bg.scaleY = 1.5\r\n\r\n\r\n\r\n# make gradients over exits/entrances\r\nmake_dark_gradient(1500, 0, 500, 500, 20)\r\nTravelGate(1700, 0, 60, 500, self.roomid, 'R2_2')\r\n\r\nmake_dark_gradient(-500, 50, 500, 400, 20, direction=False)\r\nTravelGate(-700, 50, 60, 400, self.roomid, 'R2_0')\r\n\r\n# set room music\r\n\r\nplay_track(game.music, 1)\r\n# Empty lines for scroll glitch\r\n\r\n\r\n\r\n\r\n\r\n",
+                            "loop": "#R2_1 loop\n\n"
+                        }
+                    },
+                    {
+                        "R2_2": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\nself.roomid = '2-2'\n\ngame.cam_limit_x = (-108, 1508)\ngame.cam_limit_y = (90, -90)\n\n# room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '2-1':\n    smooth_tp(-500, 50)\nelif game.travelid == '2-3':\n    smooth_tp(2000, 0)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCCCCC6    ',\n    '    L...................R    ',\n    'CCCC3...................2CCCC',\n    '.............................',\n    '.......X.....................',\n    'NVBV1........................',\n    '    L...................0VNBB',\n    '    L...................R    ',\n    '    5VBNVBNNVNBBNVNVNBNB4    '\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (750, 400, 2200, 95),\n    (950, -400, 2600, 95), \n    (-500, 300, 495, 295),\n    (-500, -250, 495, 395),\n    (1900, 300, 495, 295),\n    (1900, -300, 495, 295),\n]\n\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 50, 1300\ngame.bg.scaleX = game.bg.scaleY = 1.5\n\n# make objects here\n# JELLY - x, y, angle, scale=1\n# CURRENT - x, y, w, h, xa, ya\n# BOOSTER - x, y, angle, force=30\n# SFISH - x, y, angle, AI=True\n# BOUNCER/(bumper) - x, y, force=30\n# ANGLERF - x, y, AI=True\n# SPIKE - x, y, point_d, scale=1\n\nfor x in range(2):\n    for i in range(9):\n        make_sfish(-100 + (200*i) + (100*x), 300 - (600*x), -85 + (180*x))\n\n\n# make gradients over exits/entrances\nmake_dark_gradient(1900, 0, 500, 500, 20)\nTravelGate(2120, 0, 60, 500, self.roomid, 'R2_3')\n\nmake_dark_gradient(-500, 50, 500, 400, 20, direction=False)\nTravelGate(-700, 50, 60, 400, self.roomid, 'R2_1')\n\n# set room music\n\nplay_track(game.music, 1)\n# Empty lines for scroll glitch\n\n\n\n\n\n",
+                            "loop": "#R2_2 loop\n\n"
+                        }
+                    },
+                    {
+                        "R2_3": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\nself.roomid = '2-3'\n\ngame.cam_limit_x = (-108, 1208)\ngame.cam_limit_y = (90, -190)\n\n# room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '2-2':\n    smooth_tp(-500, 50)\nelif game.travelid == '2-5':\n    smooth_tp(1500, 50)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '    7CCCCCCCCCCCCCCCC6    ',\n    '    L................R    ',\n    'CCCC3................2CCCC',\n    '..........................',\n    '.......X..................',\n    'NVBV1................0NNVB',\n    '    L................R    ',\n    '    L................R    ',\n    '    L................R    ',\n    '    5VBNVBNNVNBBNVNVN4    '\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (-500, 302, 495, 295),\n    (-500, -300, 495, 495),\n    (750, 400, 2200, 95),\n    (750, -500, 2200, 95),\n    (1600, 302, 495, 295),\n    (1600, -300, 495, 495),\n]\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 30, 1000\ngame.bg.scaleX = game.bg.scaleY = 1.5\n\n# make objects here\n# JELLY - x, y, angle, scale=1\n# CURRENT - x, y, w, h, xa, ya\n# BOOSTER - x, y, angle, force=30\n# SFISH - x, y, angle, AI=True\n# BOUNCER/(bumper) - x, y, force=30\n# ANGLERF - x, y, AI=True\n# SPIKE - x, y, point_d, scale=1\n\nmake_current(550, -50, 1100, 800, 7, 0)\n\nmake_jelly(0, 0, -90)\nmake_jelly(200, 100, -90)\nmake_jelly(250, -300, -90)\nmake_jelly(475, 220, -90)\nmake_jelly(475, 320, -90)\nmake_jelly(420, -100, -90)\nmake_jelly(500, -400, -90)\nmake_jelly(600, -200, -90)\nmake_jelly(680,  60, -90)\nmake_jelly(900, -100, -90)\nmake_jelly(920, -300, -90)\nmake_jelly(950, 300, -90)\nmake_jelly(1150, 0, -90)\n\n\n# make gradients over exits/entrances\nmake_dark_gradient(1600, 50, 500, 400, 20)\nTravelGate(1800, 50, 60, 500, self.roomid, 'R2_5')\n\nmake_dark_gradient(-500, 50, 500, 400, 20, direction=False)\nTravelGate(-700, 50, 60, 400, self.roomid, 'R2_2')\n\n# set room music\n\nplay_track(game.music, 2)\n# Empty lines for scroll glitch\n\n\n\n\n\n",
+                            "loop": "#R2_3 loop\n\n"
+                        }
+                    },
+                    {
+                        "R2_5": {
+                            "type": "room script",
+                            "start": "self.roomid = '2-5'\n\ngame.npcs.clear()\ngame.dark = False\n\nself.placed = game.prog.gem1_place\n\ngame.cam_limit_x = (-560, -490)\ngame.cam_limit_y = (-110, -890)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '2-6':\n    smooth_tp(-1000, 50)\nelif game.travelid == '2-3':\n    smooth_tp(-1000, -1050)\nelse:\n    smooth_tp(0, 0)\n\n# X is (0, 0)\nlvlmap = [\n    'CCCCCCCCCCCCC6',\n    '.............R',\n    '............XR',\n    'NVBNNBVBN1...R',\n    '         L...R',\n    '         L...R',\n    '         L...R',\n    '         L...R',\n    '         L...R',\n    '         L...R',\n    '         L...R',\n    'CCCCCCCCC3...R',\n    '.............R',\n    '.............R',\n    'NBVBNNNBNBVBN4',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-550, 200, 1400, 95),\n    (100, -500, 95, 1500),\n    (-750, -500, 995, 895),\n    (-550, -1200, 1400, 95)\n]\nblockgroup(0, 0, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 0, -1400\ngame.bg.scaleX = 1.5\ngame.bg.scaleY = 1.5\n\nfor i in range(4):\n    make_spike(-400 - (100*i), -980, 'N')\nfor i in range(4):\n    make_spike(-400 - (100*i), -20, 'S', 1.2 + 0.1*i)\n\nfor i in range(3):\n    make_spike(0, -400 * i, 'E', 1.7)\nfor i in range(2):\n    make_spike(-210, -200 - 400*i, 'W', 1.7)\n\nmake_current(-100, -450, 300, 700, 0, 7)\n\n# gradients over exits/entrances\nmake_dark_gradient(-1000, -1050, 500, 400, 20, direction=False)\nTravelGate(-1200, -1050, 60, 400, self.roomid, 'R2_3')\n\nmake_dark_gradient(-1000, 50, 500, 400, 20, direction=False)\nTravelGate(-1200, 50, 60, 400, self.roomid, 'R2_6')\n\n# set room music\n\nplay_track(game.music, 2)\n\n\n# Empty lines for scroll glitch\n\n\n\n\n\n\n",
+                            "loop": "#R2_5 loop\n\n"
+                        }
+                    },
+                    {
+                        "R2_6": {
+                            "type": "room script",
+                            "start": "self.roomid = '2-6'\n\ngame.npcs.clear()\ngame.dark = False\n\ngame.water_height = None\n\ngame.cam_limit_x = (290, 1510)\ngame.cam_limit_y = (-110, -1390)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\n\nif game.travelid == '2-5':\n    smooth_tp(1800, -300)\nelif game.travelid == '2-8':\n    smooth_tp(-100, -1100)\nelse:\n    smooth_tp(1800, -300)\n\n# X is (0, 0)\nlvlmap = [\n    '          7CCCCCCCCC6    ',\n    '          L.........R    ',\n    '   X      L.........R    ',\n    '          L.........2CCCC',\n    '          L...0V1........',\n    '          L...R L........',\n    '          L...R L........',\n    '          L...R 5VBNNVBNN',\n    '          L...R          ',\n    '          L...2CCCC6     ',\n    '          L........R     ',\n    '          L........R     ',\n    'CCCCCCCC6 L........R     ',\n    '........R 5VNBV1...R     ',\n    '........R      L...R     ',\n    '........2CCCCCC3...R     ',\n    'NVBN1..............R     ',\n    '    L..............R     ',\n    '    L..............R     ',\n    '    5VBNVBBVNBVBNBV4     '\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (500, 0, 1100, 95),\n    (1200, -150, 495, 395),\n    (0, -650, 95, 1395),\n    (500, -650, 295, 595),\n    (900, -800, 1095, 295),\n    (150, -1400, 796, 295),\n    (900, -1500, 95, 1100)\n]\nblockgroup(700, 200, colliders)\n\ncolliders = [\n    (400, 0, 1100, 95),\n    (200, -550, 495, 395),\n    (1150, -700, 1600, 95),\n    (450, 650, 1005, 1205),\n    (2200, -150, 505, 1205)\n]\nblockgroup(-300, -1000, colliders)\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 0, 0\ngame.bg.scaleX = 2\ngame.bg.scaleY = 2\n\n\n# make stuff\nmake_booster(1500, -300, 0)\nmake_booster(1500,  0, 90)\nmake_booster(900, -900, -90)\nmake_booster(1400, -900, 180)\nmake_booster(900, -1500, 90)\nmake_booster(600, -1500, 90)\nmake_sfish(200, -1200, -90)\nmake_sfish(400, -1200, -90)\nmake_sfish(800, -500, 90)\nmake_sfish(1000, -500, 90)\nmake_sfish(800, -1400, 0)\nmake_sfish(800, -1600, 0)\n\nif not game.prog.gem2_pick:\n    make_gem(50, -1250, 'gem_red.png')\n\n# set room music\n\nplay_track(game.music, 3)\n# Empty lines for scroll glitch\n\nmake_dark_gradient(1900, -300, 500, 500, 25)\nTravelGate(2000, -300, 60, 500, self.roomid, 'R2_5')\n\nmake_dark_gradient(-100, -1200, 500, 500, 25, direction=False)\nTravelGate(-250, -1250, 60, 500, self.roomid, 'R2_8')\n\n\n\n\n\n\n\n",
+                            "loop": "#R2_6 loop\n\n"
+                        }
+                    },
+                    {
+                        "R2_8": {
+                            "type": "room script",
+                            "start": "self.roomid = '2-8'\n\ngame.npcs.clear()\ngame.dark = False\n\nself.placed = game.prog.gem2_place\nself.water_rising = False\nif not self.placed:\n    game.water_height = -170\nelse:\n    game.water_height = None\n\ngame.cam_limit_x = (290, 1410)\ngame.cam_limit_y = (490, -290)\n\nif game.travelid == '2-6':\n    smooth_tp(1850, -450)\nelif game.travelid == '3-1':\n    smooth_tp(-150, 600)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    'L..R                    ',\n    'L..R                    ',\n    'L..R                    ',\n    'L..R                    ',\n    'L..2CCCCCCCCCCCCCCCCC6  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L..X.................R  ',\n    'L....................R  ',\n    'L....................R  ',\n    'L....................2CC',\n    '5NVBBBNNVNBBNVNVNN1.....',\n    '                  L.....',\n    '                  5VNBBB',\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-300, 200, 95, 1300),\n    (900, 600, 1895, 495),\n    (1900, 50, 295, 795),\n    (600, -500, 1895, 295),\n    (1750, -600, 600, 95),\n]\nblockgroup(0, 0, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 1300, -1400\ngame.bg.scaleX = 1.5\ngame.bg.scaleY = 1.5\n\nif not self.placed:\n    self.water = list()\n    spritesheet = sprite('wavesheet.png', 4, 1)\n    anim = animation(spritesheet, 5, 0, 3)\n    for i in range(4):\n        s = Slate()\n        s.x = 600*i\n        s.y = -190\n        s.z = -6\n        set_animation(s, anim)\n        self.water.append(s)\n\nped = make_pedestal(500, -223, 0.5, self.placed)\nif self.placed:\n    g = make_gem(ped.x, ped.y + (270 * ped.scaleY), 'gem_red.png')\n    g.placed = True\n    g.z = -7\n\nmake_dark_gradient(1800, -450, 500, 400, 20)\nTravelGate(2000, -450, 60, 400, self.roomid, 'R2_6')\n\nmake_dark_gradient(-150, 600, 400, 500, 20, vert=True, direction=False)\nTravelGate(-150, 800, 500, 60, self.roomid, 'R3_1')\n\n# set room music\n\nplay_track(game.music, 3)\n# Empty lines for scroll glitch\n\n\n\n\n\n\n\n\n",
+                            "loop": "if game.prog.gem2_place and not self.placed:\n    self.placed = True\n    self.water_rising = True\n\nif self.water_rising:\n    if self.water[0].y < 800:\n        game.water_height += 4\n        for w in self.water:\n            w.y += 4"
+                        }
+                    },
+                    {
+                        "R3_1": {
+                            "type": "room script",
+                            "start": "game.npcs.clear()\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '3-1'\n\nself.placed = game.prog.gem3_place\nself.water_rising = False\nif not self.placed:\n    game.water_height = -170\n\ngame.cam_limit_x = (-110, 910)\ngame.cam_limit_y = (90, -490)\n\n# room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '3-2':\n    smooth_tp(-450, -250)\nelif game.travelid == '2-8':\n    smooth_tp(1350, -600)\nelse:\n    smooth_tp(0, 0)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '    L.................R',\n    '    L.................R',\n    '    L.................R',\n    '    L.................R',\n    '    L..X..............R',\n    'CCCC7.................R',\n    '......................R',\n    '......................R',\n    'NNBVVVBNVBNNVNBBNNB1..R',\n    '                   L..R',\n    '                   L..R',\n    '                   L..R',\n    '                   L..R',\n]\nmake_map(lvlmap)\n\n\n# make colliders\ncolliders = [\n    (-500, 150, 495, 595),\n    (200, -600, 2095, 495),\n    (1500, -200, 95, 1500)\n]\nblockgroup(0, 0, colliders)\n\n# background configuration\ngame.bg.sprite = new_sprite(\"ocean_bg.png\")\ngame.bg.x, game.bg.y = 400, 1200\ngame.bg.scaleX = 1.5\ngame.bg.scaleY = 1.5\n\nif not self.placed:\n    self.water = list()\n    spritesheet = sprite('wavesheet.png', 4, 1)\n    anim = animation(spritesheet, 5, 0, 3)\n    for i in range(5):\n        s = Slate()\n        s.x = -400 + (600*i)\n        s.y = -200\n        s.z = -6\n        set_animation(s, anim)\n        self.water.append(s)\n\nped = make_pedestal(500, -260, 1.2, self.placed)\nif self.placed:\n    g = make_gem(ped.x, ped.y + (270 * ped.scaleY), 'gem_rainbow.png')\n    g.placed = True\n    g.z = -7\n\nif game.prog.gem3_pick:\n    msg = (\"After all these years! The three gems have\\n\"\n            \"been recovered! It looks like that nautilus fight\\n\"\n            \"went swimmingly!\")\nelse:\n    msg = (\"Greetings Traveller! Wulfric here. If you wish to find the\\n\"\n    \"third and final gem, you will have to face the mighty\\n\"\n    \"nautilus in the caverns to my left. Many of our strongest warriors\\n\"\n    \"have fallen to it. Try finding a weak spot with your dash!\\n\")\n    \nmake_simple_npc(0, -200, 'Whale', msg , facingr=True)\n\n# gradients over exits/entrances\nmake_dark_gradient(-500, -250, 500, 400, 25, direction=False)\nTravelGate(-700, -250, 60, 400, self.roomid, 'R3_2')\n\nmake_dark_gradient(1350, -600, 400, 500, 25, vert=True)\nTravelGate(1350, -800, 400, 60, self.roomid, 'R2_8')\n\nTravelGate(600, 400, 1900, 60, self.roomid, 'Victory_Room')\n\n# set room music\nstop_track(game.music)\nplay_track(game.music, 5)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "if game.prog.gem3_place and not self.placed:\n    self.placed = True\n    self.water_rising = True\n\nif self.water_rising:\n    if self.water[0].y < 800:\n        game.water_height += 4\n        for w in self.water:\n            w.y += 4"
+                        }
+                    },
+                    {
+                        "R3_2": {
+                            "type": "room script",
+                            "start": "# npc list for player to check\ngame.npcs.clear()\n\n# whether room is dark\ngame.dark = False\ngame.water_height = None\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '3-2'\n\ngame.cam_limit_x = (290, 1210)\ngame.cam_limit_y = (-110, -290)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '3-1':\n    smooth_tp(1700, -200)\nelif game.travelid == '3-B':\n    smooth_tp(-100, -200)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCCCCC6',\n    'L....................R',\n    'L..X.................R',\n    '......................',\n    '......................',\n    '......................',\n    'L....................R',\n    'L....................R',\n    '5VBNVBNNVNBBNVNVNBNBNR'\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (-300, 100, 100, 300),\n    (-300, -500, 100, 300),\n    (1800, 100, 100, 300),  \n    (1800, -500, 100, 300), \n    (850, -600, 2200, 100),\n    (850, 200, 2200, 100),\n]\n\n# from top left\nblockgroup(0, 0, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = -100, -300\ngame.bg.scaleX = 2\ngame.bg.scaleY = 1.5\n\nself.gate = TravelGate(-390, -200, 100, 300, self.roomid, 'R3_B')\n\nself.gate2 = TravelGate(1800, -200, 100, 300, self.roomid, 'R3_1')\n\nif game.bossdead:\n    make_current(-250, -200, 200, 300, 40, 0)\n    \n# set room music\n\nplay_track(game.music, 5)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R3_1 loop\n\n"
+                        }
+                    },
+                    {
+                        "R3_B": {
+                            "type": "room script",
+                            "start": "# npc list for player to check\ngame.npcs.clear()\n\n# whether room is dark\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '3-B'\n\n# lowest(left) x + 640, highest(right) x - 640\ngame.cam_limit_x = (490, 1510)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (-210, -790)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\n\nsmooth_tp(1900, -500)\n\n\n\n# X is (0, 0)\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCCCCCC6',\n    'LX....................R',\n    'L.....................R',\n    'L.....................R',\n    'L.....................R',\n    'L......................',\n    'L......................',\n    'L......................',\n    'L.....................R',\n    'L.....................R',\n    'L.....................R',\n    'L.....................R',\n    '5VBNVBNNVNBBNVNVNBNBNN4'\n]\nmake_map(lvlmap)\n\n# I didn't write this\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = 500, -100\ngame.bg.scaleX = 2\ngame.bg.scaleY = 1.5\n\n# make colliders\ncolliders = [\n    (1000, 100, 2300, 100),\n    (1000, -1100, 2300, 100),\n    (-100, -500, 100, 1300),\n    (2100, -100, 100, 500),\n    (2100, -900, 100, 500)\n]\n\n# from top left\nblockgroup(0, 0, colliders)\n\n# make objects here\n\nn = Nautilus()\nn.x = 200\nn.y = -500\n# JELLY - x, y, angle, scale=1\n# CURRENT - x, y, w, h, xa, ya\n# BOOSTER - x, y, angle, force=30\n# SFISH - x, y, angle, AI=True\n# BOUNCER/(bumper) - x, y, force=30\n# ANGLERF - x, y, AI=True\n# SPIKE - x, y, point_d, scale=1\n\n\n# make gradients over exits/entrances\n# x, y, w, h, levels, direction=True, vert=False\n# levels is number of different opacity rects to divide into\n# direction True means top/left is lightest part (for exits going right/down)\n# vert decides vertical or horizontal gradient\n\n#self.gate = TravelGate(2220, -450, 60, 400, self.roomid, 'Room1')\nTravelGate(2100, -500, 100, 300, self.roomid, 'R3_2')\n\n# set room music\n\nplay_track(game.music, 6)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                            "loop": "#R3_B loop\n\n"
+                        }
+                    },
+                    {
+                        "Victory_Room": {
+                            "type": "room script",
+                            "start": "#R3_W start\n\nself.ws = Slate()\nself.ws.sprite = new_sprite(\"Win_Screen.png\")\nself.ws.scaleX = 1.7\nself.ws.scaleY = 1.8\ngame.p.spr_obj.visible = False\ngame.cam_limit_x = (0, 0)\ngame.cam_limit_y = (0, 0)\ngame.p.healthbar.visible = False\n\ncompletiontime = datetime.datetime.now() - game.start_time\ntimetxt = new_text(\"Time: \" + str(completiontime)[:-4], -600, -300)\ntimetxt.scaleX = 1.2\ntimetxt.scaleY = 1.2\ntimetxt.z = 50\ntimetxt.color = \"#fff\"\n\ndtxt = new_text(\"Deaths: \" + str(game.deaths), 450, -300)\ndtxt.scaleX = 1.2\ndtxt.scaleY = 1.2\ndtxt.z = 50\ndtxt.color = \"#fff\"\nplay_track(game.music, 8)",
+                            "loop": "#R3_W loop\n\n"
+                        }
+                    }
+                ]
+            },
+            {
+                "Room_Template": {
+                    "type": "room script",
+                    "start": "# npc list for player to check\ngame.npcs.clear()\n\n# whether room is dark\ngame.dark = False\n\n# ROOM ID - used for determining location when going to other rooms\nself.roomid = '69-69'\n\n# lowest(left) x + 640, highest(right) x - 640\ngame.cam_limit_x = (290, 1610)\n# highest y - 360, lowest y + 360\ngame.cam_limit_y = (-110, -290)\n\n# Insert room IDs and spawn locations for rooms that lead to this room\nif game.travelid == '1-0':\n    smooth_tp(-350, -50)\nelse:\n    smooth_tp(0, 0)\n\n\n# X is (0, 0)\nlvlmap = [\n    '7CCCCCCCCCCCCCCCCCCCC6',\n    'L....................R',\n    'L..X.................R',\n    'L....................R',\n    'L....................R',\n    'L....................2CCCC',\n    'L.........................',\n    'L.........................',\n    '5VBNVBNNVNBBNVNVNBNBNVBNVN'\n]\nmake_map(lvlmap)\n\n# make colliders\ncolliders = [\n    (0, -400, 95, 900),\n    (1050, 0, 2200, 95),\n    (1250, -800, 2600, 95), \n    (2300, -250, 495, 595),\n]\n\n# from top left\nblockgroup(-300, 200, colliders)\n\n\n# background manipulation\ngame.bg.sprite = new_sprite(\"purple_bg.png\")\ngame.bg.x, game.bg.y = -100, -300\ngame.bg.scaleX = 2\ngame.bg.scaleY = 1.5\n\n# make objects here\n# JELLY - x, y, angle, scale=1\n# CURRENT - x, y, w, h, xa, ya\n# BOOSTER - x, y, angle, force=30\n# SFISH - x, y, angle, AI=True\n# BOUNCER/(bumper) - x, y, force=30\n# ANGLERF - x, y, AI=True\n# SPIKE - x, y, point_d, scale=1\n\n# make gradients over exits/entrances\n# x, y, w, h, levels, direction=True, vert=False\n# levels is number of different opacity rects to divide into\n# direction True means top/left is lightest part (for exits going right/down)\n# vert decides vertical or horizontal gradient\nmake_dark_gradient(2000, -450, 500, 400, 20)\nself.gate = TravelGate(2220, -450, 60, 400, self.roomid, 'Room1')\n\n\n# set room music\nstop_track(game.music)\nplay_track(game.music, 6)\n# Empty lines for scroll glitch\n\n\n\n\n",
+                    "loop": "#Room_Template loop\n\n"
+                }
+            }
+        ],
+        "texture": [
+            {
+                "tiles": [
+                    {
+                        "ground1.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615954594.ground1.png"
+                        }
+                    },
+                    {
+                        "ground2.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615954601.ground2.png"
+                        }
+                    },
+                    {
+                        "ground3.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616115967.ground3.png"
+                        }
+                    },
+                    {
+                        "ciel.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616116213.ciel.png"
+                        }
+                    },
+                    {
+                        "wall_left.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616115833.wall_left.png"
+                        }
+                    },
+                    {
+                        "wall_right.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615954627.wall_right.png"
+                        }
+                    },
+                    {
+                        "in_corner_tl.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616112361.in_corner_tl.png"
+                        }
+                    },
+                    {
+                        "in_corner_tr.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616112366.in_corner_tr.png"
+                        }
+                    },
+                    {
+                        "in_corner_bl.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616112369.in_corner_bl.png"
+                        }
+                    },
+                    {
+                        "in_corner_br.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616112375.in_corner_br.png"
+                        }
+                    },
+                    {
+                        "out_corner_tl.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616116555.out_corner_tl.png"
+                        }
+                    },
+                    {
+                        "out_corner_tr.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616116613.out_corner_tr.png"
+                        }
+                    },
+                    {
+                        "out_corner_bl.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616116633.out_corner_bl.png"
+                        }
+                    },
+                    {
+                        "out_corner_br.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616116652.out_corner_br.png"
+                        }
+                    },
+                    {
+                        "centre.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616570454.centre.png"
+                        }
+                    },
+                    {
+                        "dark_tile.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616445786.dark_tile.png"
+                        }
+                    },
+                    {
+                        "arrowN.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616622273.arrowN.png"
+                        }
+                    },
+                    {
+                        "arrowW.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616622547.arrowW.png"
+                        }
+                    },
+                    {
+                        "arrowS.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616622281.arrowS.png"
+                        }
+                    },
+                    {
+                        "arrowE.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616622543.arrowE.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "NPCs": [
+                    {
+                        "whalesheet_gap.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615951543.whalesheet_gap.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Player": [
+                    {
+                        "dynamic_squid.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615957753.dynamic_squid.png"
+                        }
+                    },
+                    {
+                        "player_still.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616453331.player_still.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Stage1": [
+                    {
+                        "gradient1.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615953211.gradient1.png"
+                        }
+                    },
+                    {
+                        "pixel_bg_stage1.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1615960001.pixel_bg_stage1.png"
+                        }
+                    },
+                    {
+                        "purple_bg.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616546270.purple_bg.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Stage2": [
+                    {
+                        "Tiles2": []
+                    },
+                    {
+                        "Background2": [
+                            {
+                                "ocean_bg.png": {
+                                    "type": "image",
+                                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616651496.ocean_bg.png"
+                                }
+                            },
+                            {
+                                "waterBG.png": {
+                                    "type": "image",
+                                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.225782.1615667719.waterBG.png"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Gameplay_elements": [
+                    {
+                        "boostersheet.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616545842.boostersheet.png"
+                        }
+                    },
+                    {
+                        "bouncesheet.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616545187.bouncesheet.png"
+                        }
+                    },
+                    {
+                        "wavesheet.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616715939.wavesheet.png"
+                        }
+                    },
+                    {
+                        "sonar_beam.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616371496.sonar_beam.png"
+                        }
+                    },
+                    {
+                        "Spike1.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225969.1616188359.Spike1.png"
+                        }
+                    },
+                    {
+                        "Spike1_dark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616456779.Spike1_dark.png"
+                        }
+                    },
+                    {
+                        "Spike2.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225969.1616188331.Spike2.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Misc": [
+                    {
+                        "pedestal.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616719495.pedestal.png"
+                        }
+                    },
+                    {
+                        "text_box.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616039356.text_box.png"
+                        }
+                    },
+                    {
+                        "black40x40.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616018445.black40x40.png"
+                        }
+                    },
+                    {
+                        "white40x40.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616711624.white40x40.png"
+                        }
+                    },
+                    {
+                        "debug.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1615942085.debug.png"
+                        }
+                    },
+                    {
+                        "Guide.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616348073.Guide.png"
+                        }
+                    },
+                    {
+                        "current_particle_dark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616627807.current_particle_dark.png"
+                        }
+                    },
+                    {
+                        "current_particle.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616733563.current_particle.png"
+                        }
+                    },
+                    {
+                        "exclaim_mark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616656281.exclaim_mark.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Enemies": [
+                    {
+                        "Swordfish.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616455645.Swordfish.png"
+                        }
+                    },
+                    {
+                        "Swordfish_dark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616456827.Swordfish_dark.png"
+                        }
+                    },
+                    {
+                        "jelly.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616347498.jelly.png"
+                        }
+                    },
+                    {
+                        "jelly_dark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616456808.jelly_dark.png"
+                        }
+                    },
+                    {
+                        "Anglerfish_light.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616275209.Anglerfish_light.png"
+                        }
+                    },
+                    {
+                        "Anglerfish.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616275637.Anglerfish.png"
+                        }
+                    },
+                    {
+                        "Anglerfish_dark.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616454910.Anglerfish_dark.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Tutorial": [
+                    {
+                        "newE.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616348829.newE.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Boss": [
+                    {
+                        "N_Cannon.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714721.N_Cannon.png"
+                        }
+                    },
+                    {
+                        "N_Death.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714740.N_Death.png"
+                        }
+                    },
+                    {
+                        "N_Hit.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714754.N_Hit.png"
+                        }
+                    },
+                    {
+                        "N_Spike_Shoot.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225969.1616729211.N_Spike_Shoot.png"
+                        }
+                    },
+                    {
+                        "N_Shockwave.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714811.N_Shockwave.png"
+                        }
+                    },
+                    {
+                        "N_Spike.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225969.1616729202.N_Spike.png"
+                        }
+                    },
+                    {
+                        "N_Idle.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714798.N_Idle.png"
+                        }
+                    },
+                    {
+                        "N_Summon.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616714855.N_Summon.png"
+                        }
+                    },
+                    {
+                        "Boss_Spike.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225969.1616732075.Boss_Spike.png"
+                        }
+                    },
+                    {
+                        "BossBar.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616724553.BossBar.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "Health": [
+                    {
+                        "health_0.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393393.health_0.png"
+                        }
+                    },
+                    {
+                        "health_1.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393407.health_1.png"
+                        }
+                    },
+                    {
+                        "health_2.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393414.health_2.png"
+                        }
+                    },
+                    {
+                        "health_3.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393422.health_3.png"
+                        }
+                    },
+                    {
+                        "health_4.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393430.health_4.png"
+                        }
+                    },
+                    {
+                        "health_5.png": {
+                            "type": "image",
+                            "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616393438.health_5.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "whalesheet.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616698467.whalesheet.png"
+                }
+            },
+            {
+                "gem_blue.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616716515.gem_blue.png"
+                }
+            },
+            {
+                "gem_red.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616716522.gem_red.png"
+                }
+            },
+            {
+                "gem_rainbow.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19203.226349.1616716536.gem_rainbow.png"
+                }
+            },
+            {
+                "Player_Death.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616737689.Player_Death.png"
+                }
+            },
+            {
+                "Test_BG.jpg": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616739315.Test_BG.jpg"
+                }
+            },
+            {
+                "Win_Screen.png": {
+                    "type": "image",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616750108.Win_Screen.png"
+                }
+            }
+        ],
+        "sound": [
+            {
+                "Mood1.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368556.Mood1.mp3"
+                }
+            },
+            {
+                "Mood2.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368566.Mood2.mp3"
+                }
+            },
+            {
+                "Mood3.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368576.Mood3.mp3"
+                }
+            },
+            {
+                "Mood4.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368585.Mood4.mp3"
+                }
+            },
+            {
+                "Mood5.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368596.Mood5.mp3"
+                }
+            },
+            {
+                "Mood6.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368609.Mood6.mp3"
+                }
+            },
+            {
+                "Mood7.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368620.Mood7.mp3"
+                }
+            },
+            {
+                "Mood8.mp3": {
+                    "type": "audio",
+                    "uri": "https://s3.us-west-1.amazonaws.com/media.pixelpad.io/__ASSET__.19216.225456.1616368629.Mood8.mp3"
+                }
+            }
+        ],
+        "function": [
+            {
+                "imports.py": {
+                    "type": "function script",
+                    "head": "#File for imports to run before everything\nimport math\nimport time\nimport datetime\nimport random"
+                }
+            },
+            {
+                "gamefuncs.py": {
+                    "type": "function script",
+                    "head": "#A collection of helper functions/enums.\n\n\ndef hyp(s, c) -> int:\n    \"\"\"Return hypotenuse of right angle triangle.\"\"\"\n    return math.sqrt((s**2)+(c**2))\n\ndef get_angle(y) -> float:\n    \"\"\"Return angle of right angle triangle.\n    \n    Assumes hypotenuse is 1\n    \"\"\"\n    return math.degrees(math.asin(y))\n\ndef deter(val, k) -> int:\n    \"\"\"Helper function that allows for movement deterioration\n    while preventing rounding errors.\"\"\"\n    if abs(val) <= 0.1: return 0\n    return round(val*k, 3)\n\ndef get_dist(x1, y1, x2, y2):\n    \"\"\"Return the distance between two points.\"\"\"\n    return math.sqrt((x2-x1)**2 + (y2-y1)**2)\n\ndef do_move(pl, xdist, ydist):\n    # Increase velocity\n    pl.xv += (xdist*0.9)\n    pl.yv += (ydist*0.9)\n    \n    # Get total velocity magnetude\n    Vhyp = hyp(pl.xv, pl.yv)\n    \n    # Correct velocity speed\n    if Vhyp > 6.5: # 6.5\n        pl.xv = (pl.xv/Vhyp)*6.5\n        pl.yv = (pl.yv/Vhyp)*6.5\n\ndef update_spr(plspr, x, y, angle):\n    plspr.x = x\n    plspr.y = y\n    plspr.angle = angle\n\ndef angle_helper(Dx, Dy) -> int:\n    \"\"\"This function returns the angle for an object moving in a specific direction.\"\"\"\n    if not Dx and not Dy: Dx = 1\n    m = hyp(Dx, Dy)\n    Dy = Dy/m\n\n    if m > 1:\n        a = get_angle(Dy) - 90\n        return a if Dx > 0 else -a\n    \n    return -361\n\ndef time_ms():\n    return round(time.time() * 1000)\n\ndef boost(pl, force, angle):\n    if pl.dead:\n        return\n    pl.xv = 0\n    pl.yv = 0\n    pl.boostx = 0\n    pl.boosty = 0\n    pl.xMOD += force * math.cos(math.radians(angle+90))\n    pl.yMOD += force * math.sin(math.radians(angle+90))\n\ndef smooth_tp(x, y):\n    \"\"\"Teleport the player to x and y and manage camera movement.\"\"\"\n\n    offset_x = game.p.x - camera_x()\n    offset_y = game.p.y - camera_y()\n    game.p.x = x\n    game.p.y = y\n\n    new_camX = x + offset_x\n    new_camY = y + offset_y\n    new_camX = min(max(new_camX, game.cam_limit_x[0]), game.cam_limit_x[1])\n    new_camY = max(min(new_camY, game.cam_limit_y[0]), game.cam_limit_y[1])\n    set_camera(new_camX, new_camY)\n\ndef damage(st):\n    if game.p.dmgF:\n        game.p.hp -= st\n        game.p.spr_obj.alpha = 0.6\n        game.p.dmgF = False\n        game.p.damage_cool = game.t + 600\n        \n\ndef transform(obj, x, y, scaleX=None, scaleY=None):\n    \"\"\"Simple transform helper for working with slates.\"\"\"\n    obj.x = x\n    obj.y = y\n    if scaleX: obj.scaleX = scaleX\n    if scaleY: obj.scaleY = scaleY\n\ndef hitbox_rotate(obj, orig, obj_0, rad):\n    \"\"\"For rotating objects around a point.\"\"\"\n    obj.x = (math.cos(math.radians(obj_0)) * rad) + orig.x\n    obj.y = (math.sin(math.radians(obj_0)) * rad) + orig.y\n\ndef create_e(obj):\n    # clear any current \"E\"s\n    try:\n        destroy(game.e)\n    # no text box currently up\n    except AttributeError:\n        pass\n    game.e = Slate()\n    game.e.sprite = sprite('newE.png')\n    game.e.scaleX = game.e.scaleY = 0.4\n    game.e.x = obj.x\n    game.e.y = obj.y + obj.e_offset\n    obj.e_popup = True\n\ndef create_msg(obj):\n    TextBox(obj.msg, obj.msg_duration)\n    if obj.parent is None:\n        try:\n            destroy(game.e)\n        except AttributeError: # no e currently up\n            pass\n    else:\n        obj.parent.msg_ind += 1\n        obj.parent.update_msg()\n\ndef play_track(s_obj, s_id):\n    if s_obj.cplaying == s_id:\n        return\n    else:\n        stop_track(s_obj)\n    s_obj.song = new_sound(\"Mood\" + str(s_id) + \".mp3\")\n    s_obj.cplaying = s_id\n    set_volume(s_obj.song, 0.3)\n    loop_sound(s_obj.song)\n\ndef stop_track(s_obj):\n\n    if s_obj.song != None:\n        stop_sound(s_obj.song)\n        s_obj.song = None\n        game.c_playing = None\n\ndef place_gem(ped):\n    if len(game.p.inv) and not ped.has_gem:\n        g = game.p.inv[0]\n        g.x = ped.x\n        g.y = ped.y + (270 * ped.scaleY)\n        g.placed = True\n        g.z = -7\n        g.in_inv = False\n        game.npcs.remove(ped)\n        try:\n            destroy(game.e)\n        except AttributeError:\n            pass\n\n        if not game.prog.gem1_place:\n            game.prog.gem1_place = True\n        elif not game.prog.gem2_place:\n            game.prog.gem2_place = True\n        elif not game.prog.gem3_place:\n            game.prog.gem3_place = True\n            # TRIGGER GAME END\n        ped.has_gem = True\n        game.p.inv.clear()\n    \n\n"
+                }
+            },
+            {
+                "make_map.py": {
+                    "type": "function script",
+                    "head": "tile_map = {\n    'C': (sprite('ciel.png'), ),\n    'L': (sprite('wall_left.png'), ),\n    'R': (sprite('wall_right.png'), ),\n    'V': (sprite('ground1.png'), ),\n    'B': (sprite('ground2.png'), ),\n    'N': (sprite('ground3.png'), ),\n    '0': (sprite('in_corner_tl.png'), ),\n    '1': (sprite('in_corner_tr.png'), ),\n    '2': (sprite('in_corner_bl.png'), ),\n    '3': (sprite('in_corner_br.png'), ),\n    '4': (sprite('out_corner_tl.png'), ),\n    '5': (sprite('out_corner_tr.png'), ),\n    '6': (sprite('out_corner_bl.png'), ),\n    '7': (sprite('out_corner_br.png'), ),\n    \"W\": (sprite(\"arrowN.png\"), ),\n    \"D\": (sprite(\"arrowE.png\"), ),\n    \"S\": (sprite(\"arrowS.png\"), ),\n    \"A\": (sprite(\"arrowW.png\"), ),\n    \"O\": (sprite(\"centre.png\"), ),\n    \"~\": (sprite(\"black40x40.png\"), 2.5, 2.5, 0, 0, -5),\n}\nDARK_TILE = sprite('dark_tile.png')\n\ndef make_map(layout):\n    for i in range(len(layout)):\n        if 'X' in layout[i]:\n            origin = (layout[i].index('X'), i)\n    \n    for i in range(len(layout)):\n        for j in range(len(layout[i])):\n            key = layout[i][j]\n            if key in '. X':\n                continue\n            elif key not in tile_map.keys():\n                print(f'Unrecognised \"{layout[i][j]} in level map.')\n                continue\n\n            t = Tile()\n\n            t.x = 100 * (j - origin[0])\n            t.y = 100 * (origin[1] - i)\n            t.z = 9\n            if len(tile_map[key]) == 1:\n                if key in 'WASD':\n                    t.sprite = tile_map[key][0]\n                else:\n                    t.sprite = DARK_TILE if game.dark else tile_map[key][0]\n            else:\n                spr, scX, scY, x_off, y_off, z = tile_map[key]\n                t.sprite = spr\n                t.scaleX = scX\n                t.scaleY = scY\n                t.x += x_off\n                t.y -= y_off\n                t.z = z\n\n\n\n\n\n\n\n"
+                }
+            },
+            {
+                "gamecreation.py": {
+                    "type": "function script",
+                    "head": "\n\nd_to_angle = {\n    \"N\": 0,\n    \"W\": 90,\n    \"S\": 180,\n    \"E\": 270\n}\n\ndef createblock(x, y, w, h):\n    \"\"\"Basic opaque block. Takes args for pos, size, and optional block sprite.\"\"\"\n    #construct block and set args\n    a = Block()\n    a.x = x\n    a.y = y\n    #This works for 40x40 sprite. For other sprites, change divisor accordingly\n    a.sprite = sprite('debug.png') if game.debug else sprite('black40x40.png')\n    a.scaleX = w/40\n    a.scaleY = h/40\n    \n    if game.debug:\n        a.alpha = 0.6\n        a.z = 9\n    else:\n        a.z = -5\n\n    #store these for collision purposes\n    a.wid = w/2\n    a.ht = h/2\n    a.nf = y+a.ht\n    a.sf = y-a.ht\n    a.wf = x-a.wid\n    a.ef = x+a.wid\n    \n    return a\n\ndef blockgroup(x, y, posl):\n    \"\"\"Creates a group of blocks at a x and y position,\n    given a list  of block constructs. posl is a list of tuples,\n    each of the form (x, y, w, h).\"\"\"\n    for bx, by, bw, bh in posl:\n        createblock(bx+x, by+y, bw, bh)\n\ndef make_current(x, y, w, h, xa, ya):\n    \"\"\"Create a current block, which takes arguments for\n    position, size, and acceleration values.\"\"\"\n    inst = Current()\n    inst.x = x\n    inst.y = y\n    inst.scaleX = w/40\n    inst.scaleY = h/40\n    inst.xa = xa\n    inst.ya = ya\n\n    inst.w = w/2\n    inst.h = h/2\n    inst.dense = max((w*h)//20000, 1)\n    return inst\n    \ndef make_particle(x, y, xv, yv, spr, proc):\n    \"\"\"Create a particle with a linear velocity. \n    Pass in a parent process that will kill the particle later.\"\"\"\n    inst =  Particle()\n    inst.x = x\n    inst.y = y\n    inst.sprite = new_sprite(spr)\n    inst.xv = xv\n    inst.yv = yv\n    inst.parent = proc\n    inst.nb = proc.y + proc.h\n    inst.sb = proc.y - proc.h\n    inst.eb = proc.x + proc.w\n    inst.wb = proc.x - proc.w\n    inst.angle = angle_helper(xv, yv) + 90\n\ndef make_booster(x, y, angle, force=30):\n    \"\"\"A booster that launches you at a certain angle when touched.\n    Force is given a default value, as for the sake of gameplay, faster boosters should\n    be indicated as such to the player.\"\"\"\n    inst = Booster()\n    inst.x = inst.disp.x = x\n    inst.y = inst.disp.y = y\n    inst.angle = inst.disp.angle = angle\n    inst.force = force\n\ndef make_bumper(x, y, force=30):\n    \"\"\"A bumper that always sends you in the opposite direction \n    from when you last bumped into it.\"\"\"\n    inst = Bumper()\n    inst.x = inst.disp.x = x\n    inst.y = inst.disp.y = y\n    inst.force = force\n\ndef make_spike(x, y, point_d, scale=1):\n    \"\"\"Make a spike at specified coords as well as a direction\n    (N, S, E, W). Also takes optional arg for scale.\"\"\"\n    inst = Spike()\n    inst.x = x\n    inst.y = y\n    inst.angle = d_to_angle[point_d]\n    inst.scaleX *= scale\n    inst.scaleY *= scale\n\ndef make_anglerf(x, y, AI=True):\n    \"\"\"Create an anglerfish.\"\"\"\n    inst = Anglerfish()\n    inst.x = x\n    inst.y = y\n    \ndef make_hurtbox(x, y, w, h, dmg, boost_f=None):\n    \"\"\"Create a hurtbox at a specific location, given dimenstions,\n    damage value, and a player movement modification function\"\"\"\n    inst = Hurtbox()\n    inst.x = x\n    inst.y = y\n    \n    inst.scaleX = w/40\n    inst.scaleY = h/40\n    inst.dmg = dmg\n    if boost_f != None:\n        inst.func = boost_f\n    return inst\n\ndef make_jelly(x, y, angle, scale=1):\n    \"\"\"Create a jellyfish pointing at a specfic angle.\"\"\"\n    inst = Jellyfish()\n    inst.x = x\n    inst.y = y\n    inst.angle = angle\n    inst.scaleX *= scale\n    inst.scaleY *= scale\n    inst.bounce_h.x = x + math.cos(math.radians(angle+90))*20\n    inst.bounce_h.y = y + math.sin(math.radians(angle+90))*20\n    inst.bounce_h.angle = angle\n    inst.bounce_h.scaleX *= scale\n    inst.bounce_h.scaleY *= scale    \n    inst.hbox = make_hurtbox(x, y+20, 40*scale, 30*scale, 1)\n    hitbox_rotate(inst.hbox, inst, angle-90, 20)\n    inst.hbox.angle = angle\n\ndef make_sfish(x, y, angle, AI=True):\n\n    inst = Swordfish()\n    inst.x = x\n    inst.y = y\n    inst.angle = angle\n    inst.ai = AI\n    hitbox_rotate(inst.h, inst, inst.angle, 40)\n    inst.h.angle = angle\n    if 90<angle<=270:\n        inst.scaleY *= -1\n\n    return inst\n\ndef make_echo(x, y, angle):\n    e = Echolocation()\n    e.x = x\n    e.y = y\n    e.angle = angle\n    e.xvel = math.cos(math.radians(angle+90))*14\n    e.yvel = math.sin(math.radians(angle+90))*14\n\ndef make_gem(x, y, sprname, scale=0.2):\n    g = Gem()\n    g.x = x\n    g.y = y \n    g.sprite = sprite(sprname)\n    g.scaleX = g.scaleY = scale\n    return g\n\ndef make_pedestal(x, y, scale=1, placed=False):\n    p = Pedestal()\n    p.x = x\n    p.y = y\n    p.scaleX = p.scaleY = scale\n    p.e_offset *= scale\n    \n    if not placed:\n        game.npcs.append(p)\n    \n    return p\n\n\n\n"
+                }
+            },
+            {
+                "make_gradient.py": {
+                    "type": "function script",
+                    "head": "def make_dark_gradient(x, y, w, h, levels, direction=True, vert=False, over=True):\n    \"\"\"Make a fade to black gradient centered around x, y of width\n    w and height h.\n    \n    Arg \"levels\" specifies the number of steps to divide the gradient into\n    Arg \"direction\" is True if top/left should be the lightest part\n    Arg \"vert\" is True if gradient should be vertical\n    Arg \"over\" decides if the gradient should go over the player\n    \"\"\"\n    \n    width = w/levels if not vert else w\n    height = h/levels if vert else h\n\n    for i in range(levels):\n        t = Slate()\n        t.sprite = sprite('debug.png') if game.debug else sprite('black40x40.png')\n        t.scaleX = (width/40)\n        t.scaleY = (height/40)\n        \n        if vert:\n            t.x = x \n            t.y = ((y + (h/2)) - (height/2)) - (height * i)\n        else:\n            t.x = (x - (w/2) + (width/2)) + (width * i)\n            t.y = y\n\n        t.alpha = (1/(levels-1)) * i if direction else 1 - ((1/(levels-1)) * i)\n\n        if over: t.z = 24\n\ndef make_light_gradient(x, y, w, h, levels, direction=True, vert=False, over=True):\n    \"\"\"Make a fade to white gradient centered around x, y of width\n    w and height h.\n    \n    Arg \"levels\" specifies the number of steps to divide the gradient into\n    Arg \"direction\" is True if top/left should be the lightest part\n    Arg \"vert\" is True if gradient should be vertical\n    Arg \"over\" decides if the gradient should go over the player\n    \"\"\"\n    \n    width = w/levels if not vert else w\n    height = h/levels if vert else h\n\n    for i in range(levels):\n        t = Slate()\n        t.sprite = sprite('debug.png') if game.debug else sprite('white40x40.png')\n        t.scaleX = (width/40)\n        t.scaleY = (height/40)\n        \n        if vert:\n            t.x = x \n            t.y = ((y + (h/2)) - (height/2)) - (height * i)\n        else:\n            t.x = (x - (w/2) + (width/2)) + (width * i)\n            t.y = y\n\n        t.alpha = (1/(levels-1)) * i if direction else 1 - ((1/(levels-1)) * i)\n        t.alpha /= 3\n\n        if over: t.z = 24\n\n"
+                }
+            },
+            {
+                "Nautilusfuncs.py": {
+                    "type": "function script",
+                    "head": "\n\ndef summon_spike(boss):\n    \"\"\"Summons spikes around the boss, which\n    then home towards the player.\"\"\"\n    x0, y0 = boss.x, boss.y\n    offset0 = random.randrange(0, 60)\n\n    for i in range(6):\n        inst = boss_spike()\n        vangle = (i*60) + offset0\n        gcos, gsin = math.cos(math.radians(vangle)), math.sin(math.radians(vangle))\n        inst.x = (230*gcos) + boss.x\n        inst.y = (230*gsin) + boss.y\n        inst.angle = -1*(90-vangle)\n        \ndef summon_sfish(boss):\n    \"\"\"Summons swordfish.\"\"\"\n    origin = boss.x\n    t = random.choice([\"T\", \"B\"])\n    if t == \"T\":\n        sy = 0\n        sa = -90\n    else:\n        sy = -1000\n        sa = 90\n\n    for i in range(1, 7):\n        k = make_sfish(origin + (i*160), sy, sa)\n        k.fading = True\n\ndef shockwave(boss):\n    \"\"\"Makes shockwave and sends player flying with massive current.\"\"\"\n    x0, y0 = boss.x, boss.y\n    hb = make_hurtbox(x0, y0, 600, 600, 2, lambda hb, pl: boost(pl, 20, -90))\n    hb.temp = True\n    hb.exp_time = game.t + 800\n    cur = make_current(550, -500, 1200, 1100, 30, 0)\n    cur.temp = True\n    cur.exp_time = game.t + 2000\n\ndef dash(boss):\n    \"\"\"Dash towards the player, dealing large damage.\"\"\"\n    Dx, Dy = game.p.x - boss.x, game.p.y - boss.y\n    Vmod = 20/hyp(Dx, Dy)\n    boss.xv, boss.yv = Dx*Vmod, Dy*Vmod\n\n    boss.inDash = True\n    boss.resetX, boss.resetY = (boss.x - (40*boss.xv)), (boss.y - (40*boss.yv))\n    boss.resettime = boss.t + 80\n    boss.dashEnd = boss.t + 120\n    boss.hitbox.dmg = 2\n\ndef wander(boss, v=2):\n    \"\"\"Function for random movement.\"\"\"\n    Dx, Dy = random.randrange(300, 500) - boss.x, random.randrange(-800, -200) - boss.y\n    Vmod = v/hyp(Dx, Dy)\n    boss.xv = Dx*Vmod\n    boss.yv = Dy*Vmod\n\ndef gen_att(weights):\n    \"\"\"Gets the resulting attack from a list of probabilities.\"\"\"\n    seed = random.randrange(1, 101)\n    base = 0\n    for i in range(4):\n        base += weights[i]\n        if base>=seed:\n            return i\n\ndef update_bar(bar, val, boss):\n    if not 0<=val<=15:\n        return None\n    anim = new_animation(boss.bossbar, 0, val, val)\n    set_animation(boss.barobj, anim)\n\n    \n\n\n    \n\n        \n        \n\n"
+                }
+            },
+            {
+                "Classes": [
+                    {
+                        "TravelGate.py": {
+                            "type": "function script",
+                            "head": "class TravelGate:\n    def __init__(self, x, y, w, h, roomid, dest):\n        self.inst = travelgate_inst()\n        self.inst.parent = self\n        self.inst.x = x\n        self.inst.y = y\n        \n        self.inst.sprite = sprite('debug.png') if game.debug else sprite('black40x40.png')\n        self.inst.visible = game.debug\n        self.inst.scaleX = w/40\n        self.inst.scaleY = h/40\n\n        self.roomid = roomid\n        self.dest = dest\n\n    def travel(self):\n        \"\"\"\"\"\"\n        game.travelid = self.roomid\n        set_room(self.dest)"
+                        }
+                    },
+                    {
+                        "TextBox.py": {
+                            "type": "function script",
+                            "head": "class TextBox:\n    def __init__(self, msg, duration):\n        \"\"\"Create a textbox with msg text that last for a \n        minimum of duration ms.\"\"\"\"\n\n        try: # clear possible current text box\n            game.text_box.destroy()\n        except Exception as e: # no text box currently up\n            pass\n\n        self.inst = textbox_inst()\n        self.inst.parent = self\n        self.inst.x = camera_x()\n        self.inst.y = camera_y() - 200\n        game.text_box = self\n        \n        self.text = text(msg, self.inst.x - 450, self.inst.y + 56)\n        self.text.color = '#ffffff'\n        self.text.fontsize = 70\n        self.text.fontFamily = 'courier new'\n        self.inst.z = 25\n        self.text.z = 25\n\n        self.close_time = game.t + duration\n        self.textexists = True\n    \n    def do_loop(self):\n        \n        try:\n            self.text.x \n        except Exception:\n            self.textexists = False\n        \n        self.inst.x = camera_x()\n        self.inst.y = camera_y() - 200\n        \n        if self.textexists:\n            self.text.x = self.inst.x - 450\n            self.text.y = self.inst.y + 56\n        \n\n        if game.t > self.close_time:\n            keys = (\n                mouse_is_pressed('left'),\n                mouse_is_pressed('right'),\n                key_is_pressed('arrowRight'),\n                key_is_pressed('arrowLeft'),\n                key_is_pressed('arrowDown'),\n                key_is_pressed('arrowUp'),\n                key_is_pressed(' ')\n            )\n\n            if any(keys):\n                self.destroy()\n        \n    def destroy(self):\n        destroy(self.inst)\n        destroy(self.text)\n    \n\n\n"
+                        }
+                    },
+                    {
+                        "NPC.py": {
+                            "type": "function script",
+                            "head": "\ndef make_simple_npc(x, y, type_, msg, scale=1, facingr=True):\n    \"\"\"Create a simple npc with only one line.\"\"\"\n\n    type_map = {\n        'Whale': Whale\n    }\n\n    n = type_map[type_]()\n    n.x = x\n    n.y = y\n    if not facingr:\n        n.skewY = -180\n    n.scaleX *= scale\n    n.scaleY *= scale\n    n.e_offset *= scale\n    n.msg = msg\n    \n    # flag for if \"e to interact\" popup is up\n    n.e_popup = False\n\n    game.npcs.append(n)\n    return n\n\nclass ComplexNPC:\n    def __init__(self, x, y):\n        self.inst = Whale()\n        self.inst.x = x\n        self.inst.y = y\n        self.inst.e_popup = False\n        self.inst.parent = self\n        game.npcs.append(self.inst)\n\n        self.msg_ind = 0\n        self.mark = None\n    \n    def update_loop(self):\n        if self.mark is not None:\n            self.mark.y = self.inst.y + self.inst.e_offset\n\n    def make_exclaim(self):\n        self.mark = Slate()\n        self.mark.sprite = sprite('exclaim_mark.png')\n        self.mark.scaleX = self.mark.scaleY = 0.8\n\n        # offset to left or right depending on facing\n        if self.inst.skewY != 0:\n            x_off = 110 * (self.inst.skewY/abs(self.inst.skewY))\n        else:\n            x_off = 110\n        self.mark.x = self.inst.x + (x_off * self.inst.scaleX)\n        self.mark.y = self.inst.y + self.inst.e_offset\n    \n    def destroy_exclaim(self):\n        if self.mark is not None:\n            destroy(self.mark)\n            self.mark = None\n\n\n\nWINONA_MSGS = [\n[\n\"\"\"Hi, I'm Winona the Whale! Glad you made it.\nIf you haven't been keeping up with current events,\nthe three gems that maintain the oceans were stolen, and\nthe water levels have fallen.\"\"\",\n\n\"\"\"Most of the whales made it down here safely, but we're\ntoo big to go in the caves where the gems were hidden.\"\"\",\n\n\"\"\"If you want to help out, try talking to Watson the Whale. \nCavern to the right, and just look for the biggest whale \nthere.\"\"\"\n],\n[\n\"\"\"Woah, you actually got the gem! Uh, I mean, I beleived\nin you the whole time. Quick, go put it on the pedestal\nin the cave above to raise the water level!\"\"\",\n],\n[\n\"\"\"Hey! Nice to see you again — Winona the Whale here.\nThanks so much for raising the water level. If you did it again,\nall my friends could return home too.\"\"\",\n],\n]\nclass Winona(ComplexNPC):\n    def __init__(self, x, y):\n        super().__init__(x, y)\n        self.inst.skewY = -180\n        self.update_msg()\n        \n    def update_msg(self):\n        if not game.prog.gem1_pick:\n            self.msgs = WINONA_MSGS[0]\n\n            if not game.prog.winona_e1 and self.mark is None:\n                self.make_exclaim()\n\n            if self.msg_ind >= len(self.msgs):\n                game.prog.winona_e1 = True\n                self.destroy_exclaim()\n        \n        elif game.prog.gem1_pick:\n            self.msgs = WINONA_MSGS[1]\n\n            if self.mark is not None:\n                self.destroy_exclaim()\n                game.prog.winona_e2 = True\n\n            if not game.prog.winona_e2 and self.mark is None:\n                self.make_exclaim()\n\n        self.msg = self.msgs[self.msg_ind%len(self.msgs)]\n        self.inst.msg = self.msg\n        \n        if not self.msg_ind%len(self.msgs):\n            try:\n                destroy(game.e)\n            except AttributeError:\n                pass\n\nWILHELM_MSGS = [\n[\n\"\"\"Hey there mate! I'm Wilhelm the whale.\nDidn't expect to see anybody else crazy enough to e\ncome down here. You'll be questin for the gems, I expect.                 \n                                        (1/3)\"\"\",\n\n\"\"\"The caves up ahead got too narrow for my big head,\nbut you should be able to make it. You will need a\nway to see in the dark though... Aha! I know just\nthe thing! I'll teach you Echolocation!   (2/3)\n\"\"\",\n\n\"\"\"So what you're going to want to do is press \"F\" when\nyou're in a dark cave, and everything hit by the\necholocation will light up. Good luck out there mate!\n                                        (3/3)\"\"\",\n],\n]\n\nclass Wilhelm(ComplexNPC):\n    def __init__(self, x, y):\n        super().__init__(x, y)\n        self.update_msg()\n    \n    def update_msg(self):\n        self.msgs = WILHELM_MSGS[0]\n        if not game.prog.echo:\n            self.make_exclaim()\n\n            if self.msg_ind >= len(self.msgs):\n                game.prog.echo = True\n        \n        self.msg = self.msgs[self.msg_ind%len(self.msgs)]\n        self.inst.msg = self.msg\n\n        if not self.msg_ind%len(self.msgs):\n            try:\n                destroy(game.e)\n            except AttributeError:\n                pass\n\n        if game.prog.echo or self.msg_ind>=len(self.msgs):\n            try:\n                self.destroy_exclaim()\n            except Exception:\n                pass\n\n\nWATSON_MSGS = [\n[\n\"\"\"Howdy stranger! It's rare to see travellers nowadays...\nI'm Watson the Whale. Not much changes around these parts.\nWe'd make cave paintings of the Sun to tell tales of thee\npast, but we don't know how to paint.\"\"\",\n\n\"\"\"Winona sent you, huh?\nSo you want to hear about how we got stuck down here, eh?\"\"\",\n\n\"\"\"We used to live up at the surface of the water,\nbut one day, some scary creatures used 3 magic stones,\nand sealed all the water away.\"\"\",\n\n\"\"\"Man, if only there was a convenient hero that could\nget the stones and save us...\"\"\",\n\n\"\"\"Oh hey! Do you want to go on a quest to save the world?\nYou look like you can handle it! Collect the three gems and\nreturn them to their pedestals - the nearest gem is through\nthe passage under Winona, and the pedestal is above her.\"\"\"\n],\n[\n\"\"\"I knew you had it in you! Good goin, little guy!\"\"\"\n]\n]\n\nclass Watson(ComplexNPC):\n    def __init__(self, x, y):\n        super().__init__(x, y)\n        self.inst.scaleX = self.inst.scaleY = 2\n        self.inst.e_offset *= self.inst.scaleY\n        self.update_msg()\n    \n    def update_msg(self):\n        if not game.prog.watson_e1 and self.mark is None:\n            self.make_exclaim()\n        \n        if not game.prog.gem1_pick:\n            self.msgs = WATSON_MSGS[0]\n        else:\n            self.msgs = WATSON_MSGS[1]\n        \n        self.msg = self.msgs[self.msg_ind%len(self.msgs)]\n        self.inst.msg = self.msg\n\n        if self.msg_ind >= len(self.msgs):\n            game.prog.watson_e1 = True\n            self.destroy_exclaim()\n\n        if not self.msg_ind%len(self.msgs):\n            try:\n                destroy(game.e)\n            except AttributeError:\n                pass\n\n\n"
+                        }
+                    },
+                    {
+                        "ProgTracker.py": {
+                            "type": "function script",
+                            "head": "class ProgTracker:\n    def __init__(self):\n        \n        self.echo = False\n        self.gem1_pick = False\n        self.gem1_place = False\n        self.gem2_pick = False\n        self.gem2_place = False\n        self.gem3_pick = False\n        self.gem3_place = False\n\n        # exclamation marks for npcs - has player seen message\n        self.winona_e1 = False\n        self.winona_e2 = False\n\n        self.watson_e1 = False"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
